@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+// Tutorial Followed :
+// https://weaverdev.io/projects/bonehead-procedural-animation/
+// https://discussions.unity.com/t/ik-foot-placement-setup/882657/2
+
 [ExecuteInEditMode]
 
 public class EntityController : MonoBehaviour
