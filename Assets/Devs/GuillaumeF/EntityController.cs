@@ -49,7 +49,11 @@ public class EntityController : MonoBehaviour
 
     #endregion
 
+    #region IKLegs
 
+
+
+    #endregion
 
     void LateUpdate()
     {
