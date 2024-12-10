@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652304567771604862}
   - component: {fileID: 1778849991586718445}
+  - component: {fileID: 5233303690300353864}
   m_Layer: 0
   m_Name: PsmPlayerController
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -56,9 +57,119 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b35942ba-10cb-45eb-a2c5-a05281028b86
+    m_ActionName: 'UI/JoinGame[/Keyboard/space,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d5707ac2-703b-41ca-8076-d2caa6776210
+    m_ActionName: 'UI/PSM_ConfirmSelection[/Keyboard/enter,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5233303690300353864}
+        m_TargetAssemblyTypeName: PsmSelectionController, Assembly-CSharp
+        m_MethodName: OnPSM_MoveSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f0bc72f1-0fae-4994-8381-3b22f080b616
+    m_ActionName: 'UI/PSM_MoveSelection[/XInputControllerWindows/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5233303690300353864}
+        m_TargetAssemblyTypeName: PsmSelectionController, Assembly-CSharp
+        m_MethodName: OnConfirmSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0599db7f-5a4b-4aaa-ac83-0e954f02f3f0
+    m_ActionName: 'UI/ConfirmSelection[/Keyboard/enter,/DualSenseGamepadHID/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows/buttonSouth]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5233303690300353864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277879631333515854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992ddd052c2c1574ba2d208fd41a3577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  psmManager: {fileID: 0}
+  input: {fileID: 0}
+  psmScrollRect: {fileID: 0}
+  selectedIndex: 0
+  lowFrequencyRumbleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0033264
+      inSlope: -1.9537141
+      outSlope: -1.9537141
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.18304256
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.35104325
+      outSlope: -0.35104325
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1919681
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  confirmRumbleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0033264
+      inSlope: -1.9537141
+      outSlope: -1.9537141
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.18304256
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.35104325
+      outSlope: -0.35104325
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1919681
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  psmSlot: {fileID: 0}
+  chickenNameText: {fileID: 0}
+  chickenSpellNameText: {fileID: 0}
+  chickenHealthSlider: {fileID: 0}
+  chickenSpeedSlider: {fileID: 0}

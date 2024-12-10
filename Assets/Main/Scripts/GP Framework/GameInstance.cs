@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameInstance : MonoBehaviour
 {
@@ -7,6 +9,9 @@ public class GameInstance : MonoBehaviour
     public bool debugMode;
 
     public int playerCount;
+    public List<ChickenConfig> playerConfigs = new List<ChickenConfig>();
+    
+    public Dictionary<Gamepad, Coroutine> gamepadRumbleCoroutines = new Dictionary<Gamepad, Coroutine>();
     
     private void Awake() {
         if(instance == null) {
