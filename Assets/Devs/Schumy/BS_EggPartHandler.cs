@@ -4,7 +4,7 @@ public class BS_EggPartHandler : MonoBehaviour
 {
         private Rigidbody partRb;
         private float dragOverTime;
-        private float scale = 1;
+        private float scale = 0.2f;
         private float speed = 1;
 
         public void Initialize(Rigidbody rb, float drag)
@@ -29,5 +29,6 @@ public class BS_EggPartHandler : MonoBehaviour
                 transform.localScale = Vector3.one * scale; 
                 yield return null;
             }
+            Destroy(gameObject);
         }
     }

@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -611,7 +611,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.8
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4849,7 +4849,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 470826543b60fd1409d16f8e380550ca, type: 2}
+  - {fileID: 2100000, guid: 4658b5b7dd6989b43a2897de08b951a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4893,11 +4893,11 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 4895997058012539016, guid: c826377b83e236140bef75c09f64d25c, type: 3}
-  m_Mesh1: {fileID: -4484788350579610094, guid: 4ee5f1cc78809e643b022b54897c87e7, type: 3}
-  m_Mesh2: {fileID: -4484788350579610094, guid: 4ee5f1cc78809e643b022b54897c87e7, type: 3}
-  m_Mesh3: {fileID: 0}
-  m_MeshWeighting: 2
+  m_Mesh: {fileID: 5726627510434213174, guid: de69724cb8e403b4e98aec31f0611094, type: 3}
+  m_Mesh1: {fileID: -9182879524145606928, guid: de69724cb8e403b4e98aec31f0611094, type: 3}
+  m_Mesh2: {fileID: 5070288765995540253, guid: de69724cb8e403b4e98aec31f0611094, type: 3}
+  m_Mesh3: {fileID: -7264372469766620047, guid: de69724cb8e403b4e98aec31f0611094, type: 3}
+  m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
