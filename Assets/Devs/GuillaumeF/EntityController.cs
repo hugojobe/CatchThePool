@@ -17,6 +17,8 @@ public class EntityController : MonoBehaviour
     [SerializeField]
     Transform target;
 
+    public bool moveHead;
+
     private Quaternion currentHeadLocalRotation;
     private Quaternion targetHeadLocalRotation;
 
@@ -57,7 +59,7 @@ public class EntityController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (headBone!= null && target != null)
+        if (moveHead && headBone!= null && target != null)
             HeadTrackingUpdate();
         if (animateEyes && leftEyeBone != null && rightEyeBone != null)
             EyeTrackingUpdate();
