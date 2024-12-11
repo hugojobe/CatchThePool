@@ -8,4 +8,13 @@ public class ChickenConfig : ScriptableObject
     public string chickenSpellName;
     public int chickenHealthPSM;
     public int chickenSpeedPSM;
+
+    [Space] 
+    public float chickenSpeed;
+    public float dashSpeed;
+    public float dashDistance;
+    public float dashCooldown;
+
+    [Space] 
+    public Color[] chickenColors;
 }

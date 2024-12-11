@@ -16,3 +16,9 @@ MonoBehaviour:
   chickenSpellName: Nuggquake
   chickenHealthPSM: 3
   chickenSpeedPSM: 1
+  chickenSpeed: 1.9
+  dashSpeed: 32
+  dashDistance: 2
+  dashCooldown: 1.5
+  chickenColors:
+  - {r: 0.75799996, g: 1, b: 0.736, a: 1}

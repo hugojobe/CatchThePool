@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class GameInstance : MonoBehaviour
 {
@@ -10,17 +11,28 @@ public class GameInstance : MonoBehaviour
 
     public int playerCount;
     public List<ChickenConfig> playerConfigs = new List<ChickenConfig>();
+    public List<PlayerController> playerControllers = new List<PlayerController>();
+    
+    public List<int> gamepadIDs = new List<int>();
     
     public Dictionary<Gamepad, Coroutine> gamepadRumbleCoroutines = new Dictionary<Gamepad, Coroutine>();
     
     private void Awake() {
-        if(instance == null) {
+        if (instance == null)
+        { 
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if (debugMode)
+            {
+                Gamepad[] pads = Gamepad.all.ToArray();
+                Debug.Log(pads);
+                gamepadIDs.Add(pads[0].deviceId);
+                gamepadIDs.Add(pads[1].deviceId);
+            }
         }
-        else {
+        else
             Destroy(gameObject);
-        }
     }
     
     private async void Start() {
