@@ -5,7 +5,7 @@ public class BS_EggCollide : MonoBehaviour
 {
     [SerializeField] private GameObject eggPartLeft;
     [SerializeField] private GameObject eggPartRight;
-    [SerializeField] private GameObject eggCracks;
+    //[SerializeField] private GameObject eggCracks;
     //[SerializeField] private GameObject eggYellow;
 
     [SerializeField] private float forwardSpeed = 10f;
@@ -34,7 +34,7 @@ public class BS_EggCollide : MonoBehaviour
 
         GameObject leftPart = Instantiate(eggPartLeft, transform.position, transform.rotation);
         GameObject rightPart = Instantiate(eggPartRight, transform.position, transform.rotation);
-        Instantiate(eggCracks, transform.position, transform.rotation);
+        //Instantiate(eggCracks, transform.position, transform.rotation);
        // Instantiate(eggYellow, transform.position, transform.rotation);
 
         Rigidbody leftRb = leftPart.GetComponent<Rigidbody>();

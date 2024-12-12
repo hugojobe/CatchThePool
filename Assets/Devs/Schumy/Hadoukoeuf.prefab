@@ -253,7 +253,7 @@ MonoBehaviour:
   eggPartLeft: {fileID: 946038193198604078, guid: 36a0c409c040b4642ab438ba8e242f7e, type: 3}
   eggPartRight: {fileID: 46554222209213076, guid: 65b49690bd1231e408250fbd4ca7b7cc, type: 3}
   eggCracks: {fileID: 7131938349934549987, guid: 32bfef691a6155047b0c5839c85da6cb, type: 3}
-  forwardSpeed: 120
+  forwardSpeed: 60
   splitForce: 10
   forwardRetentionFactor: 0.5
   dragOverTime: 2

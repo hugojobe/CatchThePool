@@ -73,6 +73,7 @@ public class ProceduralMovement : MonoBehaviour
     private bool isLStep;
     private bool isRStep;
 
+
     private void Start()
     {
         leftRay = new Ray(LeftAnkle.position, Vector3.down);
@@ -96,11 +97,11 @@ public class ProceduralMovement : MonoBehaviour
         if (Physics.Raycast(leftNextRay, out infos, detectionRange))
             researchGroundingLeftPos = infos.point;
 
-        rightNextRay = new Ray( RightLeg.position, Vector3.down);
+        rightNextRay = new Ray(RightLeg.position, Vector3.down);
         if (Physics.Raycast(rightNextRay, out infos, detectionRange))
             researchGroundingRightPos = infos.point;
 
-        if(Vector3.Distance(currentGroundingLeftPos, researchGroundingLeftPos) > stepDistance && !isRStep)
+        if (Vector3.Distance(currentGroundingLeftPos, researchGroundingLeftPos) > stepDistance && !isRStep)
         {
             nextLeftGroundingPos = researchGroundingLeftPos;
             if (nextLeftGroundingPos != Vector3.zero)
@@ -119,7 +120,7 @@ public class ProceduralMovement : MonoBehaviour
 
                     TargetL.position = tempPosition;
                     lerpL += Time.deltaTime * stepSpeed;
-                    
+
                 }
                 else
                 {
@@ -151,7 +152,7 @@ public class ProceduralMovement : MonoBehaviour
 
                     TargetR.position = tempPosition;
                     lerpR += Time.deltaTime * stepSpeed;
-                    
+
                 }
                 else
                 {
@@ -159,7 +160,7 @@ public class ProceduralMovement : MonoBehaviour
                     TargetR.position = currentGroundingRightPos;
                     nextRightGroundingPos = Vector3.zero;
                     isStepping = false;
-                    isRStep= false;
+                    isRStep = false;
                 }
             }
         }
