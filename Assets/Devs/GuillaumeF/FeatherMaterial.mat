@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FeatherMaterial 3
+  m_Name: FeatherMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 2b643bfbe5b4b4f4d9d0605b3c62bcf1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -47,7 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _FeatherColorValue: 0.5
-    - _FeatherID: 3
+    - _FeatherID: 1
     - _Glossiness: 0.5
     - _Metallic: 0
     - _QueueControl: 0

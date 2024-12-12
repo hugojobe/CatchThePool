@@ -16,3 +16,9 @@ MonoBehaviour:
   chickenSpellName: Spicyfart
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
+  chickenSpeed: 2.5
+  dashSpeed: 32
+  dashDistance: 2
+  dashCooldown: 1.5
+  chickenColors:
+  - {r: 0.971418, g: 0.769, b: 1, a: 1}

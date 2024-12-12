@@ -77,6 +77,7 @@ public class PsmManager : MonoBehaviour
         
         GameInstance.instance.playerCount++;
         GameInstance.instance.playerConfigs.Add(null);
+        GameInstance.instance.gamepadIDs.Add(playerInput.GetDevice<Gamepad>().deviceId);
         
         if(GameInstance.instance.playerCount < playerInputManager.maxPlayerCount)
             emptySlotsCG[GameInstance.instance.playerCount].DOFade(1, 0.2f);

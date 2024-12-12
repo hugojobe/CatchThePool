@@ -16,3 +16,9 @@ MonoBehaviour:
   chickenSpellName: Tourbiplume
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
+  chickenSpeed: 2.5
+  dashSpeed: 32
+  dashDistance: 2
+  dashCooldown: 1.5
+  chickenColors:
+  - {r: 0.69799995, g: 0.9748333, b: 1, a: 1}

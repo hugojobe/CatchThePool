@@ -16,3 +16,9 @@ MonoBehaviour:
   chickenSpellName: Hadoukoeuf
   chickenHealthPSM: 1
   chickenSpeedPSM: 3
+  chickenSpeed: 3.1
+  dashSpeed: 32
+  dashDistance: 2
+  dashCooldown: 1.5
+  chickenColors:
+  - {r: 1, g: 0.7865579, b: 0.476, a: 1}
