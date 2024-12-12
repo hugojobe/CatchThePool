@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-485188641796470128
+--- !u!114 &-3789258516721062756
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,13 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DashPuff_M
-  m_Shader: {fileID: -6465566751694194690, guid: 6ea5ae8d7ff25f946aa2a9ec23753374, type: 3}
+  m_Name: DashSpecks_M
+  m_Shader: {fileID: -6465566751694194690, guid: 3093f750845214b4aa8d6b8b7fdb9505, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _FRAME_ANIMATION_AUTOMATIC
-  - _SPRITE_ORIENTATION_REGULAR
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,22 +37,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1c9f3b45a66a4d88b4ad4951cbe4ff54:
-        m_Texture: {fileID: 2800000, guid: b26f4cbae57a88f4cbd25296d97e7550, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_26bd4562dd2e4223b19813909ed859b0:
-        m_Texture: {fileID: 2800000, guid: 16f3904778bf027419c1022a2eea8860, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_6174cc37a8e24a6ca104731d11d594ed:
-        m_Texture: {fileID: 2800000, guid: 2f2423bb678a02d45950372ff1013ee0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_e9703806004f4752934454a6ee595797:
-        m_Texture: {fileID: 2800000, guid: 9e6323b1121f38b44b311ad01494b089, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -87,10 +69,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Motion_vector:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -101,6 +79,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Specks:
+        m_Texture: {fileID: 2800000, guid: ae28b8292db6f35448bc17bd439b8aca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -117,56 +99,47 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_0671ea344b044e029790543672a6a90f: 30
-    - Vector1_392a4b66f32049d9ab1084f3a8c71a0a: 8
-    - Vector1_70743c15ff3e490cb232c8512c705597: 0.1
-    - Vector1_d1ebd2a9a3e148b987344089daf08854: 8
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _BLEND_WITH_VERTEX_COLOR: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorBooster: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth_fade_distance: 0.25
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FRAME_ANIMATION: 0
-    - _Frame: 0
+    - _FadePower: 2
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Motion_vector_intensity: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ROTATE_UV_TRAIL: 0
     - _ReceiveShadows: 1
-    - _SPRITE_ORIENTATION: 0
-    - _Shadows_strength: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SpecksPower: 1
     - _SpecularHighlights: 1
+    - _Speed: 3
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _USE_MOTION_VECTOR: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_e6caed8b54cd469fa5d7c358c90c19cc: {r: 0.6981132, g: 0.50934315, b: 0.2272161, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8509804, g: 0.83529276, b: 0.76077646, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

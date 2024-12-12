@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-485188641796470128
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 9
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DashPuff_M
-  m_Shader: {fileID: -6465566751694194690, guid: 6ea5ae8d7ff25f946aa2a9ec23753374, type: 3}
+  m_Name: FartFlame_M
+  m_Shader: {fileID: -6465566751694194690, guid: 0df11791c0b89794fa6e1ff4367c9061, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -40,19 +27,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_1c9f3b45a66a4d88b4ad4951cbe4ff54:
-        m_Texture: {fileID: 2800000, guid: b26f4cbae57a88f4cbd25296d97e7550, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae91663f7ce328a4cbb54150920be80c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_26bd4562dd2e4223b19813909ed859b0:
-        m_Texture: {fileID: 2800000, guid: 16f3904778bf027419c1022a2eea8860, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9d1fd649088f73f4eb95e5c632d6f2a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_6174cc37a8e24a6ca104731d11d594ed:
-        m_Texture: {fileID: 2800000, guid: 2f2423bb678a02d45950372ff1013ee0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0e2c0eeb3706be44aa53df162d33dac2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_e9703806004f4752934454a6ee595797:
-        m_Texture: {fileID: 2800000, guid: 9e6323b1121f38b44b311ad01494b089, type: 3}
+        m_Texture: {fileID: 2800000, guid: dade75a55df74984ea1806e32afa63b4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -77,6 +64,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emissive_texture:
+        m_Texture: {fileID: 2800000, guid: e5544a81edca8a94e99eddcbbc7e5658, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -117,9 +108,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_0671ea344b044e029790543672a6a90f: 30
+    - Vector1_0671ea344b044e029790543672a6a90f: 20
     - Vector1_392a4b66f32049d9ab1084f3a8c71a0a: 8
-    - Vector1_70743c15ff3e490cb232c8512c705597: 0.1
+    - Vector1_70743c15ff3e490cb232c8512c705597: 0
     - Vector1_d1ebd2a9a3e148b987344089daf08854: 8
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
@@ -163,10 +154,24 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_e6caed8b54cd469fa5d7c358c90c19cc: {r: 0.6981132, g: 0.50934315, b: 0.2272161, a: 0}
+    - Color_e6caed8b54cd469fa5d7c358c90c19cc: {r: 0.199, g: 0.199, b: 0.199, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Emissive_color: {r: 7.245283, g: 0.44428644, b: 0.44428644, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
+--- !u!114 &4983806350086786485
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
