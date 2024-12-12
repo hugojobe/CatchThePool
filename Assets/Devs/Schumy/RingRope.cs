@@ -46,15 +46,41 @@ public class RingRope : MonoBehaviour
 
     private void Update()
     {
-
-
         if (isInteracting && interactingPlayer != null)
         {
             Vector3 playerPosition = interactingPlayer.position;
 
-            controlPoint2.position = startPoint + (playerPosition - startPoint)*0.5f;
-            controlPoint1.position = endPoint + (playerPosition - endPoint) *0.5f;
+            // Direction principale entre startPoint et endPoint
+            Vector3 lineDirection = (endPoint - startPoint).normalized;
+
+            // Trouver le point le plus proche sur la ligne (projection)
+            Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
+
+            // Distance entre le joueur et le point le plus proche sur la ligne
+            float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
+
+            // Position relative du joueur le long de la ligne (valeur entre 0 et 1)
+            float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) / Vector3.Distance(startPoint, endPoint);
+
+            // Offset de base pour avancer sur l'axe X
+            float baseOffset = 2.0f;
+
+            // Ajuster l'offset total en divisant la distance par 2
+            float totalOffset = baseOffset + (distanceToLine / 2.0f);
+
+            // Décalage supplémentaire parallèle pour augmenter la courbure
+            float curvatureOffset = 10.0f; // Ajustez cette valeur pour contrôler la courbure
+            Vector3 curvatureAdjustment = lineDirection * curvatureOffset;
+
+            // Ajuster l'influence des points de contrôle en fonction de la position relative du joueur (inversé)
+            float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);    // Plus fort vers end
+            float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); // Plus fort vers start
+
+            // Ajuster les positions des points de contrôle
+            controlPoint1.position = new Vector3(playerPosition.x + totalOffset * controlPoint1Weight, controlPoint1.position.y, playerPosition.z) + curvatureAdjustment * controlPoint1Weight;
+            controlPoint2.position = new Vector3(playerPosition.x + totalOffset * controlPoint2Weight, controlPoint2.position.y, playerPosition.z) - curvatureAdjustment * controlPoint2Weight;
         }
+
         else
         {
             controlPoint2.position = Vector3.Lerp(controlPoint1.position, startPoint, returnSpeed * Time.deltaTime);
