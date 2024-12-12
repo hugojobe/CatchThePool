@@ -42,18 +42,64 @@ public class RingRope : MonoBehaviour
 
         UpdateMesh();
         GenerateCollider();
+
+        lineDirection = (endPoint - startPoint).normalized;
+        parentPosition = transform.parent.position;
     }
 
+    private Vector3 parentPosition;
+    private Vector3 lineDirection;
     private void Update()
     {
-
-
         if (isInteracting && interactingPlayer != null)
         {
+
             Vector3 playerPosition = interactingPlayer.position;
 
-            controlPoint2.position = startPoint + (playerPosition - startPoint)*0.5f;
-            controlPoint1.position = endPoint + (playerPosition - endPoint) *0.5f;
+          Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
+          float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
+    
+           float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) / Vector3.Distance(startPoint, endPoint);
+
+           float curvatureOffset = 4.0f; 
+           Vector3 curvatureAdjustment = lineDirection * curvatureOffset;
+    
+          float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);    
+           float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); 
+           bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
+           if (isXAxis)
+           { 
+               float baseOffset = (parentPosition.z < playerPosition.z) ? 1.0f : -1.0f; 
+               float totalOffset = baseOffset + (distanceToLine / 2.0f); 
+               controlPoint1.position = new Vector3(
+                  playerPosition.x,
+                  controlPoint1.position.y,
+                playerPosition.z + (totalOffset * controlPoint1Weight)
+                  ) + curvatureAdjustment * controlPoint1Weight;
+
+               controlPoint2.position = new Vector3(
+                   playerPosition.x, 
+                   controlPoint2.position.y, 
+                   playerPosition.z + (totalOffset * controlPoint2Weight)
+                ) - curvatureAdjustment * controlPoint2Weight;
+           }
+           else
+            {
+                float baseOffset = (parentPosition.x < playerPosition.x) ? 1.0f : -1.0f;
+                float totalOffset = baseOffset + (distanceToLine / 2.0f);
+
+                controlPoint1.position = new Vector3(
+                 playerPosition.x + (totalOffset * controlPoint1Weight),
+                 controlPoint1.position.y,
+                 playerPosition.z
+              ) + curvatureAdjustment * controlPoint1Weight;
+
+                controlPoint2.position = new Vector3(
+                   playerPosition.x + (totalOffset * controlPoint2Weight),
+                    controlPoint2.position.y,
+                       playerPosition.z
+                     ) - curvatureAdjustment * controlPoint2Weight;
+            }
         }
         else
         {
@@ -69,11 +115,9 @@ public class RingRope : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isInteracting)
-        {
-            interactingPlayer = other.transform;
-            isInteracting = true;
-        }
+        if (!other.CompareTag("Player") || isInteracting) return;
+        interactingPlayer = other.transform;
+        isInteracting = true;
     }
 
     public void ReleaseInteraction()
@@ -176,6 +220,24 @@ public class RingRope : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(controlPoint1.position, 0.1f);
             Gizmos.DrawSphere(controlPoint2.position, 0.1f);
+            
+            Vector3 centerPoint = (startPoint + endPoint) / 2;
+
+            Vector3 parentPosition = transform.parent.position;
+            Vector3 directionToParent = (parentPosition - centerPoint).normalized;
+
+            Vector3 lineDirection = (endPoint - startPoint).normalized;
+            bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
+
+            Vector3 perpendicularDirection = isXAxis ? Vector3.forward : Vector3.right;
+
+            perpendicularDirection *= Mathf.Sign(Vector3.Dot(directionToParent, perpendicularDirection));
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(startPoint, endPoint);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(centerPoint, centerPoint + (perpendicularDirection * 3f)); // Ligne de longueur 3
         }
     }
 }
