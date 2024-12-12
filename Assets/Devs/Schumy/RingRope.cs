@@ -1,100 +1,92 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class RingRope : MonoBehaviour
 {
     private Vector3 startPoint;
-    private Vector3 interactionPoint;
-    private Vector3 endPoint; 
-    private Transform controlPoint; 
+    private Vector3 endPoint;
+    private Transform controlPoint1;
+    private Transform controlPoint2;
     private float ropeRadius;
-    private Material ropeMaterial;
     private int segments;
     private float returnSpeed;
 
     private MeshFilter meshFilter;
-    private bool isInteracting = false; 
-    private Transform interactingPlayer; 
-    private BoxCollider ropeCollider; 
+    private bool isInteracting;
+    private Transform interactingPlayer;
+    private BoxCollider ropeCollider;
 
     public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed)
     {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.ropeRadius = ropeRadius;
-        this.ropeMaterial = ropeMaterial;
         this.segments = segments;
         this.returnSpeed = returnSpeed;
-        
+
         meshFilter = gameObject.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = gameObject.AddComponent<MeshRenderer>();
         meshRenderer.material = ropeMaterial;
+        transform.position = (startPoint + endPoint) / 2;
 
-        GameObject controlPointObject = new GameObject("ControlPoint");
-        controlPoint = controlPointObject.transform;
-        controlPoint.position = (startPoint + endPoint) / 2;
-        transform.position = controlPoint.position;
+        
+        GameObject controlPoint1Object = new ("ControlPoint1");
+        controlPoint1 = controlPoint1Object.transform;
+        controlPoint1.position = startPoint;
+
+        GameObject controlPoint2Object = new ("ControlPoint2");
+        controlPoint2 = controlPoint2Object.transform;
+        controlPoint2.position = endPoint;
+
         ropeCollider = gameObject.AddComponent<BoxCollider>();
-        ropeCollider.isTrigger = true; 
+        ropeCollider.isTrigger = true;
 
-        GenerateBezierMesh();
-        UpdateCollider();
+        UpdateMesh();
+        GenerateCollider();
     }
-    public float t = 0.5f;
 
     private void Update()
     {
+
+
         if (isInteracting && interactingPlayer != null)
         {
-            float t = 0.5f;
-            float oneMinusT = 1 - t;
-            float weightStart = oneMinusT * oneMinusT; 
-            float weightEnd = t * t; 
-            float weightControl = 2 * oneMinusT * t; 
-            
+            Vector3 playerPosition = interactingPlayer.position;
 
-            Vector3 controlPosition = (interactingPlayer.position - (weightStart * startPoint) - (weightEnd * endPoint)) / weightControl;
-            controlPosition.y = interactingPlayer.position.y;
-            controlPoint.position = controlPosition;
-
+            controlPoint2.position = startPoint + (playerPosition - startPoint)*0.5f;
+            controlPoint1.position = endPoint + (playerPosition - endPoint) *0.5f;
         }
         else
         {
-            Vector3 targetPosition = (startPoint + endPoint) / 2;
-            controlPoint.position = Vector3.Lerp(controlPoint.position, targetPosition, returnSpeed * Time.deltaTime);
+            controlPoint2.position = Vector3.Lerp(controlPoint1.position, startPoint, returnSpeed * Time.deltaTime);
+            controlPoint1.position = Vector3.Lerp(controlPoint2.position, endPoint, returnSpeed * Time.deltaTime);
         }
 
-        GenerateBezierMesh();
+        UpdateMesh();
 
         if (isInteracting && Input.GetKeyDown(KeyCode.E))
             ReleaseInteraction();
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isInteracting)
         {
-            
             interactingPlayer = other.transform;
             isInteracting = true;
-            
-            interactionPoint = other.transform.position;
         }
     }
-    
 
-    private void ReleaseInteraction()
+    public void ReleaseInteraction()
     {
         interactingPlayer = null;
         isInteracting = false;
     }
 
-    private void GenerateBezierMesh()
+    private void UpdateMesh()
     {
-        Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint.position, endPoint, segments);
+        Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
 
-        Mesh mesh = new ();
+        Mesh mesh = new();
         Vector3[] vertices = new Vector3[bezierPoints.Length * 8];
         Vector3[] normals = new Vector3[vertices.Length];
         Vector2[] uvs = new Vector2[vertices.Length];
@@ -149,39 +141,41 @@ public class RingRope : MonoBehaviour
         meshFilter.mesh = mesh;
     }
 
-    private Vector3 direction;
-    private void UpdateCollider()
+    private void GenerateCollider()
     {
         float length = Vector3.Distance(startPoint, endPoint);
         ropeCollider.size = new Vector3(ropeRadius * 2, ropeRadius * 2, length);
 
-        direction = (endPoint - startPoint).normalized;
+        Vector3 direction = (endPoint - startPoint).normalized;
         ropeCollider.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
-    private Vector3[] CalculateBezierCurve(Vector3 p0, Vector3 p1, Vector3 p2, int segments)
+    private Vector3[] CalculateBezierCurve(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, int segments)
     {
         Vector3[] points = new Vector3[segments + 1];
         for (int i = 0; i <= segments; i++)
         {
             float t = i / (float)segments;
-            points[i] = Mathf.Pow(1 - t, 2) * p0 +
-                        2 * (1 - t) * t * p1 +
-                        Mathf.Pow(t, 2) * p2;
+            points[i] = Mathf.Pow(1 - t, 3) * p0 +
+                        3 * Mathf.Pow(1 - t, 2) * t * p1 +
+                        3 * (1 - t) * Mathf.Pow(t, 2) * p2 +
+                        Mathf.Pow(t, 3) * p3;
         }
         return points;
     }
 
     private void OnDrawGizmos()
     {
-        if (startPoint != null && endPoint != null && controlPoint != null)
+        if (controlPoint1 != null && controlPoint2 != null)
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(startPoint, controlPoint.position);
-            Gizmos.DrawLine(controlPoint.position, endPoint);
+            Gizmos.DrawLine(startPoint, controlPoint1.position);
+            Gizmos.DrawLine(controlPoint1.position, controlPoint2.position);
+            Gizmos.DrawLine(controlPoint2.position, endPoint);
 
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(controlPoint.position, 0.1f);
+            Gizmos.DrawSphere(controlPoint1.position, 0.1f);
+            Gizmos.DrawSphere(controlPoint2.position, 0.1f);
         }
     }
 }
