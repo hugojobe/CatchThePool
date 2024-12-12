@@ -9,6 +9,7 @@ public class FeedbackMachine : MonoBehaviour
     [Space]
     public AnimationCurve dashScaleCurve;
     
+// DASH
     public void OnDashStarted()
     {
         
@@ -23,6 +24,18 @@ public class FeedbackMachine : MonoBehaviour
     {
         Vector3 localScale = playerVisualsParent.transform.localScale;
         playerVisualsParent.transform.localScale = new Vector3(localScale.x, localScale.y, dashScaleCurve.Evaluate(dashProgress));
+        
+    }
+    
+// DAMAGE
+    public void OnDamageTaken(GameObject damageCauser)
+    {
+        
+    }
+    
+// DEATH
+    public void OnDeath()
+    {
         
     }
 }
