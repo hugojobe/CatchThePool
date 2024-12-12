@@ -51,61 +51,56 @@ public class RingRope : MonoBehaviour
     private Vector3 lineDirection;
     private void Update()
     {
-if (isInteracting && interactingPlayer != null)
-{
+        if (isInteracting && interactingPlayer != null)
+        {
 
-    Vector3 playerPosition = interactingPlayer.position;
+            Vector3 playerPosition = interactingPlayer.position;
 
-    Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
-    float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
+          Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
+          float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
     
-    float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) / Vector3.Distance(startPoint, endPoint);
+           float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) / Vector3.Distance(startPoint, endPoint);
 
-    float curvatureOffset = 4.0f; 
-    Vector3 curvatureAdjustment = lineDirection * curvatureOffset;
+           float curvatureOffset = 4.0f; 
+           Vector3 curvatureAdjustment = lineDirection * curvatureOffset;
     
-    float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);    
-    float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); 
-    bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
-    if (isXAxis)
-    {
-        float baseOffset = (parentPosition.z < playerPosition.z) ? 1.0f : -1.0f;
-        float totalOffset = baseOffset + (distanceToLine / 2.0f);
-        controlPoint1.position = new Vector3(
-            playerPosition.x,
-            controlPoint1.position.y,
-            playerPosition.z + (totalOffset * controlPoint1Weight)
-        ) + curvatureAdjustment * controlPoint1Weight;
+          float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);    
+           float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); 
+           bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
+           if (isXAxis)
+           { 
+               float baseOffset = (parentPosition.z < playerPosition.z) ? 1.0f : -1.0f; 
+               float totalOffset = baseOffset + (distanceToLine / 2.0f); 
+               controlPoint1.position = new Vector3(
+                  playerPosition.x,
+                  controlPoint1.position.y,
+                playerPosition.z + (totalOffset * controlPoint1Weight)
+                  ) + curvatureAdjustment * controlPoint1Weight;
 
-        controlPoint2.position = new Vector3(
-            playerPosition.x,
-            controlPoint2.position.y,
-            playerPosition.z + (totalOffset * controlPoint2Weight)
-        ) - curvatureAdjustment * controlPoint2Weight;
-    }
-    else
-    {
-        float baseOffset = (parentPosition.x < playerPosition.x) ? 1.0f : -1.0f;
-        float totalOffset = baseOffset + (distanceToLine / 2.0f);
+               controlPoint2.position = new Vector3(
+                   playerPosition.x, 
+                   controlPoint2.position.y, 
+                   playerPosition.z + (totalOffset * controlPoint2Weight)
+                ) - curvatureAdjustment * controlPoint2Weight;
+           }
+           else
+            {
+                float baseOffset = (parentPosition.x < playerPosition.x) ? 1.0f : -1.0f;
+                float totalOffset = baseOffset + (distanceToLine / 2.0f);
 
-        controlPoint1.position = new Vector3(
-            playerPosition.x + (totalOffset * controlPoint1Weight),
-            controlPoint1.position.y,
-            playerPosition.z
-        ) + curvatureAdjustment * controlPoint1Weight;
+                controlPoint1.position = new Vector3(
+                 playerPosition.x + (totalOffset * controlPoint1Weight),
+                 controlPoint1.position.y,
+                 playerPosition.z
+              ) + curvatureAdjustment * controlPoint1Weight;
 
-        controlPoint2.position = new Vector3(
-            playerPosition.x + (totalOffset * controlPoint2Weight),
-            controlPoint2.position.y,
-            playerPosition.z
-        ) - curvatureAdjustment * controlPoint2Weight;
-    }
-}
-
-
-
-
-
+                controlPoint2.position = new Vector3(
+                   playerPosition.x + (totalOffset * controlPoint2Weight),
+                    controlPoint2.position.y,
+                       playerPosition.z
+                     ) - curvatureAdjustment * controlPoint2Weight;
+            }
+        }
         else
         {
             controlPoint2.position = Vector3.Lerp(controlPoint1.position, startPoint, returnSpeed * Time.deltaTime);
@@ -120,11 +115,9 @@ if (isInteracting && interactingPlayer != null)
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isInteracting)
-        {
-            interactingPlayer = other.transform;
-            isInteracting = true;
-        }
+        if (!other.CompareTag("Player") || isInteracting) return;
+        interactingPlayer = other.transform;
+        isInteracting = true;
     }
 
     public void ReleaseInteraction()
@@ -228,28 +221,21 @@ if (isInteracting && interactingPlayer != null)
             Gizmos.DrawSphere(controlPoint1.position, 0.1f);
             Gizmos.DrawSphere(controlPoint2.position, 0.1f);
             
-            // Calculer la position centrale de la corde
             Vector3 centerPoint = (startPoint + endPoint) / 2;
 
-            // Calculer la direction vers le parent
             Vector3 parentPosition = transform.parent.position;
             Vector3 directionToParent = (parentPosition - centerPoint).normalized;
 
-            // Identifier l'axe principal de la corde
             Vector3 lineDirection = (endPoint - startPoint).normalized;
             bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
 
-            // Calculer la direction perpendiculaire
             Vector3 perpendicularDirection = isXAxis ? Vector3.forward : Vector3.right;
 
-            // Ajuster la direction perpendiculaire pour pointer vers le parent
             perpendicularDirection *= Mathf.Sign(Vector3.Dot(directionToParent, perpendicularDirection));
 
-            // Dessiner la corde
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(startPoint, endPoint);
 
-            // Dessiner la ligne perpendiculaire
             Gizmos.color = Color.green;
             Gizmos.DrawLine(centerPoint, centerPoint + (perpendicularDirection * 3f)); // Ligne de longueur 3
         }
