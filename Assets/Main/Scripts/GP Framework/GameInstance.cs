@@ -26,7 +26,6 @@ public class GameInstance : MonoBehaviour
             if (debugMode)
             {
                 Gamepad[] pads = Gamepad.all.ToArray();
-                Debug.Log(pads);
                 gamepadIDs.Add(pads[0].deviceId);
                 gamepadIDs.Add(pads[1].deviceId);
             }

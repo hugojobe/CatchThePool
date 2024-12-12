@@ -67,39 +67,41 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
-        Vector3 dashDirection = moveInput.normalized;
-        float dashTime = chickenConfig.dashDistance / chickenConfig.dashSpeed;
-        float elapsedTime = 0f;
+        Vector3 dashDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
+        moveInput = new Vector2(dashDirection.x, dashDirection.z);
+        float dashDistance = chickenConfig.dashDistance;
+        float dashSpeed = chickenConfig.dashSpeed;
+        float dashTime = dashDistance / dashSpeed;
 
-        moveSpeed = chickenConfig.dashSpeed;
-        
+        moveSpeed = dashSpeed;
         feedbackMachine.OnDashStarted();
 
-        if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, chickenConfig.dashDistance))
+        if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
-            dashTime = hit.distance / chickenConfig.dashSpeed;
+            dashDistance = hit.distance;
+            dashTime = dashDistance / dashSpeed;
         }
 
+        rb.linearVelocity = dashDirection * dashSpeed;;
+
+        float elapsedTime = 0f;
         while (elapsedTime < dashTime)
         {
-            rb.linearVelocity = dashDirection * moveSpeed;
             elapsedTime += Time.fixedDeltaTime;
-            
-            feedbackMachine.OnDashUpdate(elapsedTime / dashTime);
 
+            feedbackMachine.OnDashUpdate(elapsedTime / dashTime);
             yield return new WaitForFixedUpdate();
         }
+
+        yield return new WaitForEndOfFrame();
 
         rb.linearVelocity = Vector3.zero;
         moveSpeed = chickenConfig.chickenSpeed;
         playerState = PlayerState.Normal;
-        
         feedbackMachine.OnDashFinished();
 
-        yield return new WaitForSecondsRealtime(chickenConfig.dashCooldown);
+        yield return new WaitForSeconds(chickenConfig.dashCooldown);
         ResetDashCooldown();
-
-        dashCooldownCoroutine = null;
     }
 
     private bool CanMove()
@@ -126,7 +128,8 @@ public class PlayerController : MonoBehaviour
 
         DrawLocalAxes();
 
-        rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
+        if(playerState != PlayerState.Dashing)
+            rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
 
         rb.DORotate(watchRotation, 0.3f);
     }

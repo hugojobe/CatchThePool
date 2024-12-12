@@ -61,9 +61,9 @@ public class MainMenuManager : MonoBehaviour
 
         sequence.Append(subtitlePanel.DOFade(1, 0.5f).SetDelay(0.5f));
 
-        sequence.Join(menuButton1.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
-        sequence.Join(menuButton2.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).SetDelay(0.2f));
-        sequence.Join(menuButton3.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).SetDelay(0.4f));
+        sequence.Append(menuButton1.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
+        sequence.Append(menuButton2.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
+        sequence.Append(menuButton3.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
         
         sequence.AppendInterval(0.5f);
         sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(defaultSelectedButton));
