@@ -137,12 +137,14 @@ Material:
     - _Metallic: 0
     - _Motion_vector_intensity: 0
     - _OcclusionStrength: 1
+    - _OffsetWithPos: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ROTATE_UV_TRAIL: 0
     - _ReceiveShadows: 1
     - _SPRITE_ORIENTATION: 0
+    - _ScaleWithSize: 1
     - _Shadows_strength: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
