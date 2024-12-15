@@ -4,27 +4,25 @@ using System.Collections.Generic;
 public class RingRopeManager : MonoBehaviour
 {
     [Header("Ring Configuration")]
-    public Transform[] pillars; // Les 4 piliers (coin du ring)
-    public int ropesPerSide = 3; // Nombre de cordes par côté
-    public float ropeSpacing = 0.5f; // Espacement vertical entre les cordes
-    public Material ropeMaterial; // Matériau des cordes
-    public float ropeRadius = 0.1f; // Rayon des cordes
-    public int ropeSegments = 50; // Segments pour la courbe de Bézier
+    public Transform[] pillars;
+    public int ropesPerSide = 3; 
+    public float ropeSpacing = 0.5f; 
+    public Material ropeMaterial; 
+    public float ropeRadius = 0.1f; 
+    public int ropeSegments = 50;
 
+    public float borderSlide = 3;
+    public Material borderMaterial;
     [Header("Interaction Configuration")]
-    public float interactionRange = 2.0f; // Distance maximale pour interagir avec une corde
-    public float returnSpeed = 5.0f; // Vitesse de retour du point de contrôle
+    public float interactionRange = 2.0f; 
+    public float returnSpeed = 5.0f; 
 
     private List<RingRope> ropes = new List<RingRope>();
+    
 
     private void Start()
     {
-        if (pillars.Length != 4)
-        {
-            Debug.LogError("Le ring doit avoir exactement 4 piliers !");
-            return;
-        }
-
+        if (pillars.Length != 4) return;
         GenerateRopes();
     }
 
@@ -32,7 +30,6 @@ public class RingRopeManager : MonoBehaviour
     {
         ropes.Clear();
 
-        // Boucler sur chaque paire de piliers
         for (int i = 0; i < pillars.Length; i++)
         {
             Transform startPillar = pillars[i];
@@ -54,6 +51,8 @@ public class RingRopeManager : MonoBehaviour
 
                 ropes.Add(rope);
             }
+            //TODO PLANE FOR VISUAL INTECACT
+            ropes[^1].BorderInit(borderMaterial,borderSlide);
         }
     }
 

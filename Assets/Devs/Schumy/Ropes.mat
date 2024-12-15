@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EggTrail 1
-  m_Shader: {fileID: -6465566751694194690, guid: c73b720385a0d0546811bfd329a5ec65, type: 3}
+  m_Name: Ropes
+  m_Shader: {fileID: -6465566751694194690, guid: b3fcd1980c8a3884eb6f8f0ebacc8b31, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -24,16 +24,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_1765ab3d40654c91b406f85b3c58cdc5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 0b41546c280ed0a43ac71335ac6c71f8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9d1ec538a68145cb94e1451d805d3fb4_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: a19864506f8ab26469a68ab1d8519700, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: b26f4cbae57a88f4cbd25296d97e7550, type: 3}
+    - _RopeTexture:
+        m_Texture: {fileID: 2800000, guid: 23b2319c2158d95489aabf3c3d724027, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -50,13 +42,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Emiss: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 14.188679, g: 3.764706, b: 1.6941177, a: 1}
+    - _PlayerColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &9028949229227224263
+--- !u!114 &3241512742148468355
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
