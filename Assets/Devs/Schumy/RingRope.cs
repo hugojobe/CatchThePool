@@ -9,6 +9,7 @@ public class RingRope : MonoBehaviour
     private float ropeRadius;
     private int segments;
     private float returnSpeed;
+    private Renderer ropeRenderer;
 
     private MeshFilter meshFilter;
     private bool isInteracting;
@@ -25,6 +26,7 @@ public class RingRope : MonoBehaviour
 
         meshFilter = gameObject.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = gameObject.AddComponent<MeshRenderer>();
+        ropeRenderer = meshRenderer;
         meshRenderer.material = ropeMaterial;
         transform.position = (startPoint + endPoint) / 2;
 
@@ -39,6 +41,7 @@ public class RingRope : MonoBehaviour
 
         ropeCollider = gameObject.AddComponent<BoxCollider>();
         ropeCollider.isTrigger = true;
+        mpb = new MaterialPropertyBlock();
 
         UpdateMesh();
         GenerateCollider();
@@ -46,7 +49,32 @@ public class RingRope : MonoBehaviour
         lineDirection = (endPoint - startPoint).normalized;
         parentPosition = transform.parent.position;
     }
+    
+    private GameObject plane;
+    private Renderer planeRenderer;
+    private MaterialPropertyBlock mpb;
+    public void BorderInit(Material planeMaterial,float borderslide)
+    {
+        // Créer le plane
+        plane = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        plane.name = "RopePlane";
+        plane.transform.SetParent(transform);
 
+        // Positionner le plane sous la corde
+        plane.transform.localRotation = Quaternion.Euler(90, 90, 0); // Plan horizontal
+        plane.transform.localPosition = new Vector3(0, -borderslide, 0); // Juste sous la corde
+
+        // Ajuster la taille du plane pour correspondre au BoxCollider
+        plane.transform.localScale = new Vector3(ropeCollider.size.z, ropeCollider.size.x*8, 1);
+
+        planeRenderer = plane.GetComponent<Renderer>();
+        planeRenderer.material = planeMaterial;
+
+        Destroy(plane.GetComponent<Collider>());
+    }
+    
+    
+    
     private Vector3 parentPosition;
     private Vector3 lineDirection;
     private void Update()
@@ -118,12 +146,24 @@ public class RingRope : MonoBehaviour
         if (!other.CompareTag("Player") || isInteracting) return;
         interactingPlayer = other.transform;
         isInteracting = true;
+        mpb.SetFloat("_Emiss",3);
+        ropeRenderer.SetPropertyBlock(mpb);
+        if (planeRenderer == null) return;
+        mpb.SetFloat("_BorderActiv",1);
+        planeRenderer.SetPropertyBlock(mpb);
+        
     }
 
     public void ReleaseInteraction()
     {
         interactingPlayer = null;
         isInteracting = false;
+        
+        mpb.SetFloat("_Emiss",0);
+        ropeRenderer.SetPropertyBlock(mpb);
+        if (planeRenderer == null) return;
+        mpb.SetFloat("_BorderActiv",0);
+        planeRenderer.SetPropertyBlock(mpb);
     }
 
     private void UpdateMesh()
