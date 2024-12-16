@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    
     public GameObject playerPrefab;
     
     [Space]
@@ -18,7 +20,18 @@ public class GameManager : MonoBehaviour
     
     [Space]
     public float closePlayerRadius;
-    
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
     private void Start()
     {
         availableSpawnpoints = spawnpoints.ToList();

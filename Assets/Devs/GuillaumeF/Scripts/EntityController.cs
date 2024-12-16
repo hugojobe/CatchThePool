@@ -51,11 +51,6 @@ public class EntityController : MonoBehaviour
 
     #endregion
 
-    #region IKLegs
-
-    
-
-    #endregion
 
     void LateUpdate()
     {
@@ -101,27 +96,20 @@ public class EntityController : MonoBehaviour
 
     private void HeadTrackingUpdate()
     {
-        //Current Value
         currentHeadLocalRotation = headBone.localRotation;
 
-        //Reset local rotation
         headBone.localRotation = Quaternion.identity;
 
         LookDir = (target.position - headBone.position);
 
         LocalLookDir = headBone.InverseTransformDirection(LookDir);
 
-        //Apply angle limit
         LocalLookDir = Vector3.RotateTowards(Vector3.forward, LocalLookDir, Mathf.Deg2Rad * maxHeadTurnAngle, 0);
 
-        //LookingForward :
         targetHeadRotation = Quaternion.LookRotation(LocalLookDir, transform.up);
 
-        //getting local rotation to look at
         targetHeadLocalRotation = Quaternion.LookRotation(LocalLookDir, Vector3.up);
 
-
-        //Smoothing on head rotation
         headBone.localRotation = Quaternion.Slerp(currentHeadLocalRotation, targetHeadLocalRotation, 1 - Mathf.Exp(-speed * Time.deltaTime));
     }
 
