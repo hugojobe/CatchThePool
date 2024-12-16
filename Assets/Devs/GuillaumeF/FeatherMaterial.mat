@@ -28,6 +28,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 74245feb33ebbbb4aa90be3a060bcf30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FeatherMask:
+        m_Texture: {fileID: 2800000, guid: 1ea811b91097c3e4580215e80316f489, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -46,14 +50,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Bloom: 0
     - _FeatherColorValue: 0.5
     - _FeatherID: 1
     - _Glossiness: 0.5
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _bloom: 5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PlayerColor: {r: 0.6907868, g: 0.7490196, b: 0, a: 0}
     - _UvScale: {r: 1, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
