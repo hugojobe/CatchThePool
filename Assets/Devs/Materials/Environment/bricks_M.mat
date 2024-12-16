@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1254249844846452563
+--- !u!114 &-1819377114513097737
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: bricks_M
   m_Shader: {fileID: -6465566751694194690, guid: 1a8df632768e6a94aba6898e6771afd0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor_Alpha:
-        m_Texture: {fileID: 2800000, guid: b1d2a005802bad64bb502997c95aa00d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 47e74e3543de6a744abb906fc996b017, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -78,11 +78,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: bf5266f2dfe3ab746aab86f829f2415a, type: 3}
+        m_Texture: {fileID: 2800000, guid: c468bddcdc351394fbea80c73d3ed8f2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ORM:
-        m_Texture: {fileID: 2800000, guid: 7e955d0500e691b448644a5216c86bd2, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc5e9eb67b54925469391f1ba0843ac6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
