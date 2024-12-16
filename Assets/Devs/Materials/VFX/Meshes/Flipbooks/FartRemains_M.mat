@@ -121,7 +121,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_0671ea344b044e029790543672a6a90f: 60
+    - Vector1_0671ea344b044e029790543672a6a90f: 45
     - Vector1_392a4b66f32049d9ab1084f3a8c71a0a: 8
     - Vector1_70743c15ff3e490cb232c8512c705597: 0.1
     - Vector1_d1ebd2a9a3e148b987344089daf08854: 8
@@ -150,12 +150,14 @@ Material:
     - _Metallic: 0
     - _Motion_vector_intensity: 0
     - _OcclusionStrength: 1
+    - _OffsetWithPos: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ROTATE_UV_TRAIL: 0
     - _ReceiveShadows: 1
     - _SPRITE_ORIENTATION: 1
+    - _ScaleWithSize: 0
     - _Shadows_strength: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0

@@ -11,8 +11,6 @@ AvatarMask:
   m_Elements:
   - m_Path: 
     m_Weight: 1
-  - m_Path: Chicken
-    m_Weight: 0
   - m_Path: Root
     m_Weight: 1
   - m_Path: Root/LeftLeg
@@ -22,7 +20,7 @@ AvatarMask:
   - m_Path: Root/LeftLeg/LeftKnee/LeftAnkle
     m_Weight: 1
   - m_Path: Root/LowerSpine
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Root/LowerSpine/MiddleSpine
     m_Weight: 1
   - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine
@@ -32,6 +30,8 @@ AvatarMask:
   - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/LeftShoulder/LeftElbow
     m_Weight: 1
   - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/LeftShoulder/LeftElbow/LeftWing
+    m_Weight: 1
+  - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/LeftShoulder/LeftElbow/LeftWing/LeftWingEnd
     m_Weight: 1
   - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/Neck
     m_Weight: 1
@@ -61,6 +61,8 @@ AvatarMask:
     m_Weight: 1
   - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/RightShoulder/RightElbow/RightWing
     m_Weight: 1
+  - m_Path: Root/LowerSpine/MiddleSpine/UpperSpine/RightShoulder/RightElbow/RightWing/RightWingEnd
+    m_Weight: 1
   - m_Path: Root/RightLeg
     m_Weight: 1
   - m_Path: Root/RightLeg/RightKnee
@@ -68,8 +70,10 @@ AvatarMask:
   - m_Path: Root/RightLeg/RightKnee/RightAnkle
     m_Weight: 1
   - m_Path: Root/TailBoneStart
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Root/TailBoneStart/TailBoneMiddle
     m_Weight: 1
   - m_Path: Root/TailBoneStart/TailBoneMiddle/TailBoneEnd
+    m_Weight: 1
+  - m_Path: ShiKenLP
     m_Weight: 1
