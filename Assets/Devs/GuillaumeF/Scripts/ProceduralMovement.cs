@@ -66,6 +66,8 @@ public class ProceduralMovement : MonoBehaviour
     private Ray rightRay;
     private Ray leftNextRay;
     private Ray rightNextRay;
+    private Ray rootRay;
+
     private float lerpR;
     private float lerpL;
     private bool isStepping;
@@ -100,6 +102,11 @@ public class ProceduralMovement : MonoBehaviour
         rightNextRay = new Ray(RightLeg.position, Vector3.down);
         if (Physics.Raycast(rightNextRay, out infos, detectionRange))
             researchGroundingRightPos = infos.point;
+
+        rootRay = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(rootRay, out infos, detectionRange))
+            transform.rotation = Quaternion.FromToRotation(transform.up, infos.normal) * transform.rotation;
+
 
         if (Vector3.Distance(currentGroundingLeftPos, researchGroundingLeftPos) > stepDistance && !isRStep)
         {

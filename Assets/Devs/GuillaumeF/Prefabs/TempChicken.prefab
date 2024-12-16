@@ -512,6 +512,10 @@ PrefabInstance:
       value: TempChicken
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e93fb2a06ee8c5b41b11e707ca23a5b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e93fb2a06ee8c5b41b11e707ca23a5b7, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
