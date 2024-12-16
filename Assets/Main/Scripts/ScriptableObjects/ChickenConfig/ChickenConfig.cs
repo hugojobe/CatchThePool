@@ -6,8 +6,11 @@ public class ChickenConfig : ScriptableObject
 {
     public string chickenName;
     public string chickenSpellName;
+    public Sprite chickenImage;
     public int chickenHealthPSM;
     public int chickenSpeedPSM;
+    [Space]
+    public int chickenHealthGameplay;
 
     [Space] 
     public float chickenSpeed;

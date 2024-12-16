@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState;
 
     private FeedbackMachine feedbackMachine;
-    private Damageable damageable;
+    public Damageable damageable;
 
     public Vector3 watchRotation;
     public bool isCloseToAnyPlayer;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         
         feedbackMachine.pc = this;
-        damageable.currentHealth = chickenConfig.chickenHealthPSM;
+        damageable.currentHealth = chickenConfig.chickenHealthGameplay;
         
         GameInstance.instance.playerControllers.Add(this);
 
@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
 
         playerState = PlayerState.Normal;
         dashCooldownElapsed = true;
+        
+        damageable.playerController = this;
         
         damageable.OnDamageTaken += OnDamageTaken;
         damageable.OnDamageTaken += feedbackMachine.OnDamageTaken;
@@ -153,19 +155,16 @@ public class PlayerController : MonoBehaviour
             if (playerState == PlayerState.Dashing && otherPC.playerState == PlayerState.Dashing)
             {
                 OnDamageTaken(otherPlayer);
-                Debug.Log("Both players dashed into each other");
                 return;
             }
 
             if (otherPC.playerState == PlayerState.Dashing)
             {
-                Debug.Log($"Player {index} received a dash");
                 return;
             }
             
             if(playerState == PlayerState.Dashing)
             {
-                Debug.Log($"Player {index} dealing damage");
                 
                 otherPlayer.TryGetComponent<Damageable>(out Damageable otherDamageable);
                 otherDamageable.TakeDamage(gameObject);
@@ -294,6 +293,7 @@ public class PlayerController : MonoBehaviour
         moveInput = Vector3.zero;
 
         GameInstance.instance.playerAlive[index] = false;
+        GameInstance.instance.playerDeaths[index]++;
     }
 
     private void ResetDashCooldown()

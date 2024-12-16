@@ -531,6 +531,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
+  playerCount: 0
+  playerConfigs: []
+  playerControllers: []
+  gamepadIDs: 
+  playerAlive: 
+  playerScores: 
+  playerKills: 
+  playerDeaths: 
+  winningPlayerIndex: 0
+  requiredPointsToWin: 5
 --- !u!4 &890171086
 Transform:
   m_ObjectHideFlags: 0

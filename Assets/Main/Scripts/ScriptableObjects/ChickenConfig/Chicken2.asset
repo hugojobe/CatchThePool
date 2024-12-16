@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chickenName: Big nugget
   chickenSpellName: Nuggquake
+  chickenImage: {fileID: 21300000, guid: 8160b912ccef0a545a71b4270edecbac, type: 3}
   chickenHealthPSM: 3
   chickenSpeedPSM: 1
+  chickenHealthGameplay: 3
   chickenSpeed: 1.9
   dashSpeed: 32
   dashDistance: 2

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chickenName: ConPollo
   chickenSpellName: Spicyfart
+  chickenImage: {fileID: 21300000, guid: 021928db46ef2fe4492bd3621128e778, type: 3}
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
+  chickenHealthGameplay: 2
   chickenSpeed: 2.5
   dashSpeed: 32
   dashDistance: 2

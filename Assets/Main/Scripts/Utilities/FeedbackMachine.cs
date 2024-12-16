@@ -22,8 +22,6 @@ public class FeedbackMachine : MonoBehaviour
 
     public void OnDashUpdate(float dashProgress)
     {
-        Vector3 localScale = playerVisualsParent.transform.localScale;
-        playerVisualsParent.transform.localScale = new Vector3(localScale.x, localScale.y, dashScaleCurve.Evaluate(dashProgress));
         
     }
     

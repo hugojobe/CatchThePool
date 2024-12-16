@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,7 +19,16 @@ public class GameInstance : MonoBehaviour
     
     public Dictionary<Gamepad, Coroutine> gamepadRumbleCoroutines = new Dictionary<Gamepad, Coroutine>();
     
-    [Space] public List<bool> playerAlive;
+    [Space] 
+    public List<bool> playerAlive;
+    public List<int> playerScores;
+    public List<int> playerKills;
+    public List<int> playerDeaths;
+
+    public int winningPlayerIndex;
+    
+    [Space] 
+    public int requiredPointsToWin;
     
     private void Awake() {
         if (instance == null)
@@ -43,38 +53,66 @@ public class GameInstance : MonoBehaviour
         }
     }
 
-    public void StartRound()
+    public void InitNewRound()
     {
-        playerAlive.ForEach(p => p = true);
+        StartCoroutine(InitNewRoundCoroutine());
+    }
 
-        
+    public IEnumerator InitNewRoundCoroutine()
+    {
         var availableSpawnpoints = GameManager.instance.spawnpoints.ToList();
-        
+        if (GameInstance.instance.playerCount == 2)
+        {
+            int startIndex = Random.value < 0.5f ? 0 : 2;
+            availableSpawnpoints.RemoveRange(startIndex, 2);
+        }
         
         for (int i = 0; i < playerControllers.Count; i++)
         {
-
-            if (GameInstance.instance.playerCount == 2)
-            {
-                int startIndex = Random.value < 0.5f ? 0 : 2;
-                availableSpawnpoints.RemoveRange(startIndex, 2);
-            }
-
             int selectedSpawnpointIndex = Random.Range(0, availableSpawnpoints.Count);
-
-            playerControllers[i].transform.position = transform.TransformPoint(availableSpawnpoints[selectedSpawnpointIndex].position);
+            
+            playerControllers[i].rb.MovePosition(transform.TransformPoint(availableSpawnpoints[selectedSpawnpointIndex].position));
+            Vector3 direction = GameManager.instance.ringCenter.position - playerControllers[i].transform.position;
+            playerControllers[i].watchRotation = Quaternion.LookRotation(direction, playerControllers[i].transform.up).eulerAngles;
             
             availableSpawnpoints.RemoveAt(selectedSpawnpointIndex);
-        }
-    }
+            
+            playerControllers[i].playerState = PlayerState.Uncontrolled;
+            playerAlive[i] = true;
+            playerControllers[i].damageable.currentHealth = playerControllers[i].chickenConfig.chickenHealthGameplay;
 
+        }
+        
+        yield return new WaitForSeconds(1f);
+        playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
+    }
+    
     public void EndRound()
     {
-        
+        foreach (PlayerController player in playerControllers)
+        {
+            if (player.playerState == PlayerState.Dead)
+                continue;
+            
+            player.playerState = PlayerState.Dead;
+            
+            int trueIndex = playerAlive.Select((value, index) => new { value, index })
+                .Where(x => x.value)
+                .Select(x => x.index)
+                .SingleOrDefault();
+            
+            GameManager.instance.ShowEndOfRoundUi(trueIndex);
+            
+            playerScores[trueIndex]++;
+        }
     }
 
     public void CheckForEndOfRound()
     {
+        if (playerAlive.Count(value => value) == 1)
+            EndRound();
         
+        else if(playerAlive.Count(value => value) == 0)
+            GameManager.instance.ShowEndOfRoundUi(-1);
     }
 }

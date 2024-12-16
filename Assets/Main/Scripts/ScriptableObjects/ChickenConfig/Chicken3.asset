@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chickenName: Rokoco
   chickenSpellName: Tourbiplume
+  chickenImage: {fileID: 21300000, guid: 69af26d186c34394eb5218bb0ce269af, type: 3}
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
+  chickenHealthGameplay: 2
   chickenSpeed: 2.5
   dashSpeed: 32
   dashDistance: 2

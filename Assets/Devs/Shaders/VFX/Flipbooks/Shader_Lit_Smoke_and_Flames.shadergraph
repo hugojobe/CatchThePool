@@ -4289,7 +4289,7 @@
     "m_Title": "Invert to have distance to camera",
     "m_Position": {
         "x": -489.0,
-        "y": 534.9999389648438
+        "y": 535.0000610351563
     }
 }
 
@@ -4497,7 +4497,7 @@
     "m_Title": "Scale to match world units",
     "m_Position": {
         "x": -59.0,
-        "y": 534.9999389648438
+        "y": 535.0
     }
 }
 
@@ -6457,10 +6457,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2326.0,
-            "y": -355.0000305175781,
+            "x": -2328.999755859375,
+            "y": -360.9999694824219,
             "width": 132.0,
-            "height": 123.00001525878906
+            "height": 121.99998474121094
         }
     },
     "m_Slots": [
@@ -6468,7 +6468,7 @@
             "m_Id": "9a9c040f4dcd498b9781fd00a558c862"
         },
         {
-            "m_Id": "76dbceb0cac94e599b262dc375e0d347"
+            "m_Id": "e20099ac4d17474ebf52df3dd2cb5332"
         }
     ],
     "synonyms": [
@@ -6483,8 +6483,8 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "_maskInput": "xxxx",
-    "convertedMask": "xxxx"
+    "_maskInput": "xy",
+    "convertedMask": "xy"
 }
 
 {
@@ -6507,8 +6507,8 @@
     "m_ObjectId": "3dcc18d30c9e4554afb9860ba59d12dd",
     "m_Title": "Compute UVs from frame number",
     "m_Position": {
-        "x": -3235.999755859375,
-        "y": 64.99993896484375
+        "x": -3236.0,
+        "y": 65.0
     }
 }
 
@@ -6534,7 +6534,7 @@
     "m_Title": "Current frame UV in your custom vertex stream",
     "m_Position": {
         "x": -2507.999755859375,
-        "y": -420.00006103515627
+        "y": -419.9999694824219
     }
 }
 
@@ -7105,8 +7105,8 @@
     "m_ObjectId": "4ca3e3547f4747ff9e28441b8f45d848",
     "m_Title": "Check Frame animation mode",
     "m_Position": {
-        "x": -3038.999755859375,
-        "y": -556.0000610351563
+        "x": -3039.0,
+        "y": -556.0
     }
 }
 
@@ -7401,7 +7401,7 @@
     "m_Title": "Sprite orientation",
     "m_Position": {
         "x": 231.0,
-        "y": -1022.0001220703125
+        "y": -1022.0
     }
 }
 
@@ -7644,7 +7644,7 @@
     "m_Title": "Depth + depth fade",
     "m_Position": {
         "x": -1077.0,
-        "y": 430.99993896484377
+        "y": 431.0
     }
 }
 
@@ -8933,31 +8933,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
-    "m_ObjectId": "76dbceb0cac94e599b262dc375e0d347",
-    "m_Id": 1,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "779cfd312812403a9b57b8aff0883afb",
     "m_Id": 0,
@@ -9556,7 +9531,7 @@
     "m_ObjectId": "8305380de7ee43ac95bc733b0b8f439f",
     "m_Title": "Emissive texture",
     "m_Position": {
-        "x": -914.999755859375,
+        "x": -915.0,
         "y": -1260.0
     }
 }
@@ -9712,8 +9687,8 @@
     "m_ObjectId": "85c912d707b64c619464b0873b155bca",
     "m_Title": "Compute current frame, use Frame parameter in manual mode",
     "m_Position": {
-        "x": -4011.99951171875,
-        "y": 534.9999389648438
+        "x": -4012.0,
+        "y": 535.0
     }
 }
 
@@ -10536,7 +10511,7 @@
     "m_Title": "Blend with vertex color",
     "m_Position": {
         "x": 1538.0,
-        "y": 72.99993896484375
+        "y": 73.0
     }
 }
 
@@ -10622,8 +10597,8 @@
     "m_ObjectId": "9c44731494bf47eca4cdd77d23586e78",
     "m_Title": "Anim blend in your custom vertex stream",
     "m_Position": {
-        "x": -2446.999755859375,
-        "y": -715.0000610351563
+        "x": -2447.0,
+        "y": -715.0
     }
 }
 
@@ -10719,7 +10694,7 @@
     "m_ObjectId": "9d751c77c1b74413af3b6a89bef5ee27",
     "m_Title": "Current frame UV in your custom vertex stream",
     "m_Position": {
-        "x": -2510.999755859375,
+        "x": -2511.0,
         "y": -146.0
     }
 }
@@ -13696,8 +13671,8 @@
     "m_ObjectId": "d6a88d7167bd4731906dfdbb7806d410",
     "m_Title": "Lighting",
     "m_Position": {
-        "x": 683.00048828125,
-        "y": -516.0000610351563
+        "x": 683.0,
+        "y": -516.0
     }
 }
 
@@ -14244,7 +14219,7 @@
     "m_Title": "6 points textures",
     "m_Position": {
         "x": -899.0,
-        "y": -828.0000610351563
+        "y": -828.0
     }
 }
 
@@ -14386,6 +14361,27 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "_UV_next",
     "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "e20099ac4d17474ebf52df3dd2cb5332",
+    "m_Id": 1,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
     "m_Value": {
         "x": 0.0,
         "y": 0.0
@@ -15269,8 +15265,8 @@
     "m_ObjectId": "f819fb83ea584cebb644e362ebd83f45",
     "m_Title": "Alpha texture",
     "m_Position": {
-        "x": -1009.999755859375,
-        "y": 27.999935150146486
+        "x": -1010.0,
+        "y": 28.0
     }
 }
 
