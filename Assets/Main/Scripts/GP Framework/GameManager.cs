@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     private List<Transform> availableSpawnpoints;
     
     [Space]
+    public EOR_Manager eorManager;
+    
+    [Space]
     public float closePlayerRadius;
 
     private void Awake()
@@ -26,7 +29,6 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
             Destroy(gameObject);
@@ -105,6 +107,11 @@ public class GameManager : MonoBehaviour
             
             playerController.Initialize();
         }
+    }
+
+    public void ShowEndOfRoundUi(int winningPlayerIndex)
+    {
+        eorManager.ShowRoundEndCanvas(winningPlayerIndex);
     }
     
     private void OnDrawGizmosSelected()
