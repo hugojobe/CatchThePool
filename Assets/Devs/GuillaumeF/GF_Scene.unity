@@ -204,8 +204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0058167134, y: 0.832837, z: -0.5534188, w: -0.008740068}
-  m_LocalPosition: {x: 1.5056559, y: 6.583821, z: 3.0866222}
+  m_LocalRotation: {x: 0.00650361, y: -0.89372927, z: 0.44837523, w: 0.012858549}
+  m_LocalPosition: {x: 0.97725254, y: 7.2675743, z: 6.462049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 415817356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.857, y: 3, z: 3.223}
+  m_LocalPosition: {x: 2.294, y: 3, z: 6.984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -848,6 +848,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConPollo
       objectReference: {fileID: 0}
+    - target: {fileID: 6671807212243420273, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671807212243420273, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.012038635
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1045,11 +1053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2305670354774764986, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -2.881716e-28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2305670354774764986, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.0334815e-28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5100501242314304248, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1090,6 +1098,10 @@ PrefabInstance:
     - target: {fileID: 5100501242314304248, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100501242314304248, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5585394238799310914, guid: 29f39d839c159194bba5db7ee8d5491c, type: 3}
       propertyPath: m_Name
