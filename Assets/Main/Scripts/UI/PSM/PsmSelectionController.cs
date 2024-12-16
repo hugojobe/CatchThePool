@@ -32,10 +32,18 @@ public class PsmSelectionController : MonoBehaviour
     public Slider chickenHealthSlider;
     public Slider chickenSpeedSlider;
 
+    public bool canConfirm;
+
     private void Start()
     {
         pad = input.GetDevice<Gamepad>();
         UpdateDisplay();
+        Invoke(nameof(SetCanConfirm), 0.2f);
+    }
+    
+    private void SetCanConfirm()
+    {
+        canConfirm = true;
     }
 
     public void OnPSM_MoveSelection(InputAction.CallbackContext context)
@@ -79,7 +87,7 @@ public class PsmSelectionController : MonoBehaviour
     
     public void OnConfirmSelection(InputAction.CallbackContext context)
     {
-        if (hasConfirmed)
+        if (hasConfirmed || !canConfirm)
             return;
         
         hasConfirmed = true;

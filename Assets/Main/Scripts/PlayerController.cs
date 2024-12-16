@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInput input;
     public Rigidbody rb;
     public ChickenConfig chickenConfig;
+    public Color chickenColor;
     private bool isInitialized;
     public PlayerState playerState;
 
@@ -31,7 +32,8 @@ public class PlayerController : MonoBehaviour
 
     public void Initialize()
     {
-        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = chickenConfig.chickenColors[Random.Range(0, chickenConfig.chickenColors.Length)];
+        chickenColor = chickenConfig.chickenColors[Random.Range(0, chickenConfig.chickenColors.Length)];
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = chickenColor;
         
         feedbackMachine = GetComponent<FeedbackMachine>();
         damageable = GetComponent<Damageable>();
@@ -290,6 +292,8 @@ public class PlayerController : MonoBehaviour
         playerState = PlayerState.Dead;
         rb.linearVelocity = Vector3.zero;
         moveInput = Vector3.zero;
+
+        GameInstance.instance.playerAlive[index] = false;
     }
 
     private void ResetDashCooldown()
