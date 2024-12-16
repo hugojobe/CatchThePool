@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -29,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private Coroutine dashCoroutine;
     
     private Coroutine damagePhysicsCoroutine;
+
+    private List<RingRope> ringRopes = new();
 
     public void Initialize()
     {
@@ -115,7 +120,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         rb.linearVelocity = Vector3.zero;
         moveSpeed = chickenConfig.chickenSpeed;
@@ -174,14 +179,31 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(DashDamageStopCoroutine());
             }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.CompareTag("Rope"))
         {
+            Debug.Log("Rope");
+            
+            RingRope ringRope = other.gameObject.GetComponent<RingRope>();
+            
+            ringRopes.Add(ringRope);
+            
+            if (other.transform.childCount == 0)
+                return;
+            
             if (playerState == PlayerState.Dashing)
             {
-                Rope rope = other.gameObject.GetComponent<Rope>();
-                Vector3 reflectVelocity = Vector3.Reflect(previousFrameVelocity, other.contacts[0].normal);
+                Debug.Log("Dashing");
+                
+                Vector3 reflectVelocity = Vector3.Reflect(previousFrameVelocity, ringRope.perpendicularDirection.normalized);
+                
+                Debug.DrawLine(transform.position, transform.position + reflectVelocity, Color.red, 2f);
+                
                 moveInput = reflectVelocity.normalized;
+                
                 if (dashCoroutine != null)
                 {
                     StopCoroutine(dashCoroutine);
@@ -191,11 +213,18 @@ public class PlayerController : MonoBehaviour
                 }
                 dashCooldownElapsed = false;
                 dashCoroutine = StartCoroutine(DashCoroutine(reflectVelocity.normalized));
-                
-                Vector3 contactPosition = other.contacts[0].point;
-                other.gameObject.GetComponent<Rope>().Init(contactPosition, this);
+
+                StartCoroutine(ReleaseRopes());
             }
         }
+    }
+
+    private IEnumerator ReleaseRopes()
+    {
+        yield return new WaitForSeconds(0.05f);
+        
+        ringRopes.ForEach(r => r.ReleaseInteraction());
+        ringRopes.Clear();
     }
 
     private IEnumerator DashDamageStopCoroutine()

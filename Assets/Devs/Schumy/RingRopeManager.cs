@@ -14,7 +14,6 @@ public class RingRopeManager : MonoBehaviour
     public float borderSlide = 3;
     public Material borderMaterial;
     [Header("Interaction Configuration")]
-    public float interactionRange = 2.0f; 
     public float returnSpeed = 5.0f; 
 
     private List<RingRope> ropes = new List<RingRope>();
@@ -52,7 +51,7 @@ public class RingRopeManager : MonoBehaviour
                 ropes.Add(rope);
             }
             //TODO PLANE FOR VISUAL INTECACT
-            ropes[^1].BorderInit(borderMaterial,borderSlide);
+            ropes[^2].BorderInit(borderMaterial,borderSlide);
         }
     }
 

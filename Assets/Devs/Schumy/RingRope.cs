@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class RingRope : MonoBehaviour
@@ -15,6 +16,8 @@ public class RingRope : MonoBehaviour
     private bool isInteracting;
     private Transform interactingPlayer;
     private BoxCollider ropeCollider;
+
+    public Vector3 perpendicularDirection;
 
     public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed)
     {
@@ -48,6 +51,14 @@ public class RingRope : MonoBehaviour
 
         lineDirection = (endPoint - startPoint).normalized;
         parentPosition = transform.parent.position;
+        
+        Vector3 directionToParent = (parentPosition - (startPoint + endPoint) / 2).normalized;
+        
+        bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
+
+        perpendicularDirection = isXAxis ? Vector3.forward : Vector3.right;
+
+        perpendicularDirection *= Mathf.Sign(Vector3.Dot(directionToParent, perpendicularDirection));
     }
     
     private GameObject plane;
@@ -97,7 +108,7 @@ public class RingRope : MonoBehaviour
            bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
            if (isXAxis)
            { 
-               float baseOffset = (parentPosition.z < playerPosition.z) ? 1.0f : -1.0f; 
+               float baseOffset = (parentPosition.z < playerPosition.z) ? 3.0f : -3.0f; 
                float totalOffset = baseOffset + (distanceToLine / 2.0f); 
                controlPoint1.position = new Vector3(
                   playerPosition.x,
@@ -131,8 +142,8 @@ public class RingRope : MonoBehaviour
         }
         else
         {
-            controlPoint2.position = Vector3.Lerp(controlPoint1.position, startPoint, returnSpeed * Time.deltaTime);
-            controlPoint1.position = Vector3.Lerp(controlPoint2.position, endPoint, returnSpeed * Time.deltaTime);
+            //controlPoint2.position = Vector3.Lerp(controlPoint1.position, startPoint, returnSpeed * Time.deltaTime);
+            //controlPoint1.position = Vector3.Lerp(controlPoint2.position, endPoint, returnSpeed * Time.deltaTime);
         }
 
         UpdateMesh();
@@ -151,13 +162,22 @@ public class RingRope : MonoBehaviour
         if (planeRenderer == null) return;
         mpb.SetFloat("_BorderActiv",1);
         planeRenderer.SetPropertyBlock(mpb);
-        
     }
 
     public void ReleaseInteraction()
     {
         interactingPlayer = null;
         isInteracting = false;
+        
+        DOTween.To(() => controlPoint1.position, x =>
+        {
+            controlPoint1.position = x;
+        }, startPoint, 0.3f).SetEase(Ease.OutElastic);
+            
+        DOTween.To(() => controlPoint2.position, x =>
+        {
+            controlPoint2.position = x;
+        }, endPoint, 0.3f).SetEase(Ease.OutElastic);
         
         mpb.SetFloat("_Emiss",0);
         ropeRenderer.SetPropertyBlock(mpb);
@@ -228,10 +248,15 @@ public class RingRope : MonoBehaviour
     private void GenerateCollider()
     {
         float length = Vector3.Distance(startPoint, endPoint);
-        ropeCollider.size = new Vector3(ropeRadius * 2, ropeRadius * 2, length);
+        ropeCollider.size = new Vector3(ropeRadius * 100, ropeRadius * 4, length - 0.5f);
 
         Vector3 direction = (endPoint - startPoint).normalized;
         ropeCollider.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        
+        
+        ropeCollider.center = new(ropeCollider.center.x - 2.5f, ropeCollider.center.y, ropeCollider.center.z);
+        
+        ropeCollider.gameObject.tag = "Rope";
     }
 
     private Vector3[] CalculateBezierCurve(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, int segments)

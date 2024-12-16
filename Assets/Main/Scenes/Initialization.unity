@@ -540,7 +540,7 @@ MonoBehaviour:
   playerKills: 
   playerDeaths: 
   winningPlayerIndex: 0
-  requiredPointsToWin: 5
+  requiredPointsToWin: 2
 --- !u!4 &890171086
 Transform:
   m_ObjectHideFlags: 0
