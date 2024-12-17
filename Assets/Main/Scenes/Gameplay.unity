@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 238685766}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 355137696}
   m_Layer: 0
   m_Name: Ring (2)
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -813,8 +813,8 @@ Transform:
   m_GameObject: {fileID: 355137694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21675336, y: 0.5984601, z: -0.21758069}
-  m_LocalScale: {x: 0.018469866, y: 0.8538057, z: 0.018469866}
+  m_LocalPosition: {x: 0.37160197, y: 1.026, z: -0.37302035}
+  m_LocalScale: {x: 0.03166474, y: 1.4637645, z: 0.03166474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 404737001}
   m_Layer: 0
   m_Name: Ring (3)
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -921,8 +921,8 @@ Transform:
   m_GameObject: {fileID: 404736999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21675336, y: 0.5984601, z: 0.21758069}
-  m_LocalScale: {x: 0.018469866, y: 0.8538057, z: 0.018469866}
+  m_LocalPosition: {x: -0.37160197, y: 1.026, z: 0.37302035}
+  m_LocalScale: {x: 0.03166474, y: 1.4637645, z: 0.03166474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -1383,8 +1383,8 @@ Transform:
   m_GameObject: {fileID: 666190678}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.21675336, y: 0.5249649, z: 0}
-  m_LocalScale: {x: 0.12832478, y: 0.21601798, z: 0.01011148}
+  m_LocalPosition: {x: 0.37160197, y: 0.8999999, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.3703412, z: 0.017335122}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -1697,8 +1697,8 @@ Transform:
   m_GameObject: {fileID: 845647386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5249649, z: 0.21675336}
-  m_LocalScale: {x: 0.12832484, y: 0.21601805, z: 0.01011148}
+  m_LocalPosition: {x: 0, y: 0.8999999, z: 0.37160197}
+  m_LocalScale: {x: 0.2200002, y: 0.37034148, z: 0.017335122}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -1967,6 +1967,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6290238436788827444, guid: 191ba675480b8604c9cd8f55f1ade995, type: 3}
+      propertyPath: borderSlide
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290238436788827444, guid: 191ba675480b8604c9cd8f55f1ade995, type: 3}
+      propertyPath: borderMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f6e244e0eff4b524a8b9595885446d4b, type: 2}
+    - target: {fileID: 6290238436788827444, guid: 191ba675480b8604c9cd8f55f1ade995, type: 3}
       propertyPath: pillars.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -2082,8 +2090,8 @@ Transform:
   m_GameObject: {fileID: 868790003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5249649, z: -0.21675336}
-  m_LocalScale: {x: 0.12832484, y: 0.21601805, z: 0.01011148}
+  m_LocalPosition: {x: 0, y: 0.8999999, z: -0.37160197}
+  m_LocalScale: {x: 0.2200002, y: 0.37034148, z: 0.017335122}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -2250,7 +2258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &897482840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2258,7 +2266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897482839}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f8eb983b416b0e478257013d24a94e1, type: 3}
   m_Name: 
@@ -2388,7 +2396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1020286489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,7 +2404,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020286488}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72a0ee4bd49624945a740742b9ae8a42, type: 3}
   m_Name: 
@@ -2404,8 +2412,8 @@ MonoBehaviour:
   debugMode: 1
   playerCount: 2
   playerConfigs:
+  - {fileID: 11400000, guid: 5cc3191cc370fdd419624071edbb830f, type: 2}
   - {fileID: 11400000, guid: fb5a13d53f3291e469b873aa01c3c46b, type: 2}
-  - {fileID: 11400000, guid: 363416d3abd83f04680ea4351e6aecc5, type: 2}
   playerControllers: []
   gamepadIDs: 
   playerAlive: 0101
@@ -2490,8 +2498,8 @@ Transform:
   m_GameObject: {fileID: 1260820220}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.21675336, y: 0.5249649, z: 0}
-  m_LocalScale: {x: 0.12832478, y: 0.21601798, z: 0.01011148}
+  m_LocalPosition: {x: -0.37160197, y: 0.8999999, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.3703412, z: 0.017335122}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -2709,7 +2717,7 @@ GameObject:
   - component: {fileID: 1318426010}
   m_Layer: 0
   m_Name: Ring (4)
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2723,8 +2731,8 @@ Transform:
   m_GameObject: {fileID: 1318426008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21675336, y: 0.5984601, z: 0.21758069}
-  m_LocalScale: {x: 0.018469866, y: 0.8538057, z: 0.018469866}
+  m_LocalPosition: {x: 0.37160197, y: 1.026, z: 0.37302035}
+  m_LocalScale: {x: 0.03166474, y: 1.4637645, z: 0.03166474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -3091,7 +3099,7 @@ GameObject:
   - component: {fileID: 1639910276}
   m_Layer: 0
   m_Name: Ring
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3180,8 +3188,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.29}
-  m_LocalScale: {x: 21.75745, y: 1.7144, z: 21.75745}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 12.691, y: 1, z: 12.691}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1990018974}
   - {fileID: 404737000}
@@ -3680,7 +3688,7 @@ GameObject:
   - component: {fileID: 1990018975}
   m_Layer: 0
   m_Name: Ring (1)
-  m_TagString: Untagged
+  m_TagString: EggBreak
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3694,8 +3702,8 @@ Transform:
   m_GameObject: {fileID: 1990018973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21675336, y: 0.5984601, z: -0.21758069}
-  m_LocalScale: {x: 0.018469866, y: 0.8538057, z: 0.018469866}
+  m_LocalPosition: {x: -0.37160197, y: 1.026, z: -0.37302035}
+  m_LocalScale: {x: 0.03166474, y: 1.4637645, z: 0.03166474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}
@@ -3936,8 +3944,8 @@ Transform:
   m_GameObject: {fileID: 2016044607}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5249649, z: 0}
-  m_LocalScale: {x: 0.045961272, y: 0.5832944, z: 0.045961272}
+  m_LocalPosition: {x: 0, y: 0.8999999, z: 0}
+  m_LocalScale: {x: 0.078796, y: 1, z: 0.078796}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1639910279}

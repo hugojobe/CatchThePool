@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6484f12b87fbdba43b4e7aa19c1bcec2, type: 3}
   m_Name: Hadoukeouf
   m_EditorClassIdentifier: 
+  hadoukoeufPrefab: {fileID: 1354560638669845633, guid: 636d8647d32756e419b25df2b2effabd, type: 3}

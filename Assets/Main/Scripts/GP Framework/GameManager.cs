@@ -68,9 +68,12 @@ public class GameManager : MonoBehaviour
             if (distance < closePlayerRadius)
             {
                 isCloseToAnyPlayer = true;
-                players[i].isCloseToAnyPlayer = true;
-                Vector3 directionToOtherPlayer = players[j].transform.position - players[i].transform.position;
-                players[i].watchRotation = Quaternion.LookRotation(directionToOtherPlayer, Vector3.up).eulerAngles;
+                if (players[i].playerState != PlayerState.Dashing && players[i].playerState != PlayerState.Dead && players[i].playerState != players[i].chickenConfig.abilityState)
+                {
+                    players[i].isCloseToAnyPlayer = true;
+                    Vector3 directionToOtherPlayer = players[j].transform.position - players[i].transform.position;
+                    players[i].watchRotation = Quaternion.LookRotation(directionToOtherPlayer, Vector3.up).eulerAngles;
+                }
             }
         }
 

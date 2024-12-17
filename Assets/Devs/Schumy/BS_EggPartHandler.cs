@@ -4,7 +4,7 @@ public class BS_EggPartHandler : MonoBehaviour
 {
         private Rigidbody partRb;
         private float dragOverTime;
-        private float scale = 0.2f;
+        private float scale = 0.08f;
         private float speed = 1;
 
         public void Initialize(Rigidbody rb, float drag)

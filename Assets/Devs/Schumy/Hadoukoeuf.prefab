@@ -179,7 +179,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.58, y: 3.94, z: -6.19}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3083752262098649796}
@@ -252,11 +252,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggPartLeft: {fileID: 946038193198604078, guid: 36a0c409c040b4642ab438ba8e242f7e, type: 3}
   eggPartRight: {fileID: 46554222209213076, guid: 65b49690bd1231e408250fbd4ca7b7cc, type: 3}
-  forwardSpeed: 60
-  splitForce: 10
+  forwardSpeed: 25
+  splitForce: 5
   forwardRetentionFactor: 0.5
   dragOverTime: 2
   rotationForce: 5
+  launcherPc: {fileID: 0}
 --- !u!54 &6703444404067663700
 Rigidbody:
   m_ObjectHideFlags: 0

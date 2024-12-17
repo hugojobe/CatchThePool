@@ -98,12 +98,12 @@ GameObject:
   - component: {fileID: 8403680478395378847}
   - component: {fileID: 8862424710936690066}
   m_Layer: 2
-  m_Name: PlayerMesh
+  m_Name: Debug Player Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8275949524402699167
 Transform:
   m_ObjectHideFlags: 0
@@ -269,13 +269,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679746920838541114}
-  - component: {fileID: 3717465800384280157}
+  - component: {fileID: 3342955180135766469}
   - component: {fileID: 5586198081429142011}
   - component: {fileID: 7722202312907847344}
   - component: {fileID: 4978279432978190366}
   - component: {fileID: 6827308021207099809}
   - component: {fileID: 2484807640208147659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -298,8 +298,8 @@ Transform:
   - {fileID: 8275949524402699167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3717465800384280157
-SphereCollider:
+--- !u!136 &3342955180135766469
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -316,9 +316,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 0.76289785
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.030268729, z: 0}
 --- !u!114 &5586198081429142011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +442,8 @@ MonoBehaviour:
   moveInput: {x: 0, y: 0}
   previousFrameVelocity: {x: 0, y: 0, z: 0}
   dashCooldownElapsed: 0
+  abilityCooldownElapsed: 0
+  animator: {fileID: 0}
 --- !u!114 &4978279432978190366
 MonoBehaviour:
   m_ObjectHideFlags: 0

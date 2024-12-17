@@ -34,11 +34,17 @@ public class PlayerController : MonoBehaviour
     private Coroutine damagePhysicsCoroutine;
 
     private List<RingRope> ringRopes = new();
+    
+    public bool abilityCooldownElapsed;
+
+    public Animator animator;
 
     public void Initialize()
     {
         chickenColor = chickenConfig.chickenColors[Random.Range(0, chickenConfig.chickenColors.Length)];
-        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = chickenColor;
+        
+        GameObject playerMesh = Instantiate(chickenConfig.chickenMeshPrefab, transform.position, Quaternion.identity, transform);
+        playerMesh.transform.localPosition = new Vector3(0, -0.339f, 0);
         
         feedbackMachine = GetComponent<FeedbackMachine>();
         damageable = GetComponent<Damageable>();
@@ -60,7 +66,11 @@ public class PlayerController : MonoBehaviour
         
         damageable.OnDeath += OnDeath;
         damageable.OnDeath += feedbackMachine.OnDeath;
-
+        
+        animator = GetComponentInChildren<Animator>();
+        
+        chickenConfig.ability.InitAbility(this);
+        
         isInitialized = true;
     }
 
@@ -77,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if(context.control.device.deviceId != gamepadID || !CanDash())
+        if(context.control.device.deviceId != gamepadID || !CanDash() || context.phase != InputActionPhase.Started)
             return;
 
         if (moveInput == Vector2.zero)
@@ -94,10 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public void UseAbility(InputAction.CallbackContext context)
     {
-        if(context.control.device.deviceId != gamepadID || !CanDash())
-            return;
-        
-        if(!CanUseAbility())
+        if(context.control.device.deviceId != gamepadID || !CanUseAbility() || context.phase != InputActionPhase.Started)
             return;
         
         chickenConfig.ability.Activate(this);
@@ -148,7 +155,8 @@ public class PlayerController : MonoBehaviour
         return
             playerState != PlayerState.Dead &&
             playerState != PlayerState.Uncontrolled &&
-            playerState != PlayerState.Dashing;
+            playerState != PlayerState.Dashing &&
+            playerState != chickenConfig.abilityState;
     }
 
     private bool CanDash()
@@ -157,6 +165,7 @@ public class PlayerController : MonoBehaviour
             playerState != PlayerState.Dead &&
             playerState != PlayerState.Uncontrolled &&
             playerState != PlayerState.Dashing &&
+            playerState != chickenConfig.abilityState &&
             dashCooldownElapsed;
     }
 
@@ -289,7 +298,7 @@ public class PlayerController : MonoBehaviour
         Lebug.Log($"P{index} health:", damageable.currentHealth, $"Player {index}");
         Lebug.Log($"P{index} state:", playerState.ToString(), $"Player {index}");
         
-        if(playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled)
+        if(playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled && playerState != chickenConfig.abilityState)
             RotateTowardsDirection();
         
         //DrawLocalAxes();

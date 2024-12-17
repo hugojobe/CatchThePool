@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fafefa6701b1e4d9104bcbc5b3c824, type: 3}
   m_Name: Tourbiplume
   m_EditorClassIdentifier: 
+  radius: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  particlesPrefab: {fileID: 8976851458816490664, guid: b567778620549424ca386ac4c85e93aa, type: 3}

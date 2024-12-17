@@ -9,6 +9,9 @@ public class ChickenConfig : ScriptableObject
     public Sprite chickenImage;
     public int chickenHealthPSM;
     public int chickenSpeedPSM;
+
+    [Space] public GameObject chickenMeshPrefab;
+    
     [Space]
     public int chickenHealthGameplay;
 
@@ -23,6 +26,6 @@ public class ChickenConfig : ScriptableObject
 
     [Space] 
     public Ability ability;
-
     public PlayerState abilityState;
+    public float abilityCooldown;
 }
