@@ -361,15 +361,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,11 +437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0009020703
+      value: 0.0009020705
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00047246937
+      value: 0.00047246946
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_Name
@@ -2366,7 +2366,7 @@ Animator:
   m_GameObject: {fileID: 3367671962712790108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc17949c4535a1845a18e3636ee837e9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3bc9fa2a3ff5c364391f2e0be82bd3ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
