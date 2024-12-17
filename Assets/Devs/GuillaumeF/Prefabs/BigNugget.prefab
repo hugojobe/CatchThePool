@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -417,19 +417,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9825477
+      value: 0.98254764
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18601097
+      value: -0.1860111
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -8.826928e-17
+      value: -8.826932e-17
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.6710694e-17
+      value: -1.6710718e-17
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_Name
@@ -799,8 +799,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -808,8 +808,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &542475631060558936 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5099593272771471691, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -933,8 +933,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -942,8 +942,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &636311646732358945 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5302572619680536626, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -1067,8 +1067,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -1076,8 +1076,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &770432454064034399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3750645705022955700, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -1453,8 +1453,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -1462,8 +1462,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &1300100309868664614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3222107891348497867, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -1587,8 +1587,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -1596,8 +1596,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &1315228658219805396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3241880514085083193, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -1721,8 +1721,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -1730,8 +1730,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &1632963116004849875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2888121367350151744, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -1865,8 +1865,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -1874,8 +1874,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &1885130843608620532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6587485486909280487, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2009,8 +2009,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2018,8 +2018,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2227584333243976383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6893849396812957612, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2143,8 +2143,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2152,8 +2152,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &2305670354774764986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2396683154324201303, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2292,8 +2292,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2301,8 +2301,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &3108338364143058175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1557912455171051028, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2431,8 +2431,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2440,8 +2440,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &3281518271579667841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7838634848408170642, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2565,8 +2565,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2574,8 +2574,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &3296336028075833083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1369983236102390808, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2699,8 +2699,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2708,8 +2708,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &3349930980012492108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1207105591981324193, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2833,8 +2833,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2842,8 +2842,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &3372270860314630484 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1184849274897427385, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -2967,8 +2967,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -2976,8 +2976,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &3459326529845673665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1061767039512644654, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3106,8 +3106,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3115,8 +3115,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &3641821494995086771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343057932828024992, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3240,8 +3240,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3249,8 +3249,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &4063271309825196408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -494969227669500821, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3374,8 +3374,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3383,8 +3383,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &4203387914795620976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8869637911624570723, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3518,8 +3518,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3527,8 +3527,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &4384779502664425911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9051102890010242212, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3657,8 +3657,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3666,8 +3666,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &4974313036296050900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8914197065044781625, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3821,8 +3821,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3830,8 +3830,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &6155714805205390328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7768892260732035349, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3955,8 +3955,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -3964,8 +3964,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &6309870559996921040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7578697867000837693, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4104,8 +4104,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4113,8 +4113,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &6694446257917609968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7087165248926971165, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4243,8 +4243,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4252,8 +4252,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &7150582815966369247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6739110684160141108, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4392,8 +4392,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4401,8 +4401,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &7519495388972043642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2961321887331090537, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4531,8 +4531,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4540,8 +4540,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &7772948858003019204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3070654965134661847, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4665,8 +4665,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4674,8 +4674,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &7803484012708312632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5978056835754394837, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4804,8 +4804,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4813,8 +4813,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &7883993829776914290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6040535207074776479, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4938,8 +4938,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -4947,8 +4947,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &8000253587332302755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333996222486989488, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5082,8 +5082,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -5091,8 +5091,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8591855850506404980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5296724671119259289, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5216,8 +5216,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -5225,8 +5225,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8612749230401178907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3946426975047680008, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5350,8 +5350,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -5359,8 +5359,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8729256667682319920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5159248208836009181, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5484,8 +5484,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -5493,8 +5493,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8779702659859348832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4077414262398496883, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5618,8 +5618,8 @@ ConfigurableJoint:
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
-  m_ProjectionMode: 0
-  m_ProjectionDistance: 0.1
+  m_ProjectionMode: 1
+  m_ProjectionDistance: 0.01
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
@@ -5627,8 +5627,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &8805066070880774695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283986846911375156, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
