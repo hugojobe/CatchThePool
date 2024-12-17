@@ -68,6 +68,9 @@
         },
         {
             "m_Id": "c17c5b6dce814c0884b9c2c22da2af3e"
+        },
+        {
+            "m_Id": "d96ac35fecc44269a1c0c6297813bf64"
         }
     ],
     "m_GroupDatas": [],
@@ -223,6 +226,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "75570c2b9d41464790173108fb0bb20e"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "d96ac35fecc44269a1c0c6297813bf64"
+                },
+                "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "4ba814ca241041a59a29f132e04a0213"
                 },
                 "m_SlotId": 0
             }
@@ -1272,6 +1289,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "6fdc76b4c20a4de3a35d643e9ef43913",
+    "m_Id": 1,
+    "m_DisplayName": "ObjectPos",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "ObjectPos",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.TangentMaterialSlot",
     "m_ObjectId": "748fade7fd4d4a53badcfdb9a8fa6f64",
     "m_Id": 0,
@@ -1875,6 +1915,44 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Normal"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
+    "m_ObjectId": "d96ac35fecc44269a1c0c6297813bf64",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Billboard",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -104.00000762939453,
+            "y": -450.0000305175781,
+            "width": 208.00003051757813,
+            "height": 279.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "6fdc76b4c20a4de3a35d643e9ef43913"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": false,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"69876df2ad5685e41b6d0c39d6701792\",\n        \"type\": 3\n    }\n}",
+    "m_PropertyGuids": [],
+    "m_PropertyIds": [],
+    "m_Dropdowns": [],
+    "m_DropdownSelectedEntries": []
 }
 
 {

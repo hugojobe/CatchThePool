@@ -221,8 +221,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 64.0,
+            "y": 0.9999918937683106
         },
         "m_Blocks": [
             {
@@ -238,8 +238,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 65.00004577636719,
+            "y": 205.00001525878907
         },
         "m_Blocks": [
             {
@@ -367,7 +367,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "145dcf8d5fbd430ba5c35a177ba47e84",
     "m_Id": 0,
-    "m_DisplayName": "Player Color",
+    "m_DisplayName": "PlayerColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1236,10 +1236,10 @@
     "m_Guid": {
         "m_GuidSerialized": "27c1e920-4f4b-48b8-9053-1b58a9e4a6ae"
     },
-    "m_Name": "Player Color",
+    "m_Name": "PlayerColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Player Color",
-    "m_DefaultReferenceName": "_Player_Color",
+    "m_RefNameGeneratedByDisplayName": "PlayerColor",
+    "m_DefaultReferenceName": "_PlayerColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

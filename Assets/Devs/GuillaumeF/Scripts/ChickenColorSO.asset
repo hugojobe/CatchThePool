@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RokocoColor1: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   RokocoColor2: {r: 0.26415092, g: 0.022984086, b: 0, a: 1}
-  ShiKenColor1: {r: 0.20754719, g: 0.0499288, b: 0.0499288, a: 1}
-  ShiKenColor2: {r: 0.6509434, g: 0.42291474, b: 0.16273585, a: 1}
+  ShiKenColor1: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+  ShiKenColor2: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
   ConPolloColor1: {r: 1, g: 0.1273585, b: 0.1273585, a: 1}
   ConPolloColor2: {r: 1, g: 0.7877358, b: 0.7877358, a: 1}
-  BigNuggetColor1: {r: 0.8396226, g: 0.515159, b: 0, a: 1}
-  BigNuggetColor2: {r: 0.5754717, g: 0.35931665, b: 0.05157528, a: 1}
+  BigNuggetColor1: {r: 0.3679245, g: 0.29935026, b: 0.2481755, a: 1}
+  BigNuggetColor2: {r: 0.6509434, g: 0.54129946, b: 0.38381097, a: 1}

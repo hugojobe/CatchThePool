@@ -57,7 +57,7 @@ Material:
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _bloom: 5
+    - _bloom: 10
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _PlayerColor: {r: 0.6907868, g: 0.7490196, b: 0, a: 0}
