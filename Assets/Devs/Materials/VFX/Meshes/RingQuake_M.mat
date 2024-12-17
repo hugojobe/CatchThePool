@@ -122,16 +122,21 @@ Material:
     - _GlossyReflections: 0
     - _MASKCHANNEL: 0
     - _MainColorBooster: 0
-    - _MaxHeight: 0.2
+    - _MaxHeight: 0.25
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QuakeWidth: -0.25
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 1.29
+    - _Radius: 2.63
+    - _RadiusP1: 3.11
+    - _RadiusP2: 0.75
+    - _RadiusP3: 0.75
+    - _RadiusP4: 0.75
     - _ReceiveShadows: 1
-    - _SmoothMax: 1
-    - _SmoothMin: 0
+    - _SmoothMax: 0.55
+    - _SmoothMin: 0.18
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -145,6 +150,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Player1Pos: {r: -60, g: 0, b: 0, a: 0}
+    - _Player2Pos: {r: -65, g: 0, b: 0, a: 0}
+    - _Player3Pos: {r: -60.66, g: 0, b: -2.84, a: 0}
+    - _Player4Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _PlayerPos: {r: -60, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
