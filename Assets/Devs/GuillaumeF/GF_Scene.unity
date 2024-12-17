@@ -873,11 +873,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4179596611843632099, guid: 7251b9878eafa5745800b78e0002f4ff, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0009022195
+      value: 0.00090221985
       objectReference: {fileID: 0}
     - target: {fileID: 4179596611843632099, guid: 7251b9878eafa5745800b78e0002f4ff, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00047254754
+      value: 0.00047254772
       objectReference: {fileID: 0}
     - target: {fileID: 7149205862907063457, guid: 7251b9878eafa5745800b78e0002f4ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5915,6 +5915,10 @@ PrefabInstance:
     - target: {fileID: 1074998844442433929, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
       propertyPath: m_Name
       value: ConPollo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120086751570193348, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6671807212243420273, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
       propertyPath: m_LocalRotation.y
