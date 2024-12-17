@@ -110,6 +110,7 @@ public class RingRope : MonoBehaviour
             float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor);
             if (isXAxis)
             {
+                Debug.Log("Zpos change");
                 float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
                 controlPoint1.position = new Vector3(
@@ -126,6 +127,8 @@ public class RingRope : MonoBehaviour
             }
             else
             {
+                Debug.Log("Ypos change");
+
                 float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
 
@@ -280,5 +283,22 @@ public class RingRope : MonoBehaviour
         }
         return points;
     }
+    private void OnDrawGizmos()
+    {
+        if (controlPoint1 != null && controlPoint2 != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(controlPoint1.position, 0.1f);
+            Gizmos.DrawSphere(controlPoint2.position, 0.1f);
+
+            Gizmos.color = Color.yellow;
+            Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
+            for (int i = 0; i < bezierPoints.Length - 1; i++)
+            {
+                Gizmos.DrawLine(bezierPoints[i], bezierPoints[i + 1]);
+            }
+        }
+    }
+
     
 }
