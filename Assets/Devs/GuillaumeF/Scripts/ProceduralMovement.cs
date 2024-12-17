@@ -81,11 +81,11 @@ public class ProceduralMovement : MonoBehaviour
         if (detectionRange <= 0)
             detectionRange = transform.position.y;
 
-        leftRay = new Ray(LeftAnkle.position, Vector3.down);
+        leftRay = new Ray(LeftAnkle.position, -transform.up);
         if (Physics.Raycast(leftRay, out infos, detectionRange))
             currentGroundingLeftPos = infos.point;
 
-        rightRay = new Ray(RightAnkle.position, Vector3.down);
+        rightRay = new Ray(RightAnkle.position, -transform.up);
         if (Physics.Raycast(rightRay, out infos, detectionRange))
             currentGroundingRightPos = infos.point;
 
