@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool isInitialized;
     public PlayerState playerState;
 
-    private FeedbackMachine feedbackMachine;
+    public FeedbackMachine feedbackMachine;
     public Damageable damageable;
 
     public Vector3 watchRotation;
@@ -90,6 +90,11 @@ public class PlayerController : MonoBehaviour
         playerState = PlayerState.Dashing;
         rb.linearVelocity = Vector3.zero;
         dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
+    }
+
+    public void UseAbility(InputAction.CallbackContext context)
+    {
+        chickenConfig.ability.Activate(this);
     }
 
     public IEnumerator DashCoroutine(Vector3 direction)

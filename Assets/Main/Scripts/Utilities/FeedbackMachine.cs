@@ -36,4 +36,25 @@ public class FeedbackMachine : MonoBehaviour
     {
         
     }
+    
+// ABIILITIES
+    public void OnTourbiplumeActivated()
+    {
+        
+    }
+    
+    public void OnNuggquakeActivated()
+    {
+        
+    }
+    
+    public void OnSpicyfartActivated()
+    {
+        
+    }
+    
+    public void OnHadoukoeufActivated()
+    {
+        
+    }
 }
