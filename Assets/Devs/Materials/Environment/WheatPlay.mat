@@ -53,10 +53,13 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 1
-    - _controltest: 0.95
+    - _controltest: 0
     - _tiling: 25
     m_Colors:
+    - _2: {r: 0.90943396, g: 0.7280768, b: 0.15614808, a: 0}
+    - _DebugColor: {r: 0.93207544, g: 0.6134978, b: 0.10375927, a: 0}
     - _N123: {r: 0, g: 0, b: 0, a: 0}
+    - _debug_debug_debug: {r: 1, g: 0.4766519, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3838988682904098157
