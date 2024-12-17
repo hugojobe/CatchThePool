@@ -24,3 +24,4 @@ MonoBehaviour:
   dashCooldown: 1.5
   chickenColors:
   - {r: 0.75799996, g: 1, b: 0.736, a: 1}
+  ability: {fileID: 11400000, guid: 833b5372554cffd418f0578082e8a819, type: 2}

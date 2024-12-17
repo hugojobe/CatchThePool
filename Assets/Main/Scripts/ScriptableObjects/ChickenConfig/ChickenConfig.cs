@@ -20,4 +20,7 @@ public class ChickenConfig : ScriptableObject
 
     [Space] 
     public Color[] chickenColors;
+
+    [Space] 
+    public Ability ability;
 }
