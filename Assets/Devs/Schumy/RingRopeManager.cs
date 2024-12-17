@@ -46,7 +46,8 @@ public class RingRopeManager : MonoBehaviour
                 ropeObject.transform.SetParent(transform);
 
                 RingRope rope = ropeObject.AddComponent<RingRope>();
-                rope.Initialize(startPoint, endPoint, ropeRadius, ropeMaterial, ropeSegments, returnSpeed);
+                rope.Initialize(startPoint, endPoint, ropeRadius, ropeMaterial, ropeSegments, returnSpeed, j);
+
 
                 ropes.Add(rope);
             }
