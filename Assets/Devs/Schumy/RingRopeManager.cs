@@ -11,7 +11,7 @@ public class RingRopeManager : MonoBehaviour
     public float ropeRadius = 0.1f; 
     public int ropeSegments = 50;
 
-    public float borderSlide = 3;
+    public float borderSlide = 2;
     public Material borderMaterial;
     [Header("Interaction Configuration")]
     public float returnSpeed = 5.0f; 
