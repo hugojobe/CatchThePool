@@ -23,9 +23,11 @@ public class RingRope : MonoBehaviour
     public Vector3 perpendicularDirection;
     private Vector3 control1;
     private Vector3 control2;
+    private int ropeIndex;
 
-    public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed)
+    public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed, int index)
     {
+        this.ropeIndex = index;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.ropeRadius = ropeRadius;
@@ -96,49 +98,53 @@ public class RingRope : MonoBehaviour
     {
         if (isInteracting && interactingPlayer != null)
         {
-
-            Vector3 playerPosition = interactingPlayer.position;
             
+            Vector3 playerPosition = interactingPlayer.position;
+
             Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
             float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
-
             float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) /
                                          Vector3.Distance(startPoint, endPoint);
 
         isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
             float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);
             float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor);
+            
+            curvatureAdjustment = lineDirection * curvatureOffset;
+            curvatureAdjustment.y = 0;
             if (isXAxis)
             {
+                curvatureAdjustment.z = 0;
                 float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
                 controlPoint1.position = new Vector3(
                     playerPosition.x,
-                    ropeCollider.transform.position.y,
+                    ropeCollider.transform.position.y  ,
                     playerPosition.z + (totalOffset * controlPoint1Weight)
                 ) + curvatureAdjustment * controlPoint1Weight;
 
                 controlPoint2.position = new Vector3(
                     playerPosition.x,
-                    ropeCollider.transform.position.y,
+                    ropeCollider.transform.position.y ,
                     playerPosition.z + (totalOffset * controlPoint2Weight)
                 ) - curvatureAdjustment * controlPoint2Weight;
             }
             else
             {
 
+                curvatureAdjustment.x = 0;
                 float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
 
                 controlPoint1.position = new Vector3(
                     playerPosition.x + (totalOffset * controlPoint1Weight),
-                    ropeCollider.transform.position.y,
+                    ropeCollider.transform.position.y ,
                     playerPosition.z
                 ) + curvatureAdjustment * controlPoint1Weight;
 
                 controlPoint2.position = new Vector3(
                     playerPosition.x + (totalOffset * controlPoint2Weight),
-                    ropeCollider.transform.position.y,
+                    ropeCollider.transform.position.y ,
                     playerPosition.z
                 ) - curvatureAdjustment * controlPoint2Weight;
             }
@@ -159,6 +165,7 @@ public class RingRope : MonoBehaviour
         interactingPlayer = other.transform;
         isInteracting = true;
         mpb.SetFloat("_Emiss",3);
+        mpb.SetColor("_PlayerColor",other.GetComponent<PlayerController>().chickenColor);
         ropeRenderer.SetPropertyBlock(mpb);
         if (planeRenderer == null) return;
         mpb.SetFloat("_BorderActiv",1);
@@ -288,7 +295,7 @@ public class RingRope : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(controlPoint1.position, 0.1f);
             Gizmos.DrawSphere(controlPoint2.position, 0.1f);
-
+            
             Gizmos.color = Color.yellow;
             Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
             for (int i = 0; i < bezierPoints.Length - 1; i++)
