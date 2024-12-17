@@ -28,7 +28,7 @@ public class ProceduralMovement : MonoBehaviour
     public Transform TargetR;
 
     [Header("MovementParameters")]
-    public float detectionRange = 20f;
+    public float detectionRange;
     public float stepDistance = .75f;
     public float stepHeight = 1.5f;
     public float stepSpeed = 2;
@@ -74,10 +74,13 @@ public class ProceduralMovement : MonoBehaviour
 
     private bool isLStep;
     private bool isRStep;
-
+    public bool canWalkWall;
 
     private void Start()
     {
+        if (detectionRange <= 0)
+            detectionRange = transform.position.y;
+
         leftRay = new Ray(LeftAnkle.position, Vector3.down);
         if (Physics.Raycast(leftRay, out infos, detectionRange))
             currentGroundingLeftPos = infos.point;
@@ -95,15 +98,17 @@ public class ProceduralMovement : MonoBehaviour
         TargetR.position = currentGroundingRightPos;
 
 
-        leftNextRay = new Ray(LeftLeg.position, Vector3.down);
+        leftNextRay = new Ray(LeftLeg.position, -transform.up);
         if (Physics.Raycast(leftNextRay, out infos, detectionRange))
             researchGroundingLeftPos = infos.point;
 
-        rightNextRay = new Ray(RightLeg.position, Vector3.down);
+        rightNextRay = new Ray(RightLeg.position, -transform.up);
         if (Physics.Raycast(rightNextRay, out infos, detectionRange))
             researchGroundingRightPos = infos.point;
 
-        rootRay = new Ray(transform.position, Vector3.down);
+
+        rootRay = canWalkWall ? new Ray(transform.position, -transform.up) : new Ray(transform.position, Vector3.down);
+
         if (Physics.Raycast(rootRay, out infos, detectionRange))
             transform.rotation = Quaternion.FromToRotation(transform.up, infos.normal) * transform.rotation;
 
