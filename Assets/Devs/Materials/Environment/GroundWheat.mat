@@ -68,7 +68,7 @@ Material:
     - _Smoothness: 2.62
     - _tiling: 7.66
     m_Colors:
-    - _Color: {r: 0.3970025, g: 0.5169811, b: 0.45644394, a: 0}
+    - _Color: {r: 0.5169811, g: 0.4294666, b: 0.40870774, a: 0}
     - _N123: {r: 12.44, g: 10000, b: 10000, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
