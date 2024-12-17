@@ -361,15 +361,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -433,11 +433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -7.939242e-17
+      value: -7.939219e-17
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -9.557471e-19
+      value: -9.557445e-19
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_Name
@@ -3724,7 +3724,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
