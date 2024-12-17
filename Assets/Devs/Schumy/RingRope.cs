@@ -98,9 +98,9 @@ public class RingRope : MonoBehaviour
     {
         if (isInteracting && interactingPlayer != null)
         {
-            
             previousController1 = controlPoint1.position;
             previousController2 = controlPoint2.position;
+            
             Vector3 playerPosition = interactingPlayer.position;
 
             Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
@@ -112,8 +112,8 @@ public class RingRope : MonoBehaviour
            float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); 
            if (isXAxis)
            { 
-               float baseOffset = (parentPosition.z < playerPosition.z) ? offsetter : -offsetter; 
-               float totalOffset = baseOffset + (distanceToLine / 2.0f); 
+               float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1; 
+               float totalOffset = baseOffset * offsetter + baseOffset * (distanceToLine / 2.0f);
                controlPoint1.position = new Vector3(
                   playerPosition.x,
                   controlPoint1.position.y,
@@ -128,8 +128,8 @@ public class RingRope : MonoBehaviour
            }
            else
             {
-                float baseOffset = (parentPosition.x < playerPosition.x) ? offsetter : -offsetter;
-                float totalOffset = baseOffset + (distanceToLine / 2.0f);
+                float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
+                float totalOffset = baseOffset * offsetter + baseOffset * (distanceToLine / 2.0f);
 
                 controlPoint1.position = new Vector3(
                  playerPosition.x + (totalOffset * controlPoint1Weight),
@@ -192,6 +192,8 @@ public class RingRope : MonoBehaviour
 
     private void UpdateMesh()
     {
+        Debug.Log("UpdateMesh");
+        
         Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
 
         Mesh mesh = new();

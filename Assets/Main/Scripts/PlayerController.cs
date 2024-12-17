@@ -94,6 +94,12 @@ public class PlayerController : MonoBehaviour
 
     public void UseAbility(InputAction.CallbackContext context)
     {
+        if(context.control.device.deviceId != gamepadID || !CanDash())
+            return;
+        
+        if(!CanUseAbility())
+            return;
+        
         chickenConfig.ability.Activate(this);
     }
 
@@ -152,6 +158,15 @@ public class PlayerController : MonoBehaviour
             playerState != PlayerState.Uncontrolled &&
             playerState != PlayerState.Dashing &&
             dashCooldownElapsed;
+    }
+
+    private bool CanUseAbility()
+    {
+        return
+            playerState != PlayerState.Dead &&
+            playerState != PlayerState.Uncontrolled &&
+            playerState != PlayerState.Dashing &&
+            playerState != chickenConfig.abilityState;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -348,5 +363,9 @@ public enum PlayerState
     Uncontrolled = 0,
     Normal,
     Dashing,
-    Dead
+    Dead,
+    Hadoukoeuf,
+    Spicyfart,
+    Tourbiplume,
+    Nuggquake
 }

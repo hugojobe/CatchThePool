@@ -23,4 +23,6 @@ public class ChickenConfig : ScriptableObject
 
     [Space] 
     public Ability ability;
+
+    public PlayerState abilityState;
 }

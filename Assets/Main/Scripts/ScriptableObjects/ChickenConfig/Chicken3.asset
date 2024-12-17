@@ -25,3 +25,4 @@ MonoBehaviour:
   chickenColors:
   - {r: 0.69799995, g: 0.9748333, b: 1, a: 1}
   ability: {fileID: 11400000, guid: 4dcc7a2543e673747b48d8836f4ec49e, type: 2}
+  abilityState: 6
