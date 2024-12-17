@@ -153,7 +153,7 @@ Material:
     - _EmissionColorR: {r: 0, g: 0, b: 0, a: 0}
     - _IDColorB: {r: 0, g: 0, b: 0, a: 0}
     - _IDColorG: {r: 0, g: 0, b: 0, a: 0}
-    - _IDColorR: {r: 1, g: 0, b: 0, a: 0}
+    - _IDColorR: {r: 0.4037736, g: 0.27952754, b: 0.14855815, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
