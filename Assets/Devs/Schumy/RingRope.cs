@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 
@@ -17,11 +18,11 @@ public class RingRope : MonoBehaviour
     private bool isInteracting;
     private Transform interactingPlayer;
     private BoxCollider ropeCollider;
-    private Vector3 previousController1;
-    private Vector3 previousController2;
-    private bool firstGen = false;
-
+    private bool canMove = true;
+    private bool secondControl = false;
     public Vector3 perpendicularDirection;
+    private Vector3 control1;
+    private Vector3 control2;
 
     public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed)
     {
@@ -40,11 +41,11 @@ public class RingRope : MonoBehaviour
         GameObject controlPoint1Object = new ("ControlPoint1");
         controlPoint1 = controlPoint1Object.transform;
         controlPoint1.position = startPoint;
-
+        
         GameObject controlPoint2Object = new ("ControlPoint2");
         controlPoint2 = controlPoint2Object.transform;
         controlPoint2.position = endPoint;
-
+        
         ropeCollider = gameObject.AddComponent<BoxCollider>();
         ropeCollider.isTrigger = true;
         mpb = new MaterialPropertyBlock();
@@ -54,14 +55,14 @@ public class RingRope : MonoBehaviour
 
         lineDirection = (endPoint - startPoint).normalized;
         parentPosition = transform.parent.position;
-        
         Vector3 directionToParent = (parentPosition - (startPoint + endPoint) / 2).normalized;
-        
         bool isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
 
         perpendicularDirection = isXAxis ? Vector3.forward : Vector3.right;
 
         perpendicularDirection *= Mathf.Sign(Vector3.Dot(directionToParent, perpendicularDirection));
+        
+
     }
     public float curvatureOffset = 4.0f; 
     private Vector3 curvatureAdjustment;
@@ -71,22 +72,20 @@ public class RingRope : MonoBehaviour
     private MaterialPropertyBlock mpb;
     public void BorderInit(Material planeMaterial,float borderslide)
     {
-        // Créer le plane
         plane = GameObject.CreatePrimitive(PrimitiveType.Quad);
         plane.name = "RopePlane";
         plane.transform.SetParent(transform);
 
-        // Positionner le plane sous la corde
-        plane.transform.localRotation = Quaternion.Euler(90, 90, 0); // Plan horizontal
-        plane.transform.localPosition = new Vector3(0, -borderslide, 0); // Juste sous la corde
+        plane.transform.localRotation = Quaternion.Euler(90, 90, 0); 
+        plane.transform.localPosition = new Vector3(0, -borderslide, 0); 
 
-        // Ajuster la taille du plane pour correspondre au BoxCollider
         plane.transform.localScale = new Vector3(ropeCollider.size.z, ropeCollider.size.x/100, 1);
 
         planeRenderer = plane.GetComponent<Renderer>();
         planeRenderer.material = planeMaterial;
         isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
         curvatureAdjustment = lineDirection * curvatureOffset;
+        curvatureAdjustment.y = ropeCollider.transform.position.y;
         Destroy(plane.GetComponent<Collider>());
     }
 
@@ -98,56 +97,56 @@ public class RingRope : MonoBehaviour
     {
         if (isInteracting && interactingPlayer != null)
         {
-            previousController1 = controlPoint1.position;
-            previousController2 = controlPoint2.position;
-            
-            Vector3 playerPosition = interactingPlayer.position;
 
+            Vector3 playerPosition = interactingPlayer.position;
+            
             Vector3 closestPointOnLine = startPoint + Vector3.Project(playerPosition - startPoint, lineDirection);
             float distanceToLine = Vector3.Distance(playerPosition, closestPointOnLine);
-    
-            float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) / Vector3.Distance(startPoint, endPoint);
-            
-           float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);    
-           float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor); 
-           if (isXAxis)
-           { 
-               float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1; 
-               float totalOffset = baseOffset * offsetter + baseOffset * (distanceToLine / 2.0f);
-               controlPoint1.position = new Vector3(
-                  playerPosition.x,
-                  controlPoint1.position.y,
-                playerPosition.z + (totalOffset * controlPoint1Weight)
-                  ) + curvatureAdjustment * controlPoint1Weight;
 
-               controlPoint2.position = new Vector3(
-                   playerPosition.x, 
-                   controlPoint2.position.y, 
-                   playerPosition.z + (totalOffset * controlPoint2Weight)
-                ) - curvatureAdjustment * controlPoint2Weight;
-           }
-           else
+            float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) /
+                                         Vector3.Distance(startPoint, endPoint);
+
+            float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);
+            float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor);
+            if (isXAxis)
             {
-                float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
-                float totalOffset = baseOffset * offsetter + baseOffset * (distanceToLine / 2.0f);
-
+                float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1;
+                float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
                 controlPoint1.position = new Vector3(
-                 playerPosition.x + (totalOffset * controlPoint1Weight),
-                 controlPoint1.position.y,
-                 playerPosition.z
-              ) + curvatureAdjustment * controlPoint1Weight;
+                    playerPosition.x,
+                    ropeCollider.transform.position.y,
+                    playerPosition.z + (totalOffset * controlPoint1Weight)
+                ) + curvatureAdjustment * controlPoint1Weight;
 
                 controlPoint2.position = new Vector3(
-                   playerPosition.x + (totalOffset * controlPoint2Weight),
-                    controlPoint2.position.y,
-                       playerPosition.z
-                     ) - curvatureAdjustment * controlPoint2Weight;
+                    playerPosition.x,
+                    ropeCollider.transform.position.y,
+                    playerPosition.z + (totalOffset * controlPoint2Weight)
+                ) - curvatureAdjustment * controlPoint2Weight;
+            }
+            else
+            {
+                float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
+                float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
+
+                controlPoint1.position = new Vector3(
+                    playerPosition.x + (totalOffset * controlPoint1Weight),
+                    ropeCollider.transform.position.y,
+                    playerPosition.z
+                ) + curvatureAdjustment * controlPoint1Weight;
+
+                controlPoint2.position = new Vector3(
+                    playerPosition.x + (totalOffset * controlPoint2Weight),
+                    ropeCollider.transform.position.y,
+                    playerPosition.z
+                ) - curvatureAdjustment * controlPoint2Weight;
             }
         }
 
-        if (previousController1 != controlPoint1.position || previousController2 != controlPoint2.position)
-            UpdateMesh();
+        UpdateMesh();
 
+        control1 = controlPoint1.position;
+        control2 = controlPoint2.position;
         if (isInteracting && Input.GetKeyDown(KeyCode.E))
             ReleaseInteraction();
     }
@@ -155,6 +154,7 @@ public class RingRope : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player") || isInteracting) return;
+        canMove = true;
         interactingPlayer = other.transform;
         isInteracting = true;
         mpb.SetFloat("_Emiss",3);
@@ -168,6 +168,7 @@ public class RingRope : MonoBehaviour
     {
         interactingPlayer = null;
         isInteracting = false;
+        canMove = false;
         Vector3 closestPointOnLine;
         closestPointOnLine = startPoint + Vector3.Project(controlPoint1.position - startPoint, lineDirection);
 
@@ -181,8 +182,6 @@ public class RingRope : MonoBehaviour
         {
             controlPoint2.position = x;
         }, closestPointOnLine, 0.3f).SetEase(Ease.OutElastic);
-        previousController1 = controlPoint1.position;
-        previousController2 = controlPoint2.position;
         mpb.SetFloat("_Emiss",0);
         ropeRenderer.SetPropertyBlock(mpb);
         if (planeRenderer == null) return;
@@ -192,6 +191,7 @@ public class RingRope : MonoBehaviour
 
     private void UpdateMesh()
     {
+        if (controlPoint1.position == control1 && controlPoint2.position == control2) return;
         Debug.Log("UpdateMesh");
         
         Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
@@ -249,6 +249,7 @@ public class RingRope : MonoBehaviour
         mesh.triangles = triangles;
 
         meshFilter.mesh = mesh;
+        
     }
 
     private void GenerateCollider()
@@ -263,6 +264,7 @@ public class RingRope : MonoBehaviour
         ropeCollider.center = new(ropeCollider.center.x - 2.5f, ropeCollider.center.y, ropeCollider.center.z);
         
         ropeCollider.gameObject.tag = "Rope";
+        canMove = false;
     }
 
     private Vector3[] CalculateBezierCurve(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, int segments)
