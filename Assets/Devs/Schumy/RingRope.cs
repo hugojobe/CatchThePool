@@ -83,7 +83,6 @@ public class RingRope : MonoBehaviour
 
         planeRenderer = plane.GetComponent<Renderer>();
         planeRenderer.material = planeMaterial;
-        isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
         curvatureAdjustment = lineDirection * curvatureOffset;
         curvatureAdjustment.y = ropeCollider.transform.position.y;
         Destroy(plane.GetComponent<Collider>());
@@ -106,11 +105,11 @@ public class RingRope : MonoBehaviour
             float playerPositionFactor = Vector3.Dot(playerPosition - startPoint, lineDirection) /
                                          Vector3.Distance(startPoint, endPoint);
 
+        isXAxis = Mathf.Abs(lineDirection.x) > Mathf.Abs(lineDirection.z);
             float controlPoint1Weight = Mathf.Clamp01(playerPositionFactor);
             float controlPoint2Weight = Mathf.Clamp01(1 - playerPositionFactor);
             if (isXAxis)
             {
-                Debug.Log("Zpos change");
                 float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
                 controlPoint1.position = new Vector3(
@@ -127,7 +126,6 @@ public class RingRope : MonoBehaviour
             }
             else
             {
-                Debug.Log("Ypos change");
 
                 float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
                 float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
