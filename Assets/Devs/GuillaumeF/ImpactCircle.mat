@@ -55,10 +55,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _LifeTime: 2
+    - _BloomIntensity: 2
+    - _LifeTime: 1.67
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _PlayerColor: {r: 0.48584908, g: 0.5057946, b: 1, a: 0}
+    - _PlayerColor: {r: 0.19360025, g: 0.17661978, b: 0.5943396, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
