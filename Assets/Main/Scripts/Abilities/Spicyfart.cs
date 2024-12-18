@@ -15,7 +15,7 @@ public class Spicyfart : Ability
         
         player.animator.SetTrigger("Spicyfart");
 
-        player.playerState = player.chickenConfig.abilityState;
+        player.playerState = PlayerState.Spicyfart;
         player.abilityCooldownElapsed = false;
         
         player.StartCoroutine(player.DashCoroutine(new Vector3(player.moveInput.x, 0, player.moveInput.y).normalized, 2.1f));
