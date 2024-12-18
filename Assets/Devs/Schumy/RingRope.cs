@@ -66,7 +66,7 @@ public class RingRope : MonoBehaviour
         
 
     }
-    public float curvatureOffset = 4.0f; 
+    public float curvatureOffset = 2.0f; 
     private Vector3 curvatureAdjustment;
     private bool isXAxis;
     private GameObject plane;
@@ -81,7 +81,7 @@ public class RingRope : MonoBehaviour
         plane.transform.localRotation = Quaternion.Euler(90, 90, 0); 
         plane.transform.localPosition = new Vector3(0, -borderslide, 0); 
 
-        plane.transform.localScale = new Vector3(ropeCollider.size.z, ropeCollider.size.x/100, 1);
+        plane.transform.localScale = new Vector3(ropeCollider.size.z, ropeCollider.size.x/50, 3);
 
         planeRenderer = plane.GetComponent<Renderer>();
         planeRenderer.material = planeMaterial;
@@ -91,7 +91,7 @@ public class RingRope : MonoBehaviour
     }
 
 
-    public float offsetter = 1.5f;
+    public float offsetter = 1f;
     private Vector3 parentPosition;
     private Vector3 lineDirection;
     private void Update()
@@ -112,14 +112,15 @@ public class RingRope : MonoBehaviour
             
             curvatureAdjustment = lineDirection * curvatureOffset;
             curvatureAdjustment.y = 0;
+           // float dist = Vector3.Distance(new (closestPointOnLine.x,0,closestPointOnLine.z), new(playerPosition.x,0,playerPosition.z));
             if (isXAxis)
             {
                 curvatureAdjustment.z = 0;
                 float baseOffset = (parentPosition.z < playerPosition.z) ? 1 : -1;
-                float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
+                float totalOffset = (baseOffset * (offsetter +  (distanceToLine/2)));
                 controlPoint1.position = new Vector3(
                     playerPosition.x,
-                    ropeCollider.transform.position.y  ,
+                    ropeCollider.transform.position.y,
                     playerPosition.z + (totalOffset * controlPoint1Weight)
                 ) + curvatureAdjustment * controlPoint1Weight;
 
@@ -134,7 +135,7 @@ public class RingRope : MonoBehaviour
 
                 curvatureAdjustment.x = 0;
                 float baseOffset = (parentPosition.x < playerPosition.x) ? 1 : -1;
-                float totalOffset = baseOffset * (offsetter +  (distanceToLine / 2.0f));
+                float totalOffset = (baseOffset * (offsetter +  (distanceToLine/2)));
 
                 controlPoint1.position = new Vector3(
                     playerPosition.x + (totalOffset * controlPoint1Weight),
@@ -263,7 +264,7 @@ public class RingRope : MonoBehaviour
     private void GenerateCollider()
     {
         float length = Vector3.Distance(startPoint, endPoint);
-        ropeCollider.size = new Vector3(ropeRadius * 100, ropeRadius * 4, length - 0.5f);
+        ropeCollider.size = new Vector3(ropeRadius * 100, ropeRadius * 4, length - 3f);
 
         Vector3 direction = (endPoint - startPoint).normalized;
         ropeCollider.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
@@ -288,22 +289,4 @@ public class RingRope : MonoBehaviour
         }
         return points;
     }
-    private void OnDrawGizmos()
-    {
-        if (controlPoint1 != null && controlPoint2 != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(controlPoint1.position, 0.1f);
-            Gizmos.DrawSphere(controlPoint2.position, 0.1f);
-            
-            Gizmos.color = Color.yellow;
-            Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
-            for (int i = 0; i < bezierPoints.Length - 1; i++)
-            {
-                Gizmos.DrawLine(bezierPoints[i], bezierPoints[i + 1]);
-            }
-        }
-    }
-
-    
 }
