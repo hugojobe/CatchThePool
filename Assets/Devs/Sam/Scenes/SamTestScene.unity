@@ -2703,7 +2703,7 @@ ParticleSystem:
     startFrame:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0
+      scalar: 0.984375
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6040,7 +6040,7 @@ Transform:
   m_GameObject: {fileID: 1421170842}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -12.2, y: 3.36, z: 2.97}
+  m_LocalPosition: {x: -17.26, y: 3.36, z: 2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6148,6 +6148,49 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4601483c25d0f204981cf3ff65aa9db9, type: 3}
+--- !u!1 &1584619284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8552074373371265407, guid: c6f75d02b84af9c48b49881b81405fcb, type: 3}
+  m_PrefabInstance: {fileID: 3474808196819274433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584619285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584619284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb3c5e514e9444bb42a690f1997b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames: 64
+  maxLifetime: 2
+  lifetimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1694649650
 GameObject:
   m_ObjectHideFlags: 0
@@ -6470,7 +6513,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.15
-  m_PreviewTimeScale: 1
+  m_PreviewTimeScale: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -6720,7 +6763,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8552074373371265407, guid: c6f75d02b84af9c48b49881b81405fcb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584619285}
   m_SourcePrefab: {fileID: 100100000, guid: c6f75d02b84af9c48b49881b81405fcb, type: 3}
 --- !u!1001 &5889512804426570974
 PrefabInstance:
