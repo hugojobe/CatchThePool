@@ -1,9 +1,16 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Abilities/Nuggquake")]
 public class Nuggquake : Ability
 {
+    public GameObject anticipationSmoke;
+    public GameObject impactSmoke;
+    public GameObject impactVfx;
+    public GameObject impactSprite;
+    public GameObject sphere;
+    
     public override void InitAbility(PlayerController player)
     {
         
@@ -14,14 +21,39 @@ public class Nuggquake : Ability
         player.feedbackMachine.OnNuggquakeActivated();
         
         player.animator.SetTrigger("Nuggquake");
+        
+        GameObject anticipationSmokeInstance = Instantiate(anticipationSmoke);
+        anticipationSmokeInstance.transform.position = player.transform.position;
 
         player.playerState = player.chickenConfig.abilityState;
         player.abilityCooldownElapsed = false;
         player.moveInput = Vector2.zero;
         
-        yield return new WaitForSecondsRealtime(0.32f);
+        yield return new WaitForSecondsRealtime(1.4f);
         
-        // DOTween for vfxs
+        GameObject impactSmokeInstance = Instantiate(impactSmoke);
+        impactSmokeInstance.transform.position = player.transform.position;
+        GameObject impactVfxInstance = Instantiate(impactVfx);
+        impactVfxInstance.transform.position = player.transform.position;
+        
+        GameObject sphereInstance = Instantiate(sphere);
+        sphereInstance.transform.position = player.transform.position;
+        sphereInstance.transform.localScale = Vector3.zero;
+        sphereInstance.transform.DOScale(8f, 0.2f).SetEase(Ease.OutCirc);
+
+        GameManager.instance.ringMPB.SetVector($"_Player{player.index + 1}Pos", player.transform.position);
+        
+        float radius = 0;
+        DOTween.To(() => radius, x =>
+        {
+            radius = x;
+            GameManager.instance.ringMPB.SetFloat($"_RadiusP{player.index + 1}", radius);
+            GameManager.instance.ringRend.SetPropertyBlock(GameManager.instance.ringMPB);
+            Debug.Log(radius);
+        }, 15, 2f).SetEase(Ease.OutCirc).OnComplete(() =>
+        {
+            
+        });
         
         yield return new WaitForSecondsRealtime(0.1f);
         

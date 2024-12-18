@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10d5f8eb37ac994e879b58f7c0dfc3c, type: 3}
   m_Name: Nuggquake
   m_EditorClassIdentifier: 
+  anticipationSmoke: {fileID: 8552074373371265407, guid: c6f75d02b84af9c48b49881b81405fcb, type: 3}
+  impactSmoke: {fileID: 3924519665143964075, guid: 3f31fe62bcf5f8a4981788c7158f4eb9, type: 3}
+  impactVfx: {fileID: 1695877612326445308, guid: dcc09e7add8158342a86e9ac211f6c4c, type: 3}
+  impactSprite: {fileID: 8529421363924862708, guid: 8ef3099dd1d8c434bb0dbbbe413ebcad, type: 3}
+  sphere: {fileID: 1846079653460386588, guid: d04bfaab21a04064e80ac8493f6668bf, type: 3}

@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
     [Space]
     public float closePlayerRadius;
 
+    [Space] 
+    public MaterialPropertyBlock ringMPB;
+    public Renderer ringRend;
+
     private void Awake()
     {
         if (instance == null)
@@ -32,6 +36,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+        
+        ringMPB = new MaterialPropertyBlock();
     }
 
     private void Start()
