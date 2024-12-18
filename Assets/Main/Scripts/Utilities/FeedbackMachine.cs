@@ -22,7 +22,7 @@ public class FeedbackMachine : MonoBehaviour
 
     public void OnDashUpdate(float dashProgress)
     {
-        
+        Debug.LogWarning("Dash Progress: " + dashProgress);
     }
     
 // DAMAGE

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.control.device.deviceId != gamepadID || !CanDash() || context.phase != InputActionPhase.Started)
             return;
-
+        
         if (moveInput == Vector2.zero)
             return;
 
@@ -112,6 +113,8 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DashCoroutine(Vector3 direction, float forceMultiplier = 1f, bool isSpicyfart = false)
     {
+        Debug.Log("Dash");
+        
         Vector3 dashDirection = direction;
         moveInput = new Vector2(dashDirection.x, dashDirection.z);
         float dashDistance = chickenConfig.dashDistance * forceMultiplier;
@@ -132,23 +135,26 @@ public class PlayerController : MonoBehaviour
             dashTime = dashDistance / dashSpeed;
         }
 
-        rb.linearVelocity = dashDirection * dashSpeed;;
+        rb.linearVelocity = dashDirection * dashSpeed;
 
         float elapsedTime = 0f;
         while (elapsedTime < dashTime)
         {
-            elapsedTime += Time.fixedDeltaTime;
+            elapsedTime += Time.deltaTime;
 
             if(isSpicyfart)
                 feedbackMachine.OnSpicyFartUpdate();
             else
                 feedbackMachine.OnDashUpdate(elapsedTime / dashTime);
             
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
 
         rb.linearVelocity = Vector3.zero;
         moveSpeed = chickenConfig.chickenSpeed;
+
+        yield return new WaitForEndOfFrame();
+        
         playerState = PlayerState.Normal;
         
         if(isSpicyfart)
@@ -158,6 +164,8 @@ public class PlayerController : MonoBehaviour
         
         dashCoroutine = null;
 
+        Debug.Log("Dash end");
+        
         yield return new WaitForSeconds(chickenConfig.dashCooldown);
         ResetDashCooldown();
     }
@@ -253,7 +261,11 @@ public class PlayerController : MonoBehaviour
                     feedbackMachine.OnDashFinished();
                 }
                 dashCooldownElapsed = false;
-                dashCoroutine = StartCoroutine(DashCoroutine(reflectVelocity.normalized));
+                
+                if(dashCoroutine != null)
+                    StopCoroutine(dashCoroutine);
+                
+                dashCoroutine = StartCoroutine(DashCoroutine(reflectVelocity.normalized, 3f));
 
                 StartCoroutine(ReleaseRopes());
             }
@@ -277,7 +289,7 @@ public class PlayerController : MonoBehaviour
             playerState = PlayerState.Normal;
     }
 
-    private void ForceFinishDash()
+    public void ForceFinishDash()
     {
         if (dashCoroutine != null)
         {
@@ -296,13 +308,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!isInitialized)
-            return;
         
-        if(playerState != PlayerState.Dashing && playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled)
-            rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
-        else if (playerState == PlayerState.Dead)
-            rb.linearVelocity = Vector3.zero;
     }
 
     private void Update()
@@ -316,6 +322,14 @@ public class PlayerController : MonoBehaviour
         //DrawLocalAxes();
         
         previousFrameVelocity = rb.linearVelocity;
+        
+        if(!isInitialized)
+            return;
+        
+        if(playerState != PlayerState.Dashing && playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled)
+            rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
+        else if (playerState == PlayerState.Dead)
+            rb.linearVelocity = Vector3.zero;
     }
 
     private void RotateTowardsDirection()
