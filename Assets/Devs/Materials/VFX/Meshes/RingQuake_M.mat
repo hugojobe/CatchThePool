@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseColor_Alpha:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -61,11 +65,27 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissiveColorG:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORM:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -120,17 +140,20 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _INVERTNORMAL: 0
+    - _INVERTROUGHNESS: 0
     - _MASKCHANNEL: 0
     - _MainColorBooster: 0
     - _MaxHeight: 0.25
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _OpacityThreshold: 0
     - _Parallax: 0.005
     - _QuakeWidth: -0.25
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 2.63
-    - _RadiusP1: 3.11
+    - _RadiusP1: 2.5
     - _RadiusP2: 0.75
     - _RadiusP3: 0.75
     - _RadiusP4: 0.75
@@ -143,12 +166,18 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _USEEMISSIONFORMASKS: 0
+    - _UseOpacity: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColorA: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorB: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorG: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorR: {r: 0, g: 0, b: 0, a: 0}
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}
     - _Player1Pos: {r: -60, g: 0, b: 0, a: 0}
     - _Player2Pos: {r: -65, g: 0, b: 0, a: 0}
