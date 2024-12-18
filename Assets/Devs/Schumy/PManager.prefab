@@ -50,10 +50,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   ropesPerSide: 3
-  ropeSpacing: 0.3
+  ropeSpacing: 0.173
   ropeMaterial: {fileID: 2100000, guid: f67254a06fbf5c543a386192b642eb85, type: 2}
-  ropeRadius: 0.05
+  ropeRadius: 0.03
   ropeSegments: 50
-  borderSlide: 0.8
+  borderSlide: 0.35
   borderMaterial: {fileID: 2100000, guid: f6e244e0eff4b524a8b9595885446d4b, type: 2}
   returnSpeed: 5
