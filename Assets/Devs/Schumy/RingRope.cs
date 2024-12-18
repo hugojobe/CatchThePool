@@ -51,7 +51,7 @@ public class RingRope : MonoBehaviour
         ropeCollider = gameObject.AddComponent<BoxCollider>();
         ropeCollider.isTrigger = true;
         mpb = new MaterialPropertyBlock();
-
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         UpdateMesh();
         GenerateCollider();
 
@@ -201,7 +201,6 @@ public class RingRope : MonoBehaviour
     private void UpdateMesh()
     {
         if (controlPoint1.position == control1 && controlPoint2.position == control2) return;
-        Debug.Log("UpdateMesh");
         
         Vector3[] bezierPoints = CalculateBezierCurve(startPoint, controlPoint1.position, controlPoint2.position, endPoint, segments);
 

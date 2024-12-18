@@ -4,6 +4,7 @@ using UnityEngine.Serialization;
 [CreateAssetMenu(fileName = "ChickenConfig", menuName = "ChickenConfig", order = 0)]
 public class ChickenConfig : ScriptableObject
 {
+    public ParticlesMPB.ChickenSelected chickenType ;
     public string chickenName;
     public string chickenSpellName;
     public Sprite chickenImage;

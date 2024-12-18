@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817e175e5bd62424b944750785bff900, type: 3}
   m_Name: Spicyfart
   m_EditorClassIdentifier: 
+  frontVfx: {fileID: 4428568425752688567, guid: a47ce7108bc53d84297e4951994147e3, type: 3}
+  backVfx: {fileID: 695398787706911632, guid: 6f9de83d7eec3fe4e8493165c3a3c89b, type: 3}
+  trail: {fileID: 2168873553435845440, guid: fdc5666a136633948a9eedf9578b6c31, type: 3}
+  flames: {fileID: 3372854524742514164, guid: 993ac7bac1ebd9741b42da7339314f99, type: 3}

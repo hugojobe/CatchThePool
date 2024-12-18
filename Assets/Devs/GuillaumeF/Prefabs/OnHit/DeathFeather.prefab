@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5603150486508771959}
   - component: {fileID: 4577310151410895467}
   m_Layer: 0
-  m_Name: DeathFeathBurst
+  m_Name: DeathFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
