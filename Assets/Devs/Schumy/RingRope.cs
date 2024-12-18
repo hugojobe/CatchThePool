@@ -51,7 +51,7 @@ public class RingRope : MonoBehaviour
         ropeCollider = gameObject.AddComponent<BoxCollider>();
         ropeCollider.isTrigger = true;
         mpb = new MaterialPropertyBlock();
-
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         UpdateMesh();
         GenerateCollider();
 
