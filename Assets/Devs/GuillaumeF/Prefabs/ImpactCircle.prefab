@@ -5228,7 +5228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[0].value
-      value: -0.2
+      value: -0.03838384
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].value
@@ -5240,7 +5240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[0].value
-      value: -0.2
+      value: -0.03838384
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[1].value
@@ -5252,7 +5252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[0].inSlope
-      value: 2.965959
+      value: 1.6194199
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].inSlope
@@ -5264,11 +5264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[0].inSlope
-      value: 2.5155678
+      value: 0.631191
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[1].inSlope
-      value: 1.3589832
+      value: 0.41679475
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[2].inSlope
@@ -5280,7 +5280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[0].outSlope
-      value: 2.965959
+      value: 1.6194199
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.maxCurve.m_Curve.Array.data[1].inWeight
@@ -5304,7 +5304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[0].outSlope
-      value: 2.5155678
+      value: 0.631191
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[1].inWeight
@@ -5312,7 +5312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[1].outSlope
-      value: 1.3589832
+      value: 0.41679475
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minCurve.m_Curve.Array.data[2].inWeight

@@ -76,8 +76,10 @@ public class ProceduralMovement : MonoBehaviour
     private bool isRStep;
     public bool canWalkWall;
 
-    private void Start()
+    private void OnEnable()
     {
+        OnValidate();
+
         if (detectionRange <= 0)
             detectionRange = transform.position.y;
 
