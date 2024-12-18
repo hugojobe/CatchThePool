@@ -38,6 +38,8 @@ public class BS_EggCollide : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController pc))
                 if (pc == launcherPc) return;
+
+            pc.damageable.TakeDamage(launcherPc.gameObject);
             
             collideable = true;
             rb.useGravity = true;
