@@ -11,10 +11,20 @@ public class Spicyfart : Ability
 
     public override IEnumerator ActivationCoroutine(PlayerController player)
     {
-        Debug.Log("Spicyfart activated");
-        
         player.feedbackMachine.OnSpicyfartActivated();
+        
+        player.animator.SetTrigger("Spicyfart");
 
-        yield return null;
+        player.playerState = player.chickenConfig.abilityState;
+        player.abilityCooldownElapsed = false;
+        
+        player.StartCoroutine(player.DashCoroutine(new Vector3(player.moveInput.x, 0, player.moveInput.y).normalized, 2.1f));
+        
+        player.playerState = PlayerState.Normal;
+        player.animator.SetTrigger("EndState");
+
+        yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
+
+        player.abilityCooldownElapsed = true;
     }
 }
