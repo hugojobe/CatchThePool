@@ -110,17 +110,22 @@ public class PlayerController : MonoBehaviour
         chickenConfig.ability.Activate(this);
     }
 
-    public IEnumerator DashCoroutine(Vector3 direction)
+    public IEnumerator DashCoroutine(Vector3 direction, float forceMultiplier = 1f, bool isSpicyfart = false)
     {
         Vector3 dashDirection = direction;
         moveInput = new Vector2(dashDirection.x, dashDirection.z);
-        float dashDistance = chickenConfig.dashDistance;
+        float dashDistance = chickenConfig.dashDistance * forceMultiplier;
         float dashSpeed = chickenConfig.dashSpeed;
         float dashTime = dashDistance / dashSpeed;
 
         moveSpeed = dashSpeed;
-        feedbackMachine.OnDashStarted();
-
+        
+        if (isSpicyfart)
+            feedbackMachine.OnDashStarted();
+        else
+            feedbackMachine.OnSpicyfartStarted();
+        
+        
         if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
             dashDistance = hit.distance;
@@ -134,16 +139,23 @@ public class PlayerController : MonoBehaviour
         {
             elapsedTime += Time.fixedDeltaTime;
 
-            feedbackMachine.OnDashUpdate(elapsedTime / dashTime);
+            if(isSpicyfart)
+                feedbackMachine.OnSpicyFartUpdate();
+            else
+                feedbackMachine.OnDashUpdate(elapsedTime / dashTime);
+            
             yield return new WaitForFixedUpdate();
         }
-
-        //yield return new WaitForEndOfFrame();
 
         rb.linearVelocity = Vector3.zero;
         moveSpeed = chickenConfig.chickenSpeed;
         playerState = PlayerState.Normal;
-        feedbackMachine.OnDashFinished();
+        
+        if(isSpicyfart)
+            feedbackMachine.OnSpicyfartEnded();
+        else
+            feedbackMachine.OnDashFinished();
+        
         dashCoroutine = null;
 
         yield return new WaitForSeconds(chickenConfig.dashCooldown);

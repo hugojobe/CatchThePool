@@ -14,8 +14,6 @@ public class Nuggquake : Ability
         player.feedbackMachine.OnNuggquakeActivated();
         
         player.animator.SetTrigger("Nuggquake");
-        
-        Debug.Log("Nuggquake activated");
 
         player.playerState = player.chickenConfig.abilityState;
         player.abilityCooldownElapsed = false;

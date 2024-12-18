@@ -49,7 +49,7 @@ public class Tourbiplume : Ability
                 PlayerController hitPlayer = hits[i].GetComponent<PlayerController>();
                 
                 if(hitPlayer != null && hitPlayer != player)
-                    hitPlayer.damageable.TakeDamage(hitPlayer.gameObject);
+                    hitPlayer.damageable.TakeDamage(player.gameObject);
             }
         }
 
