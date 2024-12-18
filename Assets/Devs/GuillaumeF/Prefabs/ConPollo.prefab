@@ -1210,7 +1210,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.78771967, z: 0.026607335}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3249435121199534128}
   - {fileID: 1515012860805516663}
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headBone: {fileID: 5751214750647637914}
-  target: {fileID: 4852392764601115179}
+  target: {fileID: 0}
   moveHead: 1
   speed: 5
   maxHeadTurnAngle: 60
@@ -2140,8 +2140,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4376c0cc3254e854cad39478c54bb694, type: 2}
+  - {fileID: 2100000, guid: 4376c0cc3254e854cad39478c54bb694, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5083,7 +5083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8040858400174676537}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.012037396, y: 0, z: 0, w: 0.9999276}
+  m_LocalRotation: {x: -0.49788848, y: -0.045903213, z: -0.026402585, w: 0.8656228}
   m_LocalPosition: {x: 5.781098e-17, y: 0.2330982, z: -0.015352366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

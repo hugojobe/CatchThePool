@@ -39,7 +39,13 @@ public class Nuggquake : Ability
         GameObject sphereInstance = Instantiate(sphere);
         sphereInstance.transform.position = player.transform.position;
         sphereInstance.transform.localScale = Vector3.zero;
-        sphereInstance.transform.DOScale(8f, 0.2f).SetEase(Ease.OutCirc);
+        sphereInstance.transform.DOScale(50f, 10f).SetEase(Ease.OutCirc);
+        float fadeValue = 1;
+        DOTween.To(() => fadeValue, y =>
+        {
+            fadeValue = y;
+            sphereInstance.GetComponent<Renderer>().material.SetFloat("_AlphaFactor", fadeValue);
+        }, 0f, 2f).SetEase(Ease.OutCirc);
 
         GameManager.instance.ringMPB.SetVector($"_Player{player.index + 1}Pos", player.transform.position);
         
@@ -49,11 +55,7 @@ public class Nuggquake : Ability
             radius = x;
             GameManager.instance.ringMPB.SetFloat($"_RadiusP{player.index + 1}", radius);
             GameManager.instance.ringRend.SetPropertyBlock(GameManager.instance.ringMPB);
-            Debug.Log(radius);
-        }, 15, 2f).SetEase(Ease.OutCirc).OnComplete(() =>
-        {
-            
-        });
+        }, 15, 2f).SetEase(Ease.OutCirc);
         
         yield return new WaitForSecondsRealtime(0.1f);
         
