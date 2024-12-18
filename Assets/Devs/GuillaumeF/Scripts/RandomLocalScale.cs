@@ -16,16 +16,16 @@ public class RandomLocalScale : MonoBehaviour
 
     private void OnEnable()
     {
-
+        initialScale = new Vector3[transform.childCount];
         for (int i = 0; i < transform.childCount - 1; i++)
         {
-            //if (initialScale[i] == null)
-            //    initialScale[i] = transform.localScale;
+            if (initialScale[i] == Vector3.zero)
+                initialScale[i] = transform.localScale; Debug.Log("Set Size");
 
-            //if (resetScale)
-            //{
-            //    transform.GetChild(i).transform.localScale = initialScale[i];
-            //}
+            if (resetScale)
+            {
+                transform.GetChild(i).transform.localScale = initialScale[i];
+            }
 
 
             if (uniformScale)
