@@ -127,7 +127,7 @@ Material:
     - _GlossyReflections: 0
     - _INVERTNORMAL: 0
     - _INVERTROUGHNESS: 0
-    - _MaxHeight: 0
+    - _MaxHeight: 0.2
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OpacityThreshold: 0.5
@@ -135,10 +135,10 @@ Material:
     - _QuakeWidth: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RadiusP1: 0.75
-    - _RadiusP2: 0.75
-    - _RadiusP3: 0.75
-    - _RadiusP4: 0.75
+    - _RadiusP1: 0
+    - _RadiusP2: 0
+    - _RadiusP3: 0
+    - _RadiusP4: 0
     - _ReceiveShadows: 1
     - _SmoothMax: 1
     - _SmoothMin: 0
