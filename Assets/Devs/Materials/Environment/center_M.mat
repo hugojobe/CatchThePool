@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: center_M
-  m_Shader: {fileID: -6465566751694194690, guid: 1a8df632768e6a94aba6898e6771afd0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 07a44d9928a41aa4db2a3c91ddcfeb66, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -53,6 +53,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emissive:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissiveColorG:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _IDTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -101,6 +109,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BCMaskThreshold: 2.5
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -118,13 +127,21 @@ Material:
     - _GlossyReflections: 0
     - _INVERTNORMAL: 0
     - _INVERTROUGHNESS: 0
+    - _MaxHeight: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OpacityThreshold: 0.5
     - _Parallax: 0.005
+    - _QuakeWidth: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RadiusP1: 0.75
+    - _RadiusP2: 0.75
+    - _RadiusP3: 0.75
+    - _RadiusP4: 0.75
     - _ReceiveShadows: 1
+    - _SmoothMax: 1
+    - _SmoothMin: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -133,6 +150,8 @@ Material:
     - _Surface: 0
     - _USEEMISSIONFORMASKS: 0
     - _USEOPACITY: 0
+    - _UseIDTexture: 0
+    - _UseOpacity: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -143,6 +162,17 @@ Material:
     - _EmissionColorB: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorG: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorR: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorA: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorB: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorG: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColorR: {r: 0, g: 0, b: 0, a: 0}
+    - _IDColorB: {r: 0, g: 0, b: 0, a: 0}
+    - _IDColorG: {r: 0, g: 0, b: 0, a: 0}
+    - _IDColorR: {r: 0, g: 0, b: 0, a: 0}
+    - _Player1Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Player2Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Player3Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Player4Pos: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
