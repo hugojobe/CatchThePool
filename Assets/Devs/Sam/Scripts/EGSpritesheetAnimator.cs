@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
 
+
+//DON'T USE IN EDITOR!
+
 public class EGSpritesheetAnimator : MonoBehaviour
 {
 
@@ -47,7 +50,7 @@ public class EGSpritesheetAnimator : MonoBehaviour
 
     private void CheckLifetime()
     {
-        if(NormalizeLifetime() > 1f)
+        if(NormalizeLifetime() < 1f)
         {
             currentLifetime += Time.deltaTime;
             float normalizedLifetime = NormalizeLifetime();
