@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
     public bool abilityCooldownElapsed;
 
     public Animator animator;
+    
+    public GameObject trailInstance;
+    public GameObject flameInstance;
 
     public void Initialize()
     {
@@ -313,6 +316,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(!isInitialized)
+            return;
+        
         Lebug.Log($"P{index} health:", damageable.currentHealth, $"Player {index}");
         Lebug.Log($"P{index} state:", playerState.ToString(), $"Player {index}");
         
@@ -322,9 +328,6 @@ public class PlayerController : MonoBehaviour
         //DrawLocalAxes();
         
         previousFrameVelocity = rb.linearVelocity;
-        
-        if(!isInitialized)
-            return;
         
         if(playerState != PlayerState.Dashing && playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled)
             rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;

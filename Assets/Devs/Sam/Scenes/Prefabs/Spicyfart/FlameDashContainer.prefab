@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repeat: 0
   frames: 64
-  maxLifetime: 1
+  maxLifetime: 0.5
   lifetimeCurve:
     serializedVersion: 2
     m_Curve:

@@ -12,7 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _FRAME_ANIMATION_AUTOMATIC
+  - _FRAME_ANIMATION_MANUAL
   - _SPRITE_ORIENTATION_REGULAR
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -129,7 +129,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FRAME_ANIMATION: 0
+    - _FRAME_ANIMATION: 1
     - _Frame: 0
     - _GlossMapScale: 0
     - _Glossiness: 0

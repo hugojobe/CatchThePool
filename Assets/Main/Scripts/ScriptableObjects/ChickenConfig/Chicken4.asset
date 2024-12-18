@@ -21,7 +21,7 @@ MonoBehaviour:
   chickenHealthGameplay: 2
   chickenSpeed: 2.5
   dashSpeed: 32
-  dashDistance: 2
+  dashDistance: 2.5
   dashCooldown: 1.5
   chickenColors:
   - {r: 0.971418, g: 0.769, b: 1, a: 1}

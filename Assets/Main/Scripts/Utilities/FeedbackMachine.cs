@@ -8,6 +8,9 @@ public class FeedbackMachine : MonoBehaviour
     
     [Space]
     public AnimationCurve dashScaleCurve;
+
+    [Space] 
+    public GameObject damageVfx;
     
 // DASH
     public void OnDashStarted()
@@ -22,13 +25,17 @@ public class FeedbackMachine : MonoBehaviour
 
     public void OnDashUpdate(float dashProgress)
     {
-        Debug.LogWarning("Dash Progress: " + dashProgress);
+        
     }
     
 // DAMAGE
     public void OnDamageTaken(GameObject damageCauser)
     {
-        
+        ImpactSetParameters obj = Instantiate(damageVfx).GetComponent<ImpactSetParameters>();
+        obj.transform.position = pc.transform.position;
+        obj.playerColor = damageCauser.GetComponent<PlayerController>().chickenColor;
+        obj.targetPlayerColor = pc.chickenColor;
+        obj.targetChicken = pc.chickenConfig.chickenType;
     }
     
 // DEATH
