@@ -269,7 +269,7 @@ public class RingRope : MonoBehaviour
         ropeCollider.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         
         
-        ropeCollider.center = new(ropeCollider.center.x - 2.5f, ropeCollider.center.y, ropeCollider.center.z);
+        ropeCollider.center = new(ropeCollider.center.x - 1.5f, ropeCollider.center.y, ropeCollider.center.z);
         
         ropeCollider.gameObject.tag = "Rope";
         canMove = false;
