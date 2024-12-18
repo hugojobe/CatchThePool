@@ -11,10 +11,26 @@ public class Nuggquake : Ability
 
     public override IEnumerator ActivationCoroutine(PlayerController player)
     {
-        Debug.Log("Nuggquake activated");
-        
         player.feedbackMachine.OnNuggquakeActivated();
+        
+        player.animator.SetTrigger("Nuggquake");
+        
+        Debug.Log("Nuggquake activated");
 
-        yield return null;
+        player.playerState = player.chickenConfig.abilityState;
+        player.abilityCooldownElapsed = false;
+        player.moveInput = Vector2.zero;
+        
+        yield return new WaitForSecondsRealtime(0.32f);
+        
+        // DOTween for vfxs
+        
+        yield return new WaitForSecondsRealtime(0.1f);
+        
+        player.playerState = PlayerState.Normal;
+
+        yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
+
+        player.abilityCooldownElapsed = true;
     }
 }
