@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ImpactSetPlayerColor : MonoBehaviour
+public class ImpactSetParameters : MonoBehaviour
 {
     public Color playerColor;
     public Transform[] playerObjects;
@@ -35,8 +35,12 @@ public class ImpactSetPlayerColor : MonoBehaviour
             }
             else
             {
-
-                r.GetComponent<Renderer>().SetPropertyBlock(mpb);
+                if (r.GetComponent<PropertyActivation>() != null)
+                {
+                    r.GetComponent<PropertyActivation>().color = playerColor;
+                }
+                else
+                    r.GetComponent<Renderer>().SetPropertyBlock(mpb);
 
             }
 

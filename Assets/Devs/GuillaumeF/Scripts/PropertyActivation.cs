@@ -8,6 +8,8 @@ using UnityEngine;
     protected Renderer[] objectRenderer;
     protected MaterialPropertyBlock mpb;
 
+    public Color color;
+
     [SerializeField]
     protected string propertyName;
 
@@ -25,11 +27,13 @@ using UnityEngine;
     void Start()
     {
         mpb = new MaterialPropertyBlock();
+        mpb.SetColor("_PlayerColor", color);
 
     }
     private void OnEnable()
     {
         timer = 0;
+        
     }
 
     // Update is called once per frame
