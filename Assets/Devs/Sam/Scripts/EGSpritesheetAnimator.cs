@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class EGSpritesheetAnimator : MonoBehaviour
 {
 
+    [SerializeField]
+    private bool repeat = false;
     [SerializeField]
     private int frames = 64;
     [SerializeField]
@@ -19,12 +22,15 @@ public class EGSpritesheetAnimator : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        meshRend = GetComponent<Renderer>();
-        mpb = new MaterialPropertyBlock();
+        // meshRend = GetComponent<Renderer>();
+        // mpb = new MaterialPropertyBlock();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        meshRend = GetComponent<Renderer>();
+        mpb = new MaterialPropertyBlock();
+        meshRend.GetPropertyBlock(mpb);
         
     }
 
@@ -41,18 +47,23 @@ public class EGSpritesheetAnimator : MonoBehaviour
 
     private void CheckLifetime()
     {
-        if(NormalizeLifetime() < 1f)
+        if(NormalizeLifetime() > 1f)
         {
             currentLifetime += Time.deltaTime;
             float normalizedLifetime = NormalizeLifetime();
             float curvePos = lifetimeCurve.Evaluate(normalizedLifetime);
-            mpb.SetFloat("_Frame", frames/curvePos);
-            meshRend.SetPropertyBlock(mpb);
+            meshRend.material.SetFloat("_Frame", frames*curvePos);
+            return;
         }
-        else
+        if(repeat)
         {
+            currentLifetime = 0;
+        }
+        else{
             Destroy(gameObject);
         }
+            
+        
         
     }
 }
