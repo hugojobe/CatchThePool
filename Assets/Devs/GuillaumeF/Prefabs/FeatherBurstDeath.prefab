@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5354239563601063333}
   - component: {fileID: 3285011129449507941}
   - component: {fileID: 1466518900612283776}
+  - component: {fileID: 7479992890519069962}
   m_Layer: 0
   m_Name: FeatherBurstDeath
   m_TagString: Untagged
@@ -4934,3 +4935,21 @@ MonoBehaviour:
   currentChicken: 0
   chickenColors: {fileID: 11400000, guid: 318660d0f57615c4787859d3006c5ec9, type: 2}
   playerColor: {r: 1, g: 0.7674142, b: 0.27058828, a: 0}
+--- !u!114 &7479992890519069962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217047525524298333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e895bd664ee8e44283624cfc40b6f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerColor: {r: 0, g: 0, b: 0, a: 0}
+  playerObjects: []
+  targetChicken: 0
+  targetPlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  targetObjects:
+  - {fileID: 7481200143946633890}

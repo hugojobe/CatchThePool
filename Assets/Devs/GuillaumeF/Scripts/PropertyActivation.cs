@@ -17,8 +17,11 @@ using UnityEngine;
     protected AnimationCurve spawnCurve;
 
     protected float timer = 0;
+    private float timerMultiplier;
     [SerializeField]
     protected float effectDuration = 1;
+
+
     [SerializeField]
     protected bool soloIteration = true;
 
@@ -33,6 +36,7 @@ using UnityEngine;
     private void OnEnable()
     {
         timer = 0;
+        timerMultiplier = 1 / effectDuration; 
         
     }
 
@@ -40,9 +44,9 @@ using UnityEngine;
     protected virtual void Update()
     {
 
-        if (timer <= effectDuration)
+        if (timer <= 1)
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime * timerMultiplier;
             Spawn();
 
         }

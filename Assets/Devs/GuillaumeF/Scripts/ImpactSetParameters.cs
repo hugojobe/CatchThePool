@@ -24,6 +24,9 @@ public class ImpactSetParameters : MonoBehaviour
 
         }
 
+        if (playerObjects.Length <= 0)
+            return;
+
         mpb = new MaterialPropertyBlock();
         mpb.SetColor("_PlayerColor", playerColor);
 
