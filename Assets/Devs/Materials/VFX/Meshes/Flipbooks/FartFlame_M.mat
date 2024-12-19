@@ -110,7 +110,7 @@ Material:
     m_Floats:
     - Vector1_0671ea344b044e029790543672a6a90f: 20
     - Vector1_392a4b66f32049d9ab1084f3a8c71a0a: 8
-    - Vector1_70743c15ff3e490cb232c8512c705597: 0
+    - Vector1_70743c15ff3e490cb232c8512c705597: 0.01
     - Vector1_d1ebd2a9a3e148b987344089daf08854: 8
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
@@ -123,7 +123,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth_fade_distance: 0.25
+    - _Depth_fade_distance: 0.15
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
