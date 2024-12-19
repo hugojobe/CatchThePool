@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d328937f4e5394abbfc657537e81fb, type: 3}
   m_Name: Chicken4
   m_EditorClassIdentifier: 
+  chickenType: 0
   chickenName: ConPollo
   chickenSpellName: Spicyfart
   chickenImage: {fileID: 21300000, guid: 021928db46ef2fe4492bd3621128e778, type: 3}
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
-  chickenMeshPrefab: {fileID: 4418924598363870212, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
+  chickenMeshPrefab: {fileID: 4217824599453750035, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
   chickenHealthGameplay: 2
   chickenSpeed: 2.5
   dashSpeed: 32
@@ -27,4 +28,4 @@ MonoBehaviour:
   - {r: 0.971418, g: 0.769, b: 1, a: 1}
   ability: {fileID: 11400000, guid: 355813d4d7a88e34093fa37e349f6eba, type: 2}
   abilityState: 5
-  abilityCooldown: 0
+  abilityCooldown: 5

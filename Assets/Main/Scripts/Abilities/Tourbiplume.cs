@@ -58,6 +58,7 @@ public class Tourbiplume : Ability
         
         player.playerState = PlayerState.Normal;
 
+        player.StartCoroutine(player.SetCirclePercent());
         yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
 
         player.abilityCooldownElapsed = true;

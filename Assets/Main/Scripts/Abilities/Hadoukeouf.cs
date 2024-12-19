@@ -33,6 +33,7 @@ public class Hadoukeouf : Ability
         yield return new WaitForSecondsRealtime(0.2f);
         player.playerState = PlayerState.Normal;
         
+        player.StartCoroutine(player.SetCirclePercent());
         yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
 
         player.abilityCooldownElapsed = true;

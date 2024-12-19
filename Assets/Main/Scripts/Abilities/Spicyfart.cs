@@ -56,7 +56,7 @@ public class Spicyfart : Ability
         player.playerState = PlayerState.Spicyfart;
         player.abilityCooldownElapsed = false;
         
-        player.StartCoroutine(player.DashCoroutine(new Vector3(player.moveInput.x, 0, player.moveInput.y).normalized, 2.1f));
+        player.dashCoroutine = player.StartCoroutine(player.DashCoroutine(new Vector3(player.moveInput.x, 0, player.moveInput.y).normalized, 2.1f));
         
         player.playerState = PlayerState.Normal;
         player.animator.SetTrigger("EndState");
@@ -64,6 +64,7 @@ public class Spicyfart : Ability
         pc.trailInstance.GetComponent<TrailRenderer>().emitting = false;
         pc.flameInstance.GetComponent<ParticleSystem>().Stop();
 
+        player.StartCoroutine(player.SetCirclePercent());
         yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
 
         player.abilityCooldownElapsed = true;

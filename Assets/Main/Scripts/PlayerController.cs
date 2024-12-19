@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     public Vector3 previousFrameVelocity;
 
-    [SerializeField] private bool dashCooldownElapsed;
-    private Coroutine dashCoroutine;
+    public bool dashCooldownElapsed;
+    public Coroutine dashCoroutine;
     
     private Coroutine damagePhysicsCoroutine;
 
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     public MaterialPropertyBlock circleMpb;
     public Renderer circleRend;
+    public float circlePercent = 1;
 
     public Animator animator;
     
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
         playerState = PlayerState.Uncontrolled;
         dashCooldownElapsed = true;
+        abilityCooldownElapsed = true;
         
         damageable.playerController = this;
         
@@ -88,6 +90,10 @@ public class PlayerController : MonoBehaviour
         chickenConfig.ability.InitAbility(this);
         
         ropePullArrow.transform.parent.gameObject.SetActive(false);
+        
+        circleMpb = new MaterialPropertyBlock();
+        circleMpb.SetColor("_PlayerColor", chickenColor);
+        circleRend.SetPropertyBlock(circleMpb);
         
         isInitialized = true;
     }
@@ -223,7 +229,8 @@ public class PlayerController : MonoBehaviour
             playerState != PlayerState.Uncontrolled &&
             playerState != PlayerState.Dashing &&
             playerState != PlayerState.RopePull &&
-            playerState != chickenConfig.abilityState;
+            playerState != chickenConfig.abilityState &&
+            abilityCooldownElapsed;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -354,6 +361,7 @@ public class PlayerController : MonoBehaviour
         
         Lebug.Log($"P{index} health:", damageable.currentHealth, $"Player {index}");
         Lebug.Log($"P{index} state:", playerState.ToString(), $"Player {index}");
+        Lebug.Log($"P{index} ability cd:", circlePercent + "%", $"Player {index}");
         
         if(playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled && playerState != chickenConfig.abilityState)
             RotateTowardsDirection();
@@ -395,6 +403,22 @@ public class PlayerController : MonoBehaviour
             rb.position = newPosition;
             ropePullArrow.size = new Vector2(1f, Mathf.Lerp(arrowSizeMin, arrowSizeMax, pullDistance / maxRopePullRadius));
             ropePullArrow.transform.parent.rotation = Quaternion.LookRotation(ropeEnterPosition - transform.position, ropePullArrow.transform.parent.up);
+        }
+
+        circleMpb.SetFloat("_Cooldown", circlePercent);
+        circleRend.SetPropertyBlock(circleMpb);
+    }
+
+    public IEnumerator SetCirclePercent()
+    {
+        float currentCooldown = 0;
+        circlePercent = 0;
+        
+        while(currentCooldown < chickenConfig.abilityCooldown)
+        {
+            currentCooldown += Time.deltaTime;
+            circlePercent = currentCooldown / chickenConfig.abilityCooldown;
+            yield return null;
         }
     }
 

@@ -40,6 +40,7 @@ public class Nuggquake : Ability
         GameObject sphereInstance = Instantiate(sphere);
         sphereInstance.transform.position = player.transform.position;
         sphereInstance.transform.localScale = Vector3.zero;
+        sphereInstance.GetComponent<NuggquakeSphere>().owner = player;
         sphereInstance.transform.DOScale(50f, 10f).SetEase(Ease.OutCirc);
         float fadeValue = 1;
         DOTween.To(() => fadeValue, y =>
@@ -62,6 +63,7 @@ public class Nuggquake : Ability
         
         player.playerState = PlayerState.Normal;
 
+        player.StartCoroutine(player.SetCirclePercent());
         yield return new WaitForSecondsRealtime(player.chickenConfig.abilityCooldown);
 
         player.abilityCooldownElapsed = true;

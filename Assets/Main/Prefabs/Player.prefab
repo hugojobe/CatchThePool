@@ -525,7 +525,7 @@ MonoBehaviour:
   input: {fileID: 0}
   rb: {fileID: 0}
   chickenConfig: {fileID: 0}
-  chickenColor: {r: 0, g: 0, b: 0, a: 0}
+  chickenColor: {r: 1, g: 0, b: 0, a: 1}
   playerState: 0
   feedbackMachine: {fileID: 0}
   damageable: {fileID: 0}
@@ -543,6 +543,7 @@ MonoBehaviour:
   arrowSizeMin: 0.95
   arrowSizeMax: 3
   abilityCooldownElapsed: 0
+  circleRend: {fileID: 652450849569030378}
   animator: {fileID: 0}
   trailInstance: {fileID: 0}
   flameInstance: {fileID: 0}
@@ -731,11 +732,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1657576644437357923, guid: 1203d5392b1580a489007497b467664c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1203d5392b1580a489007497b467664c, type: 3}
+--- !u!23 &652450849569030378 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8711216630329362198, guid: 1203d5392b1580a489007497b467664c, type: 3}
+  m_PrefabInstance: {fileID: 8208247687296255996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9101506188595671893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1127736504952861865, guid: 1203d5392b1580a489007497b467664c, type: 3}

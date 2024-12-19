@@ -28,4 +28,4 @@ MonoBehaviour:
   - {r: 1, g: 0.7865579, b: 0.476, a: 1}
   ability: {fileID: 11400000, guid: 5d778d7f612aced48bcd49c443f68e24, type: 2}
   abilityState: 4
-  abilityCooldown: 0
+  abilityCooldown: 5

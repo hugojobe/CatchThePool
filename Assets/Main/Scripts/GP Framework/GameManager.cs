@@ -59,8 +59,6 @@ public class GameManager : MonoBehaviour
 
         SpawnAndInitPlayers();
         
-        Debug.Log("Adding OnRoundStart callback");
-        
         GameInstance.instance.OnRoundStart += OnStartOfNewRound;
         
         StartCoroutine(GameInstance.instance.FirstRoundCoroutine());
@@ -144,7 +142,6 @@ public class GameManager : MonoBehaviour
 
     public void OnStartOfNewRound()
     {
-        Debug.Log("OnRoundStart callback");
         startRoundAnimator.SetTrigger("StartRound");
     }
 }

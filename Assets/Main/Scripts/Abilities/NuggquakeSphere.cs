@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class NuggquakeSphere : MonoBehaviour
 {
+    public PlayerController owner;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             PlayerController pc = other.GetComponent<PlayerController>();
-            if (pc != null)
+            if (pc != null && pc != owner)
             {
                 StartCoroutine(NuggquakeSphereCoroutine(pc));
             }
