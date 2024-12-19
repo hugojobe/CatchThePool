@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
     private Coroutine damagePhysicsCoroutine;
 
     private List<RingRope> ringRopes = new();
+    public Vector3 ropeEnterPosition;
+    public float maxRopePullRadius = 0.5f;
+    public float maxRopePullAngle = 80f;
+    public Vector3 currentRopeNormalVector;
+    public SpriteRenderer ropePullArrow;
+    public float arrowSizeMin = 0.95f, arrowSizeMax = 3f;
     
     public bool abilityCooldownElapsed;
 
@@ -75,6 +82,8 @@ public class PlayerController : MonoBehaviour
         
         chickenConfig.ability.InitAbility(this);
         
+        ropePullArrow.transform.parent.gameObject.SetActive(false);
+        
         isInitialized = true;
     }
 
@@ -85,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
         moveInput = context.ReadValue<Vector2>();
 
-        if (moveInput.magnitude > 0.1f && !isCloseToAnyPlayer)
+        if (moveInput.magnitude > 0.1f && !isCloseToAnyPlayer && playerState != PlayerState.Dashing && playerState != PlayerState.RopePull)
             watchRotation = Quaternion.LookRotation(rb.linearVelocity.normalized, transform.up).eulerAngles;
     }
 
@@ -99,11 +108,21 @@ public class PlayerController : MonoBehaviour
 
         if(dashCoroutine != null)
             StopCoroutine(dashCoroutine);
+
+        PlayerState oldState = playerState;
         
         dashCooldownElapsed = false;
         playerState = PlayerState.Dashing;
         rb.linearVelocity = Vector3.zero;
-        dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
+        
+        if (oldState == PlayerState.RopePull)
+        {
+            dashCoroutine = StartCoroutine(DashCoroutine((ropeEnterPosition - transform.position).normalized, 3f, false));
+            ReleaseRopesWithoutDelay();
+        }
+        else
+            dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
+        
     }
 
     public void UseAbility(InputAction.CallbackContext context)
@@ -198,6 +217,7 @@ public class PlayerController : MonoBehaviour
             playerState != PlayerState.Dead &&
             playerState != PlayerState.Uncontrolled &&
             playerState != PlayerState.Dashing &&
+            playerState != PlayerState.RopePull &&
             playerState != chickenConfig.abilityState;
     }
 
@@ -237,8 +257,6 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Rope"))
         {
-            Debug.Log("Rope");
-            
             RingRope ringRope = other.gameObject.GetComponent<RingRope>();
             
             ringRopes.Add(ringRope);
@@ -272,6 +290,15 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(ReleaseRopes());
             }
+            else
+            {
+                playerState = PlayerState.RopePull;
+                animator.SetTrigger("PushRope");
+                ropeEnterPosition = transform.position;
+                currentRopeNormalVector = -ringRope.perpendicularDirection.normalized;
+                
+                ropePullArrow.transform.parent.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -279,6 +306,12 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
         
+        ringRopes.ForEach(r => r.ReleaseInteraction());
+        ringRopes.Clear();
+    }
+    
+    private void ReleaseRopesWithoutDelay()
+    {
         ringRopes.ForEach(r => r.ReleaseInteraction());
         ringRopes.Clear();
     }
@@ -309,11 +342,6 @@ public class PlayerController : MonoBehaviour
             playerState = PlayerState.Normal;
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     private void Update()
     {
         if(!isInitialized)
@@ -329,10 +357,40 @@ public class PlayerController : MonoBehaviour
         
         previousFrameVelocity = rb.linearVelocity;
         
-        if(playerState != PlayerState.Dashing && playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled)
+        if(playerState != PlayerState.Dashing && playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled && playerState != PlayerState.RopePull)
             rb.linearVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
         else if (playerState == PlayerState.Dead)
             rb.linearVelocity = Vector3.zero;
+        else if(playerState == PlayerState.RopePull)
+        {
+            Vector3 inputVelocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
+            Vector3 newPosition = rb.position + inputVelocity * Time.fixedDeltaTime;
+
+            Vector3 pullOffset = newPosition - ropeEnterPosition;
+            float pullDistance = pullOffset.magnitude;
+
+            if (pullDistance > maxRopePullRadius)
+            {
+                pullOffset = pullOffset.normalized * maxRopePullRadius;
+                newPosition = ropeEnterPosition + pullOffset;
+            }
+
+            float angle = Vector3.Angle(currentRopeNormalVector, pullOffset);
+
+            if (angle > maxRopePullAngle)
+            {
+                float signedAngle = Vector3.SignedAngle(currentRopeNormalVector, pullOffset, Vector3.up);
+                float clampedAngle = Mathf.Sign(signedAngle) * maxRopePullAngle;
+
+                Vector3 clampedDirection = Quaternion.AngleAxis(clampedAngle, Vector3.up) * currentRopeNormalVector;
+                pullOffset = clampedDirection.normalized * pullOffset.magnitude;
+                newPosition = ropeEnterPosition + pullOffset;
+            }
+
+            rb.position = newPosition;
+            ropePullArrow.size = new Vector2(1f, Mathf.Lerp(arrowSizeMin, arrowSizeMax, pullDistance / maxRopePullRadius));
+            ropePullArrow.transform.parent.rotation = Quaternion.LookRotation(ropeEnterPosition - transform.position, ropePullArrow.transform.parent.up);
+        }
     }
 
     private void RotateTowardsDirection()
@@ -405,5 +463,6 @@ public enum PlayerState
     Hadoukoeuf,
     Spicyfart,
     Tourbiplume,
-    Nuggquake
+    Nuggquake,
+    RopePull
 }
