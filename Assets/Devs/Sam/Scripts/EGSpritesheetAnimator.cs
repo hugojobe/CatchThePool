@@ -63,6 +63,7 @@ public class EGSpritesheetAnimator : MonoBehaviour
             currentLifetime = 0;
         }
         else{
+            currentLifetime = maxLifetime;
             Destroy(gameObject);
         }
             
