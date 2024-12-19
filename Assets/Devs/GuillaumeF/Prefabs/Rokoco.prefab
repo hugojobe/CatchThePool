@@ -898,8 +898,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &111669482742775679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5758450236483215864, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1128,7 +1128,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1274,8 +1274,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &856631046641219711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5009683198031177464, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1408,8 +1408,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &1098473021174043484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4708559942210489819, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1552,8 +1552,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &1282816394620639531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6893849396812957612, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1686,8 +1686,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &1387795520209045666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6711724205102765605, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1830,8 +1830,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!137 &1695452769970152218 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6476686958302018973, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -1984,8 +1984,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2403192576999560920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1207105591981324193, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2118,8 +2118,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2443260978417552064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1184849274897427385, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2252,8 +2252,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2493431477742249327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1369983236102390808, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2386,8 +2386,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2499156856910851605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7838634848408170642, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2520,8 +2520,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &2596197464782778219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1557912455171051028, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2555,7 +2555,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2659,8 +2659,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &2757252168327897023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7504438488740577592, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2793,8 +2793,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &3287755029933098278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2033701850014786655, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -2937,8 +2937,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &3697645806882056786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9022408196468258005, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3076,8 +3076,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &3851120399807056356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8869637911624570723, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3215,8 +3215,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &4550181220488293717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1061767039512644654, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3434,8 +3434,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &6035933972529009764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7087165248926971165, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3469,7 +3469,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3573,8 +3573,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &6315136963277939438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1857025306509196393, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3722,8 +3722,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &6914202491627799509 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1266228097496276306, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3856,8 +3856,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &6927133059354334263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333996222486989488, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -3995,8 +3995,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!330 &3576096992248532301
 ParticleSystemForceField:
   m_ObjectHideFlags: 0
@@ -4624,8 +4624,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &7175670222520339505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5912171629846818122, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -4758,8 +4758,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!330 &6051246682558474410
 ParticleSystemForceField:
   m_ObjectHideFlags: 0
@@ -5387,8 +5387,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &7414424595358035526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2919448375290425537, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -5521,8 +5521,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &7450649405877096613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2954540705977814562, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -5660,8 +5660,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!4 &7457432837752315630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2961321887331090537, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -5834,8 +5834,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8653919361642878944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5296724671119259289, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -5968,8 +5968,8 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
 --- !u!1 &8692549101084368527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3946426975047680008, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
@@ -6102,5 +6102,5 @@ ConfigurableJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 2
-  m_ConnectedMassScale: 2
+  m_MassScale: 1.5
+  m_ConnectedMassScale: 1.5
