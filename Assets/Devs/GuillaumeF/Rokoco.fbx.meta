@@ -3,7 +3,17 @@ guid: 5a0501511be04b44cba04cd46c20b880
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Feather
+    second: {fileID: 2100000, guid: a8b91085a2329e641a0520c879c5ff5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rokoco1
+    second: {fileID: 2100000, guid: be51e3546d7fa65439df1901cd72d8af, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

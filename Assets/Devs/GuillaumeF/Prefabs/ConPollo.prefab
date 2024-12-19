@@ -2711,6 +2711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7224620665333575722}
+  - component: {fileID: 4857066065081028910}
   m_Layer: 0
   m_Name: ConPollo
   m_TagString: Untagged
@@ -2735,6 +2736,19 @@ Transform:
   - {fileID: 9139241835595841804}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4857066065081028910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418924598363870212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3cb2e14df02074e9081e4b72b77032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feathers: []
 --- !u!1 &4588141555855971008
 GameObject:
   m_ObjectHideFlags: 0
