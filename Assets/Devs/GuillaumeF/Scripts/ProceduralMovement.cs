@@ -83,11 +83,11 @@ public class ProceduralMovement : MonoBehaviour
         if (detectionRange <= 0)
             detectionRange = transform.position.y;
 
-        leftRay = new Ray(LeftAnkle.position, -transform.up);
+        leftRay = canWalkWall ? new Ray(LeftAnkle.position, -transform.up) : new Ray(LeftAnkle.position, Vector3.down);
         if (Physics.Raycast(leftRay, out infos, detectionRange))
             currentGroundingLeftPos = infos.point;
 
-        rightRay = new Ray(RightAnkle.position, -transform.up);
+        rightRay = canWalkWall ? new Ray(RightAnkle.position, -transform.up) : new Ray(RightAnkle.position, Vector3.down);
         if (Physics.Raycast(rightRay, out infos, detectionRange))
             currentGroundingRightPos = infos.point;
 
@@ -100,11 +100,11 @@ public class ProceduralMovement : MonoBehaviour
         TargetR.position = currentGroundingRightPos;
 
 
-        leftNextRay = new Ray(LeftLeg.position, -transform.up);
+        leftNextRay = canWalkWall ? new Ray(LeftLeg.position, -transform.up) : new Ray(LeftLeg.position, Vector3.down);
         if (Physics.Raycast(leftNextRay, out infos, detectionRange))
             researchGroundingLeftPos = infos.point;
 
-        rightNextRay = new Ray(RightLeg.position, -transform.up);
+        rightNextRay = canWalkWall ? new Ray(RightLeg.position, -transform.up) : new Ray(RightLeg.position, Vector3.down);
         if (Physics.Raycast(rightNextRay, out infos, detectionRange))
             researchGroundingRightPos = infos.point;
 
