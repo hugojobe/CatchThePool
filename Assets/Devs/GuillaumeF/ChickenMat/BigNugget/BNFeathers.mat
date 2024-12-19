@@ -46,18 +46,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FeatherPlayerTintIntensity: 0.01
+    - _FeatherPlayerTintIntensity: 0.25
     - _FeatherType: 0
     - _Float: 0
     - _Float_1: 2.5
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SmoothstepMax: 2.5
+    - _SmoothstepMin: 0
     m_Colors:
     - _FeatherColor1: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0}
     - _FeatherColor2: {r: 0.6037736, g: 0.4528302, b: 0.4528302, a: 0}
     - _FeatherInnerColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
     - _FeatherOuterColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0}
-    - _PlayerColor: {r: 0.19976147, g: 0.033018887, b: 1, a: 0}
+    - _PlayerColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3784511213272817165

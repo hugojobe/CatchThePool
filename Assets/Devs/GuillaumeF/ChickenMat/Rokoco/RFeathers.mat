@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FeatherPlayerTintIntensity: 0.472
+    - _FeatherPlayerTintIntensity: 0.25
     - _FeatherType: 0
     - _Float: 0
     - _Float_1: 2.46

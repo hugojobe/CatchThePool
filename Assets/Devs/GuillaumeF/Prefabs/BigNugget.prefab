@@ -468,6 +468,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4890587276970209843}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4978529184313743987}
     - targetCorrespondingSourceObject: {fileID: 5332809968238436118, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6544896042344317068}
@@ -2951,7 +2954,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3cb2e14df02074e9081e4b72b77032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feathers: []
+  feathers:
+  - {fileID: 3747364232744834126}
+  - {fileID: 3725568956560678265}
+  - {fileID: 5269882127974035584}
+--- !u!114 &4978529184313743987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384816121862674203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1eb0950828ebc84eab2b595204acfa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chickenColor: {r: 1, g: 1, b: 1, a: 1}
+  chickenRenderer:
+  - {fileID: 6896709682165392568}
+  - {fileID: 3903990881839907797}
+  - {fileID: 6215519687227811289}
 --- !u!4 &2456672715367301888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8084486206954526390, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -3270,6 +3293,11 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1.5
   m_ConnectedMassScale: 1.5
+--- !u!137 &3903990881839907797 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7209071731621992033, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
+  m_PrefabInstance: {fileID: 3303944966978595402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4176703650145236129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7768892260732035349, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -4779,6 +4807,11 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1.5
   m_ConnectedMassScale: 1.5
+--- !u!137 &6215519687227811289 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -317488070631108717, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
+  m_PrefabInstance: {fileID: 3303944966978595402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6255131402988862761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8869637911624570723, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5057,6 +5090,11 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1.5
   m_ConnectedMassScale: 1.5
+--- !u!137 &6896709682165392568 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -977298044963401998, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
+  m_PrefabInstance: {fileID: 3303944966978595402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6938850738979777647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3633763289081952731, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
