@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         moveSpeed = chickenConfig.chickenSpeed;
 
-        playerState = PlayerState.Normal;
+        playerState = PlayerState.Uncontrolled;
         dashCooldownElapsed = true;
         
         damageable.playerController = this;
@@ -118,11 +118,11 @@ public class PlayerController : MonoBehaviour
         if (oldState == PlayerState.RopePull)
         {
             dashCoroutine = StartCoroutine(DashCoroutine((ropeEnterPosition - transform.position).normalized, 3f, false));
+            ropePullArrow.transform.parent.gameObject.SetActive(false);
             ReleaseRopesWithoutDelay();
         }
         else
             dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
-        
     }
 
     public void UseAbility(InputAction.CallbackContext context)

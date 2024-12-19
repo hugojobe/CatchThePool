@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class GameInstance : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class GameInstance : MonoBehaviour
     
     [Space] 
     public int requiredPointsToWin;
+
+    public int currentRoundNumber = 1;
+    public Action OnRoundStart;
     
     private void Awake() {
         if (instance == null)
@@ -51,15 +55,27 @@ public class GameInstance : MonoBehaviour
         if (!debugMode) {
             CSceneManager.LoadScene(SceneNames.MainMenu);
         }
+
+        StartCoroutine(FirstRoundCoroutine());
     }
 
     public void InitNewRound()
     {
         StartCoroutine(InitNewRoundCoroutine());
     }
+    
+    private IEnumerator FirstRoundCoroutine()
+    {
+        OnRoundStart?.Invoke();
+        yield return new WaitForSeconds(1.2f);
+        playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
+    }
 
     public IEnumerator InitNewRoundCoroutine()
     {
+        currentRoundNumber++;
+        OnRoundStart?.Invoke();
+        
         var availableSpawnpoints = GameManager.instance.spawnpoints.ToList();
         if (GameInstance.instance.playerCount == 2)
         {
@@ -83,7 +99,7 @@ public class GameInstance : MonoBehaviour
 
         }
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
     }
     
@@ -101,7 +117,7 @@ public class GameInstance : MonoBehaviour
                 .Select(x => x.index)
                 .SingleOrDefault();
             
-            GameManager.instance.ShowEndOfRoundUi(trueIndex);
+            GameManager.instance.ShowEndOfRoundUi(trueIndex, currentRoundNumber);
             
             playerScores[trueIndex]++;
         }
@@ -113,6 +129,6 @@ public class GameInstance : MonoBehaviour
             EndRound();
         
         else if(playerAlive.Count(value => value) == 0)
-            GameManager.instance.ShowEndOfRoundUi(-1);
+            GameManager.instance.ShowEndOfRoundUi(-1, currentRoundNumber);
     }
 }

@@ -28,6 +28,13 @@ public class GameManager : MonoBehaviour
     public MaterialPropertyBlock ringMPB;
     public Renderer ringRend;
 
+    [Space] public Animator startRoundAnimator;
+
+    private void OnDisable()
+    {
+        GameInstance.instance.OnRoundStart -= OnStartOfNewRound;
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -51,6 +58,8 @@ public class GameManager : MonoBehaviour
         }
 
         SpawnAndInitPlayers();
+        
+        GameInstance.instance.OnRoundStart += OnStartOfNewRound;
     }
 
     private void Update()
@@ -118,14 +127,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShowEndOfRoundUi(int winningPlayerIndex)
+    public void ShowEndOfRoundUi(int winningPlayerIndex, int currentRoundNumber)
     {
-        eorManager.ShowRoundEndCanvas(winningPlayerIndex);
+        eorManager.ShowRoundEndCanvas(winningPlayerIndex,currentRoundNumber);
     }
     
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ringCenter.position, closePlayerRadius/2);
+    }
+
+    public void OnStartOfNewRound()
+    {
+        Debug.Log("Starting new round");
+        startRoundAnimator.SetTrigger("StartRound");
     }
 }

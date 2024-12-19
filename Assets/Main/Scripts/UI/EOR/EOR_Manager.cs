@@ -15,12 +15,12 @@ public class EOR_Manager : MonoBehaviour
         roundEndCanvas.alpha = 0;
     }
 
-    public void ShowRoundEndCanvas(int winningPlayerIndex)
+    public void ShowRoundEndCanvas(int winningPlayerIndex, int currentRoundNumber)
     {
-        StartCoroutine(ShowEORPlayerDivs(winningPlayerIndex));
+        StartCoroutine(ShowEORPlayerDivs(winningPlayerIndex, currentRoundNumber));
     }
     
-    public IEnumerator ShowEORPlayerDivs(int winningPlayerIndex)
+    public IEnumerator ShowEORPlayerDivs(int winningPlayerIndex, int currentRoundNumber)
     {
         yield return roundEndCanvas.DOFade(1f, 0.25f).WaitForCompletion();
         
