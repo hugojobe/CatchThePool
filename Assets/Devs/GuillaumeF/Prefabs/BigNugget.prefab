@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.747
+      value: 2.355
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1eb0950828ebc84eab2b595204acfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chickenColor: {r: 1, g: 1, b: 1, a: 1}
+  chickenColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   chickenRenderer:
   - {fileID: 6896709682165392568}
   - {fileID: 3903990881839907797}
@@ -3325,7 +3325,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -4700,8 +4700,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4983,8 +4983,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -5137,7 +5137,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -6202,7 +6202,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

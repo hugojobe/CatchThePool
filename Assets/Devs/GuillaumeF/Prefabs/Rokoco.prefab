@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.177873
+      value: -0.17787299
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_LocalRotation.y
@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.006545082
+      value: -0.0065450817
       objectReference: {fileID: 0}
     - target: {fileID: -2382609604060774472, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_IsActive
@@ -793,8 +793,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1879,8 +1879,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2555,7 +2555,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3266,7 +3266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1eb0950828ebc84eab2b595204acfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chickenColor: {r: 1, g: 1, b: 1, a: 1}
+  chickenColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   chickenRenderer:
   - {fileID: 4709214947921606283}
   - {fileID: 1695452769970152218}
@@ -3469,7 +3469,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3617,8 +3617,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3752,7 +3752,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

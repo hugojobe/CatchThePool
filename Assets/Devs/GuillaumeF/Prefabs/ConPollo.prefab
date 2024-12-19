@@ -144,7 +144,7 @@ MonoBehaviour:
       size: 0.1
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+    m_Visible: 0
   - m_Transform: {fileID: 2008562883871469645}
     m_Style:
       shape: {fileID: 4300000, guid: e050c2b16fe384bd994474655a4b4968, type: 2}
@@ -152,7 +152,7 @@ MonoBehaviour:
       size: 0.1
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+    m_Visible: 0
   - m_Transform: {fileID: 2166040930266230898}
     m_Style:
       shape: {fileID: 4300000, guid: 687b70eb9c49243639f9379f6965034f, type: 2}
@@ -160,7 +160,7 @@ MonoBehaviour:
       size: 0.1
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+    m_Visible: 0
   - m_Transform: {fileID: 31821340566607627}
     m_Style:
       shape: {fileID: 4300000, guid: e050c2b16fe384bd994474655a4b4968, type: 2}
@@ -168,7 +168,7 @@ MonoBehaviour:
       size: 0.1
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
+    m_Visible: 0
 --- !u!1 &4934086898733227656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,7 +2348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1eb0950828ebc84eab2b595204acfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chickenColor: {r: 1, g: 1, b: 1, a: 1}
+  chickenColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   chickenRenderer:
   - {fileID: 5999546267044098230}
   - {fileID: 3538849518273273835}
@@ -3368,7 +3368,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -4699,7 +4699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8955445898626134356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
@@ -4749,7 +4749,7 @@ Animator:
   m_GameObject: {fileID: 8955445898626134356}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bc9fa2a3ff5c364391f2e0be82bd3ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
