@@ -122,6 +122,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void CloseOptionsMenu()
     {
+        AudioManager.PlaySfx("Menu/SFX_Menu_Cancel/SFX_Menu_Cancel");
+
         Sequence sequence = DOTween.Sequence();
         sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(null));
         
