@@ -37,6 +37,7 @@ public class InteractiblePanel : MonoBehaviour, IPointerEnterHandler, IPointerEx
             pImageOn.DOFade(0, 0);
             i++;
         }
+        AudioManager.PlaySfx("Menu/SFX_Presentator/SFX_PresentatorCC");
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
@@ -82,6 +83,10 @@ public class InteractiblePanel : MonoBehaviour, IPointerEnterHandler, IPointerEx
             AnimationCurve buttonCurve = mmm.buttonCurve;
             GamepadRumbleController.Rumble(pad, buttonCurve, buttonCurve, 0.1f, 0.1f);
         }
+
+        int random = Random.Range(1, 5);
+        AudioManager.PlaySfx($"Menu/SFX_Menu_SwitchButton/SFX_Menu_SwitchButton{random}");
+
     }
     
     private void Unhighlight() {
@@ -103,6 +108,8 @@ public class InteractiblePanel : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void Confirm()
     {
+        AudioManager.PlaySfx("Menu/SFX_Menu_Confirm/SFX_Menu_Confirm");
+
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOPunchScale(Vector3.one * 0.15f, 0.15f).SetEase(Ease.OutBack));
         sequence.AppendCallback(Unhighlight);
