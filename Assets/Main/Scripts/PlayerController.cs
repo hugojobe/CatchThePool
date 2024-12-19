@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour
     
     public GameObject trailInstance;
     public GameObject flameInstance;
+    
+    public Coroutine abilityCoroutine;
 
     public void Initialize()
     {
