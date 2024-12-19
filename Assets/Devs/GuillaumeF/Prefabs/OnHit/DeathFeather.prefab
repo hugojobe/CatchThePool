@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5354239563601063333, guid: f933d95d90abf9644b5d4323229ab34d, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354239563601063333, guid: f933d95d90abf9644b5d4323229ab34d, type: 3}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7481200143946633890, guid: f933d95d90abf9644b5d4323229ab34d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35

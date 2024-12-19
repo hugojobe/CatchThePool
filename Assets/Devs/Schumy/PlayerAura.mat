@@ -72,7 +72,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cooldown: 0.664
-    - _Emissf: 23.13
+    - _Emissf: 8.98
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Visibility: 1

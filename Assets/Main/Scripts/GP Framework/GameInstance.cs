@@ -55,8 +55,6 @@ public class GameInstance : MonoBehaviour
         if (!debugMode) {
             CSceneManager.LoadScene(SceneNames.MainMenu);
         }
-
-        StartCoroutine(FirstRoundCoroutine());
     }
 
     public void InitNewRound()
@@ -64,8 +62,9 @@ public class GameInstance : MonoBehaviour
         StartCoroutine(InitNewRoundCoroutine());
     }
     
-    private IEnumerator FirstRoundCoroutine()
+    public IEnumerator FirstRoundCoroutine()
     {
+        yield return new WaitForSecondsRealtime(0.05f);
         OnRoundStart?.Invoke();
         yield return new WaitForSeconds(1.2f);
         playerControllers.ForEach(player => player.playerState = PlayerState.Normal);

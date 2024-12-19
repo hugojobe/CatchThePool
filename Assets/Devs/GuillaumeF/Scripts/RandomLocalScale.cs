@@ -1,7 +1,6 @@
 using UnityEngine;
 
 
-[ExecuteInEditMode]
 public class RandomLocalScale : MonoBehaviour
 {
     public bool uniformScale;
@@ -20,7 +19,7 @@ public class RandomLocalScale : MonoBehaviour
         for (int i = 0; i < transform.childCount - 1; i++)
         {
             if (initialScale[i] == Vector3.zero)
-                initialScale[i] = transform.localScale; Debug.Log("Set Size");
+                initialScale[i] = transform.localScale;
 
             if (resetScale)
             {

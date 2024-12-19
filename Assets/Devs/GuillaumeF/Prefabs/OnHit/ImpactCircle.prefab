@@ -5156,7 +5156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.5
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.startColor.minMaxState
@@ -5188,11 +5188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minScalar
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: InitialModule.gravityModifier.minMaxState
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2917277578494148793, guid: da46d1d41442af1468f24bbb9d111417, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
