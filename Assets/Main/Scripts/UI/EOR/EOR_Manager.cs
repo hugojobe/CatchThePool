@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class EOR_Manager : MonoBehaviour
@@ -10,6 +11,8 @@ public class EOR_Manager : MonoBehaviour
     
     public EOR_PlayerDiv[] eorPlayerDivs;
 
+    public TextMeshProUGUI endRoundText;
+
     private void Awake()
     {
         roundEndCanvas.alpha = 0;
@@ -17,6 +20,7 @@ public class EOR_Manager : MonoBehaviour
 
     public void ShowRoundEndCanvas(int winningPlayerIndex, int currentRoundNumber)
     {
+        endRoundText.text = $"End of round {currentRoundNumber}";
         StartCoroutine(ShowEORPlayerDivs(winningPlayerIndex, currentRoundNumber));
     }
     

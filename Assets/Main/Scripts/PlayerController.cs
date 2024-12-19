@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 watchRotation;
     public bool isCloseToAnyPlayer;
 
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
     public Vector2 moveInput;
     public Vector3 previousFrameVelocity;
 

@@ -23,8 +23,14 @@ public class NuggquakeSphere : MonoBehaviour
         if(currentState == PlayerState.Dashing)
             pc.ForceFinishDash();
         
-        pc.playerState = PlayerState.Uncontrolled;
+        if (pc.playerState != PlayerState.Spicyfart)
+        {
 
-        yield return null;
+            pc.moveSpeed = pc.chickenConfig.chickenSpeed / 4f;
+
+            yield return new WaitForSeconds(1.5f);
+
+            pc.moveSpeed = pc.chickenConfig.chickenSpeed;
+        }
     }
 }

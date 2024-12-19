@@ -13,6 +13,7 @@ public class PsmManager : MonoBehaviour
 
     public Transform[] psmSlots;
     public CanvasGroup[] emptySlotsCG;
+    public CanvasGroup[] emptySlotJoinTexts;
     public CanvasGroup[] occupiedSlotCG;
     public Transform[] psmScrollRects;
     public TextMeshProUGUI[] chickenNameTexts;
@@ -21,6 +22,8 @@ public class PsmManager : MonoBehaviour
     public Slider[] chickenSpeedSliders;
     public Transform[] confirmPanels;
     public GameObject[] joinTexts;
+    public GameObject[] leftArrows;
+    public GameObject[] rightArrows;
     
     private string gameLaunchTextString = "Starting game... {0}";
 
@@ -84,7 +87,7 @@ public class PsmManager : MonoBehaviour
         GameInstance.instance.playerDeaths.Add(0);
         
         if(GameInstance.instance.playerCount < playerInputManager.maxPlayerCount)
-            emptySlotsCG[GameInstance.instance.playerCount].DOFade(1, 0.2f);
+            emptySlotJoinTexts[GameInstance.instance.playerCount].DOFade(1, 0.2f);
 
         PsmSelectionController psmController = playerInput.GetComponent<PsmSelectionController>();
         psmController.psmManager = this;
@@ -97,6 +100,8 @@ public class PsmManager : MonoBehaviour
         psmController.chickenSpellNameText = chickenSpellNameTexts[playerInput.playerIndex];
         psmController.chickenHealthSlider = chickenHealthSliders[playerInput.playerIndex];
         psmController.chickenSpeedSlider = chickenSpeedSliders[playerInput.playerIndex];
+        psmController.leftArrow = leftArrows[playerInput.playerIndex];
+        psmController.rightArrow = rightArrows[playerInput.playerIndex];
 
         confirmPanels[playerInput.playerIndex].DOLocalMoveY(-634f, 0.15f).SetEase(Ease.OutBack).SetDelay(0.5f);
     }
