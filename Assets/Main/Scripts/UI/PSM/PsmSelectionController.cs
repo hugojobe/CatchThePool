@@ -1,9 +1,11 @@
 using System.Collections;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Sequence = DG.Tweening.Sequence;
 
 public class PsmSelectionController : MonoBehaviour
 {
@@ -36,6 +38,14 @@ public class PsmSelectionController : MonoBehaviour
 
     public GameObject leftArrow;
     public GameObject rightArrow;
+
+    private enum EPresentatorName
+    {
+        SK =0,
+        BN =1,
+        RK =2,
+        CP =3
+    }
 
     private void Start()
     {
@@ -113,6 +123,9 @@ public class PsmSelectionController : MonoBehaviour
         psmManager.confirmedPlayerCount++;
         
         GameInstance.instance.playerConfigs[index] = psmManager.chickenConfigs[selectedIndex];
+
+
+        AudioManager.PlaySfx($"Menu/SFX_Presentator/SFX_Presentator{(EPresentatorName)selectedIndex}");
         
         leftArrow.SetActive(false);
         rightArrow.SetActive(false);
@@ -122,6 +135,7 @@ public class PsmSelectionController : MonoBehaviour
         sequence.Append(psmSlot.DOScale(Vector3.one * 1.08f, 0.15f).SetEase(Ease.OutQuint));
         sequence.Append(psmSlot.DOScale(Vector3.one, 0.15f).SetEase(Ease.OutCirc));
         sequence.JoinCallback(() => GamepadRumbleController.Rumble(pad, confirmRumbleCurve, confirmRumbleCurve, 0.2f, 0.1f));
+        
     }
 
     private void UpdateDisplay()
