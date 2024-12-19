@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
     
     public bool abilityCooldownElapsed;
 
+    public MaterialPropertyBlock circleMpb;
+    public Renderer circleRend;
+
     public Animator animator;
     
     public GameObject trailInstance;
@@ -433,6 +436,14 @@ public class PlayerController : MonoBehaviour
     public void OnDeath()
     {
         ForceFinishDash();
+        
+        if (playerState == PlayerState.RopePull)
+        {
+            ReleaseRopesWithoutDelay();
+            StartCoroutine(ReleaseRopes());
+            ropePullArrow.transform.parent.gameObject.SetActive(false);
+        }
+        
         playerState = PlayerState.Dead;
         rb.linearVelocity = Vector3.zero;
         moveInput = Vector3.zero;
