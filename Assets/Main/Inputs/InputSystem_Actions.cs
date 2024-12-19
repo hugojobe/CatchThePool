@@ -62,6 +62,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""66e5cd0c-d883-444c-9d14-84419e12078c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -194,6 +203,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ConfirmSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0bf9e8d-9956-4a39-92c5-af1a919880dd"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""693914ce-d7e8-402b-842e-565ea6083522"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -353,6 +384,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_PSM_ConfirmSelection = m_UI.FindAction("PSM_ConfirmSelection", throwIfNotFound: true);
         m_UI_PSM_MoveSelection = m_UI.FindAction("PSM_MoveSelection", throwIfNotFound: true);
         m_UI_ConfirmSelection = m_UI.FindAction("ConfirmSelection", throwIfNotFound: true);
+        m_UI_Back = m_UI.FindAction("Back", throwIfNotFound: true);
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
@@ -429,6 +461,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_PSM_ConfirmSelection;
     private readonly InputAction m_UI_PSM_MoveSelection;
     private readonly InputAction m_UI_ConfirmSelection;
+    private readonly InputAction m_UI_Back;
     public struct UIActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -437,6 +470,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @PSM_ConfirmSelection => m_Wrapper.m_UI_PSM_ConfirmSelection;
         public InputAction @PSM_MoveSelection => m_Wrapper.m_UI_PSM_MoveSelection;
         public InputAction @ConfirmSelection => m_Wrapper.m_UI_ConfirmSelection;
+        public InputAction @Back => m_Wrapper.m_UI_Back;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -458,6 +492,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ConfirmSelection.started += instance.OnConfirmSelection;
             @ConfirmSelection.performed += instance.OnConfirmSelection;
             @ConfirmSelection.canceled += instance.OnConfirmSelection;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -474,6 +511,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ConfirmSelection.started -= instance.OnConfirmSelection;
             @ConfirmSelection.performed -= instance.OnConfirmSelection;
             @ConfirmSelection.canceled -= instance.OnConfirmSelection;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -559,6 +599,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnPSM_ConfirmSelection(InputAction.CallbackContext context);
         void OnPSM_MoveSelection(InputAction.CallbackContext context);
         void OnConfirmSelection(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
     public interface IGameplayActions
     {

@@ -140,7 +140,6 @@ public class GameManager : MonoBehaviour
 
     public void OnStartOfNewRound()
     {
-        Debug.Log("Starting new round");
         startRoundAnimator.SetTrigger("StartRound");
     }
 }

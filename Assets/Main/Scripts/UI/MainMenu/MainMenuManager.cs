@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
@@ -9,12 +10,26 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField]
     private GameObject defaultSelectedButton;
     
+    public GameObject gameLogo;
     public Image logoLeft, logoRight;
     public Image subtitlePanel, backgroundPanel;
 
     public GameObject menuButton1, menuButton2, menuButton3;
     
-    [Space] public AnimationCurve buttonCurve;
+    [Space] 
+    public AnimationCurve buttonCurve;
+
+    [Space] 
+    public GameObject optionsBackground;
+
+    public GameObject optionsTitle;
+    public GameObject[] optionsElements;
+    public GameObject selectionArrow;
+    public GameObject[] arrowPositions;
+    
+    public GameObject defaultSelectedOption;
+    
+    public bool isInOptionsMenu = false;
 
     private void Awake()
     {
@@ -22,10 +37,19 @@ public class MainMenuManager : MonoBehaviour
         logoRight.transform.DOLocalMoveX(1600, 0);
         subtitlePanel.DOFade(0, 0);
         backgroundPanel.transform.DOScale(0, 0);
+
+        menuButton1.transform.DOScale(Vector3.zero, 0);
+        menuButton2.transform.DOScale(Vector3.zero, 0);
+        menuButton3.transform.DOScale(Vector3.zero, 0);
         
-        menuButton1.transform.DOScale(Vector3.zero, 0).SetEase(Ease.OutBack);
-        menuButton2.transform.DOScale(Vector3.zero, 0).SetEase(Ease.OutBack);
-        menuButton3.transform.DOScale(Vector3.zero, 0).SetEase(Ease.OutBack);
+        optionsBackground.transform.DOLocalMoveX(-1120, 0);
+        optionsTitle.transform.DOLocalMoveX(-1530, 0);
+        for(int i = 0; i < optionsElements.Length; i++)
+        {
+            optionsElements[i].GetComponent<CanvasGroup>().DOFade(0, 0);
+            optionsElements[i].GetComponent<CanvasGroup>().blocksRaycasts = false;
+        }
+        selectionArrow.transform.DOScale(Vector3.zero, 0);
     }
 
     private void Start()
@@ -38,6 +62,13 @@ public class MainMenuManager : MonoBehaviour
         menuButton1.GetComponent<InteractiblePanel>().Confirm();
         CSceneManager.LoadScene(SceneNames.PSM);
     }
+    
+    public void Options()
+    {
+        menuButton2.GetComponent<InteractiblePanel>().Confirm();
+        OptionsMenuCinematic();
+        isInOptionsMenu = true;
+    }
 
     public void Quit()
     {
@@ -47,7 +78,6 @@ public class MainMenuManager : MonoBehaviour
 
     private void MainMenuStartCinematic()
     {
-
         Sequence sequence = DOTween.Sequence();
         sequence.AppendInterval(0.5f);
         
@@ -67,5 +97,61 @@ public class MainMenuManager : MonoBehaviour
         
         sequence.AppendInterval(0.5f);
         sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(defaultSelectedButton));
+    }
+
+    private void OptionsMenuCinematic()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(null));
+        
+        sequence.Append(gameLogo.transform.DOLocalMoveX(1890, 0.15f));
+        sequence.Join(menuButton1.transform.DOLocalMoveX(1890, 0.15f).SetDelay(0.05f));
+        sequence.Join(menuButton2.transform.DOLocalMoveX(1890, 0.15f).SetDelay(0.1f));
+        sequence.Join(menuButton3.transform.DOLocalMoveX(1890, 0.15f).SetDelay(0.15f));
+        
+        sequence.Join(optionsBackground.transform.DOLocalMoveX(0, 0.2f).SetEase(Ease.OutBack).SetDelay(0.25f));
+        sequence.Join(optionsTitle.transform.DOLocalMoveX(-962, 0.2f).SetEase(Ease.OutBack).SetDelay(0.3f));
+        
+        for (int i = 0; i < optionsElements.Length; i++)
+        {
+            sequence.Append(optionsElements[i].GetComponent<CanvasGroup>().DOFade(1, 0.2f).SetDelay(0.05f * i));
+            sequence.JoinCallback(() => optionsElements[i].GetComponent<CanvasGroup>().blocksRaycasts = true);
+        }
+        sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(defaultSelectedOption));
+    }
+
+    private void CloseOptionsMenu()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(null));
+        
+        sequence.Join(optionsBackground.transform.DOLocalMoveX(-1120, 0.15f));
+        sequence.Join(optionsTitle.transform.DOLocalMoveX(-1530, 0.15f));
+        sequence.Join(selectionArrow.transform.DOScale(Vector3.zero, 0.1f));
+        
+        for (int i = 0; i < optionsElements.Length; i++)
+        {
+            sequence.Join(optionsElements[i].GetComponent<CanvasGroup>().DOFade(0, 0.1f).SetDelay(i * 0.05f));
+            sequence.JoinCallback(() => optionsElements[i].GetComponent<CanvasGroup>().blocksRaycasts = false);
+        }
+        
+        sequence.Append(gameLogo.transform.DOLocalMoveX(0, 0.15f).SetEase(Ease.OutBack));
+        sequence.Join(menuButton1.transform.DOLocalMoveX(0, 0.15f).SetDelay(0.05f).SetEase(Ease.OutBack));
+        sequence.Join(menuButton2.transform.DOLocalMoveX(0, 0.15f).SetDelay(0.1f).SetEase(Ease.OutBack));
+        sequence.Join(menuButton3.transform.DOLocalMoveX(0, 0.15f).SetDelay(0.15f).SetEase(Ease.OutBack));
+        
+        sequence.AppendCallback(() => EventSystem.current.SetSelectedGameObject(defaultSelectedButton));
+    }
+
+    public void OnBackButtonPressed(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (isInOptionsMenu)
+            {
+                CloseOptionsMenu();
+                isInOptionsMenu = false;
+            }
+        }
     }
 }
