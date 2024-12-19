@@ -465,6 +465,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1592381455745605177}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4890587276970209843}
     - targetCorrespondingSourceObject: {fileID: 5332809968238436118, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6544896042344317068}
@@ -2936,6 +2939,19 @@ MonoBehaviour:
   - {fileID: 3747364232744834126}
   - {fileID: 3725568956560678265}
   - {fileID: 5269882127974035584}
+--- !u!114 &4890587276970209843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384816121862674203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3cb2e14df02074e9081e4b72b77032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feathers: []
 --- !u!4 &2456672715367301888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8084486206954526390, guid: 6531a175ef2f9204d8852dcc3fdb6f5b, type: 3}
@@ -5416,8 +5432,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
