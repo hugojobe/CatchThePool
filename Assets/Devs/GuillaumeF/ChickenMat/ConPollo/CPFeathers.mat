@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FeatherMat:
-        m_Texture: {fileID: 2800000, guid: 74245feb33ebbbb4aa90be3a060bcf30, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6468250c7c82a984aa8f94dde3ddf2c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -46,10 +46,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _FeatherPlayerTintIntensity: 0
     - _FeatherType: 0
+    - _Float: 0
+    - _Float_1: 2.46
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _FeatherColor1: {r: 0.9056604, g: 0.23495907, b: 0.23495907, a: 0}
+    - _FeatherColor2: {r: 0.21713406, g: 0.18431365, b: 1, a: 0}
+    - _PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3784511213272817165
