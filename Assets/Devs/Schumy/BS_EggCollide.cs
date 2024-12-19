@@ -38,7 +38,8 @@ public class BS_EggCollide : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController pc))
                 if (pc == launcherPc) return;
-
+            
+            AudioManager.PlaySfx("SFX_Combat/SFX_TakeDamage/SFX_EggHit");
             pc.damageable.TakeDamage(launcherPc.gameObject);
             
             collideable = true;

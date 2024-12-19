@@ -14,6 +14,7 @@ public class Spicyfart : Ability
     {
         PlayerController pc = player.GetComponent<PlayerController>();
         
+        AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_SpicyFart");
         pc.trailInstance = Instantiate(trail);
         pc.trailInstance.transform.position = player.transform.position + new Vector3(0, 0, 0);
         pc.trailInstance.transform.SetParent(player.transform);

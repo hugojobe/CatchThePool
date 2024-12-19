@@ -21,7 +21,8 @@ public class Nuggquake : Ability
         player.feedbackMachine.OnNuggquakeActivated();
         
         player.animator.SetTrigger("Nuggquake");
-        
+        AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_NuggQuake");
+
         GameObject anticipationSmokeInstance = Instantiate(anticipationSmoke);
         anticipationSmokeInstance.transform.position = player.transform.position;
 

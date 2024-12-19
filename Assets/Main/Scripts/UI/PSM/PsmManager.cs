@@ -46,6 +46,7 @@ public class PsmManager : MonoBehaviour
 
     private void Start()
     {
+
         foreach (GameObject joinText in joinTexts)
         {
             joinText.transform.DOLocalMoveY(joinText.transform.localPosition.y + 15f, 2f)
@@ -59,8 +60,9 @@ public class PsmManager : MonoBehaviour
                 .SetEase(Ease.InOutSine));
             rotationSequence.SetLoops(-1, LoopType.Yoyo);
         }
-        
         gameLaunchText.DOFade(0, 0f);
+        AudioManager.PlaySfx("Menu/SFX_Presentator/SFX_PresentatorCYC");
+
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
@@ -72,7 +74,7 @@ public class PsmManager : MonoBehaviour
             
             gameLaunchText.DOFade(0, 0.3f).SetEase(Ease.InOutSine);
         }
-        
+
         emptySlotsCG[GameInstance.instance.playerCount].DOFade(0, 0.1f);
         occupiedSlotCG[GameInstance.instance.playerCount].DOFade(1, 0.1f);
         occupiedSlotCG[GameInstance.instance.playerCount].transform.DOPunchScale(Vector2.one * 0.1f, 0.2f);

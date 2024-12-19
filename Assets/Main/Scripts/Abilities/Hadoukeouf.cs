@@ -16,7 +16,8 @@ public class Hadoukeouf : Ability
     {
         player.playerState = player.chickenConfig.abilityState;
         player.abilityCooldownElapsed = false;
-        
+        AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_Hadoukoeuf");
+
         var watchRotation = new Vector3(player.moveInput.x, 0, player.moveInput.y).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(new Vector3(0, watchRotation.y, 0), player.transform.up);
         player.rb.rotation = targetRotation;

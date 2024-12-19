@@ -19,6 +19,7 @@ public class Tourbiplume : Ability
         player.feedbackMachine.OnTourbiplumeActivated(particlesPrefab);
         
         player.animator.SetTrigger("Tourbiplume");
+        AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_Tourbiplume");
 
         player.playerState = player.chickenConfig.abilityState;
         player.abilityCooldownElapsed = false;
