@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EOR_PlayerDiv : MonoBehaviour
 {
     public List<Image> chickens;
+    public Sprite[] chickenSprites;
     private int chickenCount = 0;
-    
-    public Color chickenColor;
     
     public CanvasGroup canvasGroup;
 
@@ -22,12 +22,11 @@ public class EOR_PlayerDiv : MonoBehaviour
     {
         Image chickenImage = chickens[chickenCount];
 
-
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(chickenImage.DOColor(chickenColor, 0.1f));
-        sequence.Append(chickenImage.DOFade(0, 0.1f));
-        sequence.Append(chickenImage.DOFade(1, 0.1f));
-        sequence.Append(chickenImage.DOColor(chickenColor, 0.1f));
+        chickens[chickenCount].sprite = chickenSprites[Random.Range(0, chickenSprites.Length)];
+        sequence.Append(chickenImage.DOFade(1f, 0.1f));
+        sequence.Append(chickenImage.transform.DOScale(1.1f, 0f));
+        sequence.Append(chickenImage.transform.DOScale(1f, 0.1f));
         
         chickenCount++;
     }

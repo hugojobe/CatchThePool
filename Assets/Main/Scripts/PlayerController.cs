@@ -361,7 +361,7 @@ public class PlayerController : MonoBehaviour
         
         Lebug.Log($"P{index} health:", damageable.currentHealth, $"Player {index}");
         Lebug.Log($"P{index} state:", playerState.ToString(), $"Player {index}");
-        Lebug.Log($"P{index} ability cd:", circlePercent + "%", $"Player {index}");
+        Lebug.Log($"P{index} ability cd:", Mathf.RoundToInt(circlePercent*100) + "%", $"Player {index}");
         
         if(playerState != PlayerState.Dead && playerState != PlayerState.Uncontrolled && playerState != chickenConfig.abilityState)
             RotateTowardsDirection();
