@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using DG.Tweening;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -56,6 +58,7 @@ public class MainMenuManager : MonoBehaviour
     {
         MainMenuStartCinematic();
         AudioManager.PlayMusic("Mu_MainMenu",0);
+
     }
 
     public void Play()
