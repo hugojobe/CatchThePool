@@ -581,6 +581,7 @@ MonoBehaviour:
   trailInstance: {fileID: 0}
   flameInstance: {fileID: 0}
   spicyfartDamagePoint: {fileID: 2854067061820435553}
+  feathers: {fileID: 0}
 --- !u!114 &4978279432978190366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +644,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   damageVfx: {fileID: 4357256932173354342, guid: 1b689e1e3b89c994a8ebd185277f80b5, type: 3}
+  dashFront: {fileID: 7462457217072921782, guid: e725a470bf35fb34784625161d02c70f, type: 3}
+  dashPuff: {fileID: 6453984375409069848, guid: 07b3d91f4f75578439d5e71514baa65f, type: 3}
+  dashBurst: {fileID: 4724141674393020808, guid: 4f05e883a7206fa4f8b8aadfc776a16c, type: 3}
+  dashTrail: {fileID: 7596873545361533694, guid: eaf7dee0264eef24ca3b4b96e9ede45a, type: 3}
 --- !u!54 &2484807640208147659
 Rigidbody:
   m_ObjectHideFlags: 0
