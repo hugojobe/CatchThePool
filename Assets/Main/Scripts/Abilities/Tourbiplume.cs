@@ -28,17 +28,16 @@ public class Tourbiplume : Ability
         yield return new WaitForSecondsRealtime(0.15f);
     
         Vector3 position = player.transform.position;
-        float step = 10f;
-        for (float theta = 0; theta < 360; theta += step)
+        float angle = 2 * Mathf.PI / 12;
+        Vector3 prevPoint = position + new Vector3(radius, 0, 0);
+
+        for (int i = 1; i <= 12; i++)
         {
-            for (float phi = 0; phi < 360; phi += step)
-            {
-                float x = radius * Mathf.Sin(Mathf.Deg2Rad * theta) * Mathf.Cos(Mathf.Deg2Rad * phi);
-                float y = radius * Mathf.Sin(Mathf.Deg2Rad * theta) * Mathf.Sin(Mathf.Deg2Rad * phi);
-                float z = radius * Mathf.Cos(Mathf.Deg2Rad * theta);
-                Vector3 point = position + new Vector3(x, y, z);
-                Debug.DrawLine(position, point, Color.red, 1f);
-            }
+            float x = Mathf.Cos(i * angle) * radius;
+            float z = Mathf.Sin(i * angle) * radius;
+            Vector3 newPoint = position + new Vector3(x, 0, z);
+            Gizmos.DrawLine(prevPoint, newPoint);
+            prevPoint = newPoint;
         }
     
         Collider[] hits = Physics.OverlapSphere(player.transform.position, radius, playerLayer);

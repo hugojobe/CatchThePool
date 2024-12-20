@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
     
     public Coroutine abilityCoroutine;
 
+    [Space] public Transform spicyfartDamagePoint;
+
     public void Initialize()
     {
         chickenColor = chickenConfig.chickenColors[Random.Range(0, chickenConfig.chickenColors.Length)];

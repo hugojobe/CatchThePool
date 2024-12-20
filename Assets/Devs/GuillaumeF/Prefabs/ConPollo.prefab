@@ -415,6 +415,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5049152660683869904, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4875458664227597890, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9999238
@@ -434,6 +442,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
       propertyPath: m_Name
       value: ConPollo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370429487367875038, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: f01b37329ef7cfd48ab28c45aa59a60d, type: 3}

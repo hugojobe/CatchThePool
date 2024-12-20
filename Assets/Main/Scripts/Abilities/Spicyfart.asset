@@ -16,3 +16,7 @@ MonoBehaviour:
   backVfx: {fileID: 695398787706911632, guid: 6f9de83d7eec3fe4e8493165c3a3c89b, type: 3}
   trail: {fileID: 2168873553435845440, guid: fdc5666a136633948a9eedf9578b6c31, type: 3}
   flames: {fileID: 3372854524742514164, guid: 993ac7bac1ebd9741b42da7339314f99, type: 3}
+  radius: 1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0

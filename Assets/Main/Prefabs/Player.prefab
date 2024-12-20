@@ -173,6 +173,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4148070769987983162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2854067061820435553}
+  m_Layer: 7
+  m_Name: Spicyfart Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2854067061820435553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4148070769987983162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8679746920838541114}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4236309683600536361
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +416,7 @@ Transform:
   - {fileID: 8275949524402699167}
   - {fileID: 5353113975996569433}
   - {fileID: 9101506188595671893}
+  - {fileID: 2854067061820435553}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3342955180135766469
@@ -544,9 +576,11 @@ MonoBehaviour:
   arrowSizeMax: 3
   abilityCooldownElapsed: 0
   circleRend: {fileID: 652450849569030378}
+  circlePercent: 1
   animator: {fileID: 0}
   trailInstance: {fileID: 0}
   flameInstance: {fileID: 0}
+  spicyfartDamagePoint: {fileID: 2854067061820435553}
 --- !u!114 &4978279432978190366
 MonoBehaviour:
   m_ObjectHideFlags: 0

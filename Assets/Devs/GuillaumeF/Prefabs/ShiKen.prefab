@@ -447,10 +447,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShiKen
       objectReference: {fileID: 0}
+    - target: {fileID: 1150662042250863927, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165640017248115525, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927956493376497547, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fc17949c4535a1845a18e3636ee837e9, type: 2}
+    - target: {fileID: 6185504277971505427, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9022408196468258005, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000000029802322

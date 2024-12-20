@@ -9,6 +9,10 @@ public class Spicyfart : Ability
     public GameObject backVfx;
     public GameObject trail;
     public GameObject flames;
+
+    [Space] 
+    public float radius;
+    public LayerMask playerLayer;
     
     public override void InitAbility(PlayerController player)
     {
@@ -46,7 +50,32 @@ public class Spicyfart : Ability
         
         GameObject backVfxInstance = Instantiate(backVfx);
         backVfxInstance.transform.position = player.transform.position;
-        frontVfxInstance.transform.rotation = Quaternion.LookRotation(player.transform.forward, player.transform.up);
+        backVfxInstance.transform.rotation = Quaternion.LookRotation(player.transform.forward, player.transform.up);
+        
+        float angle = 2 * Mathf.PI / 12;
+        Vector3 prevPoint = player.spicyfartDamagePoint.position + new Vector3(radius, 0, 0);
+
+        for (int i = 1; i <= 12; i++)
+        {
+            float x = Mathf.Cos(i * angle) * radius;
+            float z = Mathf.Sin(i * angle) * radius;
+            Vector3 newPoint = player.spicyfartDamagePoint.position + new Vector3(x, 0, z);
+            Debug.DrawLine(prevPoint, newPoint, Color.red, 2f);
+            prevPoint = newPoint;
+        }
+        
+        Collider[] hits = Physics.OverlapSphere(player.transform.TransformPoint(player.spicyfartDamagePoint.localPosition), radius, playerLayer);
+    
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].gameObject.CompareTag("Player"))
+            {
+                PlayerController hitPlayer = hits[i].GetComponent<PlayerController>();
+                
+                if(hitPlayer != null && hitPlayer != player)
+                    hitPlayer.damageable.TakeDamage(player.gameObject);
+            }
+        }
         
         pc.trailInstance.GetComponent<TrailRenderer>().emitting = true;
         pc.flameInstance.GetComponent<ParticleSystem>().Play();
