@@ -185,11 +185,19 @@ public class PlayerController : MonoBehaviour
         float dashTime = dashDistance / dashSpeed;
 
         moveSpeed = dashSpeed;
-        
+
         if (!isSpicyfart)
+        {
+            
+            AudioManager.PlaySfx("SFX_Combat/SFX_Dash/SFX_Dash");
             feedbackMachine.OnDashStarted();
+        }
         else
+        {
+            
+            AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_SpicyFart");
             feedbackMachine.OnSpicyfartStarted();
+        }
         
         /*if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
@@ -312,7 +320,8 @@ public class PlayerController : MonoBehaviour
             if (playerState == PlayerState.Dashing || playerState == PlayerState.Spicyfart)
             {
                 Debug.Log("Dashing");
-                
+                AudioManager.PlaySfx("SFX_Ring/Rope/SFX_InstantRebound");
+
                 Vector3 reflectVelocity = Vector3.Reflect(previousFrameVelocity, ringRope.perpendicularDirection.normalized);
                 
                 Debug.DrawLine(transform.position, transform.position + reflectVelocity, Color.red, 2f);
@@ -356,6 +365,7 @@ public class PlayerController : MonoBehaviour
                 ropeEnterPosition = transform.position;
                 currentRopeNormalVector = -ringRope.perpendicularDirection.normalized;
                 
+                AudioManager.PlaySfx("SFX_Ring/Rope/SFX_TightRope");
                 ropePullArrow.transform.parent.gameObject.SetActive(true);
             }
         }
@@ -373,6 +383,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
         
+        AudioManager.PlaySfx("SFX_Ring/Rope/SFX_ReleaveRope");
         ringRopes.ForEach(r => r.ReleaseInteraction());
         ringRopes.Clear();
     }
@@ -493,6 +504,8 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(damagePhysicsCoroutine);
             rb.linearVelocity = Vector3.zero;
         }
+
+        AudioManager.PlaySfx("SFX_Combat/SFX_TakeDamage/SFX_Hurt");
         
         rb.linearVelocity = Vector3.zero;
         damagePhysicsCoroutine = StartCoroutine(DamagePhysicsCoroutine(damageCauser));
@@ -527,7 +540,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ReleaseRopes());
             ropePullArrow.transform.parent.gameObject.SetActive(false);
         }
-        
+        AudioManager.PlaySfx("SFX_Combat/SFX_TakeDamage/SFX_Dead");
+        AudioManager.PlaySfx($"Crowd/SFX_Crowd{Random.Range(1,4)}");
+
+
         playerState = PlayerState.Dead;
         rb.linearVelocity = Vector3.zero;
         moveInput = Vector3.zero;
