@@ -501,6 +501,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7373091902373876899, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69
+      objectReference: {fileID: 0}
     - target: {fileID: -2396683154324201303, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9833662
@@ -529,6 +533,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: be51e3546d7fa65439df1901cd72d8af, type: 2}
+    - target: {fileID: -1557912455171051028, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69
+      objectReference: {fileID: 0}
     - target: {fileID: -160617690276911729, guid: 5a0501511be04b44cba04cd46c20b880, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3290,6 +3298,7 @@ MonoBehaviour:
   - {fileID: 1695452769970152218}
   - {fileID: 4888415768080511131}
   - {fileID: 5642509970872888883}
+  FullScreenPass: {fileID: 2100000, guid: 7b79d9fd4e11c194a90fba299d724656, type: 2}
 --- !u!114 &4604713893874938204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,7 +4055,7 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 1
     m_StartRange: 0
-    m_EndRange: 1
+    m_EndRange: 1.5
     m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
@@ -4106,7 +4115,7 @@ ParticleSystemForceField:
     m_DirectionCurveY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4528,7 +4537,7 @@ ParticleSystemForceField:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_MultiplyDragByParticleSize: 1
+    m_MultiplyDragByParticleSize: 0
     m_MultiplyDragByParticleVelocity: 1
 --- !u!1 &7083335437756654822 stripped
 GameObject:
@@ -4809,7 +4818,7 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 1
     m_StartRange: 0
-    m_EndRange: 1
+    m_EndRange: 1.5
     m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
@@ -4869,7 +4878,7 @@ ParticleSystemForceField:
     m_DirectionCurveY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5291,7 +5300,7 @@ ParticleSystemForceField:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_MultiplyDragByParticleSize: 1
+    m_MultiplyDragByParticleSize: 0
     m_MultiplyDragByParticleVelocity: 1
 --- !u!1 &7276565055429068368 stripped
 GameObject:

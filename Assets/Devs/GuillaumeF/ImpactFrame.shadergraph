@@ -13,9 +13,6 @@
             "m_Id": "649747a4c85043859c0dc17a68a1417c"
         },
         {
-            "m_Id": "9566e731a5eb4e3a838cf79be78ec280"
-        },
-        {
             "m_Id": "8ece4a1ce5e840039d254573877c24a6"
         }
     ],
@@ -2551,10 +2548,10 @@
         "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 2070.0,
-            "y": 175.0,
-            "width": 140.0,
-            "height": 166.0
+            "x": 2041.9998779296875,
+            "y": 176.99998474121095,
+            "width": 124.9998779296875,
+            "height": 116.99998474121094
         }
     },
     "m_Slots": [
@@ -5176,34 +5173,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "9566e731a5eb4e3a838cf79be78ec280",
-    "m_Guid": {
-        "m_GuidSerialized": "727628a6-5694-4137-af28-c024f0c38c80"
-    },
-    "m_Name": "CircleSize",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "CircleSize",
-    "m_DefaultReferenceName": "_CircleSize",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 1,
-    "m_RangeValues": {
-        "x": -1.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.ScreenPositionMaterialSlot",
     "m_ObjectId": "9635887203ce4684bbbd46ca97c45efe",
@@ -5988,7 +5957,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 200.0,
+    "m_Value": 1000.0,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }
@@ -7535,9 +7504,6 @@
         },
         {
             "m_Id": "649747a4c85043859c0dc17a68a1417c"
-        },
-        {
-            "m_Id": "9566e731a5eb4e3a838cf79be78ec280"
         },
         {
             "m_Id": "8ece4a1ce5e840039d254573877c24a6"

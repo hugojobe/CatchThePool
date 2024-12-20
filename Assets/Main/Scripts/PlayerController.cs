@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     public void Initialize()
     {
-        chickenColor = chickenConfig.chickenColors[Random.Range(0, chickenConfig.chickenColors.Length)];
+        chickenColor = GameInstance.instance.playerColors[index];
         
         GameObject playerMesh = Instantiate(chickenConfig.chickenMeshPrefab, transform.position, Quaternion.identity, transform);
         playerMesh.transform.localPosition = new Vector3(0, -0.339f, 0);

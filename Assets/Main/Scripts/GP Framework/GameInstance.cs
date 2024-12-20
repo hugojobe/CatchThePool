@@ -35,6 +35,8 @@ public class GameInstance : MonoBehaviour
     public Action OnRoundStart;
 
     public bool isRoundRunning;
+
+    public Color[] playerColors;
     
     private void Awake() {
         if (instance == null)
