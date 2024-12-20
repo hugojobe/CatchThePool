@@ -31,12 +31,11 @@ public class FeedbackMachine : MonoBehaviour
     
 // DAMAGE
     public void OnDamageTaken(GameObject damageCauser)
-    {
-        /*ImpactSetParameters obj = Instantiate(damageVfx).GetComponent<ImpactSetParameters>();
+    { ImpactSetParameters obj = Instantiate(damageVfx).GetComponent<ImpactSetParameters>();
         obj.transform.position = pc.transform.position;
         obj.playerColor = damageCauser.GetComponent<PlayerController>().chickenColor;
         obj.targetPlayerColor = pc.chickenColor;
-        obj.targetChicken = pc.chickenConfig.chickenType;*/
+        obj.targetChicken = pc.chickenConfig.chickenType;
         
         float healthPercent = (float)pc.damageable.currentHealth / (float)pc.chickenConfig.chickenHealthGameplay;
         

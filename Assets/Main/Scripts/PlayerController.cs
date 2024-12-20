@@ -173,11 +173,11 @@ public class PlayerController : MonoBehaviour
             feedbackMachine.OnSpicyfartStarted();
         
         
-        if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
+        /*if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
             dashDistance = hit.distance;
             dashTime = dashDistance / dashSpeed;
-        }
+        }*/
 
         rb.linearVelocity = dashDirection * dashSpeed;
 
