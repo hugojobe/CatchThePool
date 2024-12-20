@@ -33,6 +33,8 @@ public class GameInstance : MonoBehaviour
 
     public int currentRoundNumber = 1;
     public Action OnRoundStart;
+
+    public bool isRoundRunning;
     
     private void Awake() {
         if (instance == null)
@@ -82,6 +84,7 @@ public class GameInstance : MonoBehaviour
         OnRoundStart?.Invoke();
         yield return new WaitForSeconds(1.2f);
         playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
+        isRoundRunning = true;
     }
 
     public IEnumerator InitNewRoundCoroutine()
@@ -127,10 +130,15 @@ public class GameInstance : MonoBehaviour
         
         yield return new WaitForSeconds(1.5f);
         playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
+        isRoundRunning = true;
     }
     
     public void EndRound()
     {
+        if (!isRoundRunning) return;
+        
+        isRoundRunning = false;
+        
         foreach (PlayerController player in playerControllers)
         {
             if (player.playerState == PlayerState.Dead)

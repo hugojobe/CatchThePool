@@ -157,8 +157,6 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator DashCoroutine(Vector3 direction, float forceMultiplier = 1f, bool isSpicyfart = false)
     {
-        Debug.Log("Dash");
-        
         Vector3 dashDirection = direction;
         moveInput = new Vector2(dashDirection.x, dashDirection.z);
         float dashDistance = chickenConfig.dashDistance * forceMultiplier;
@@ -167,11 +165,10 @@ public class PlayerController : MonoBehaviour
 
         moveSpeed = dashSpeed;
         
-        if (isSpicyfart)
+        if (!isSpicyfart)
             feedbackMachine.OnDashStarted();
         else
             feedbackMachine.OnSpicyfartStarted();
-        
         
         /*if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
