@@ -54,6 +54,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.PlayMusic("Mu_MainMenu",0);
+
         MainMenuStartCinematic();
     }
 
