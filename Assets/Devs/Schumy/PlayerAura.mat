@@ -71,11 +71,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cooldown: 0.654
-    - _Emissf: 10
+    - _Cooldown: 0.699
+    - _Emissf: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Visibility: 0.35
+    - _Visibility: 1
     m_Colors:
     - _PlayerColor: {r: 1, g: 0.59676194, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -111,6 +111,18 @@ public class GameInstance : MonoBehaviour
             playerControllers[i].damageable.currentHealth = playerControllers[i].chickenConfig.chickenHealthGameplay;
             playerControllers[i].circleRend.enabled = true;
             playerControllers[i].ReleaseRopesWithoutDelay();
+            playerControllers[i].abilityCooldownElapsed = true;
+            playerControllers[i].dashCooldownElapsed = true;
+            playerControllers[i].circlePercent = 1;
+
+            if (playerControllers[i].chickenConfig.chickenType == ParticlesMPB.ChickenSelected.ConPollo)
+            {
+                playerControllers[i].trailInstance.GetComponent<TrailRenderer>().emitting = false;
+                playerControllers[i].flameInstance.GetComponent<ParticleSystem>().Stop();
+            }
+
+            playerControllers[i].feathers.ResetFeathers();
+            playerControllers[i].ropePullArrow.transform.parent.gameObject.SetActive(false);
         }
         
         yield return new WaitForSeconds(1.5f);

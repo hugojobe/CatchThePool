@@ -21,6 +21,8 @@ public class Tourbiplume : Ability
         player.animator.SetTrigger("Tourbiplume");
         AudioManager.PlaySfx("SFX_Combat/SFX_Attacks/SFX_Tourbiplume");
 
+        player.watchRotation = Quaternion.LookRotation(player.rb.linearVelocity.normalized, player.transform.up).eulerAngles;
+        
         player.playerState = player.chickenConfig.abilityState;
         player.abilityCooldownElapsed = false;
         player.moveInput = Vector2.zero;
