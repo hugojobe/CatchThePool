@@ -9,6 +9,8 @@ public class EndScreenManager : MonoBehaviour
 
     private void Start()
     {
+        
+        AudioManager.PlayMusic("Mu_Victory",0);
         for (int i = 0; i < 4; i++)
         {
             if (i >= GameInstance.instance.playerCount)
