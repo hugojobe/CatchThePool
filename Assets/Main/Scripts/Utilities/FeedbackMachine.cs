@@ -34,7 +34,7 @@ public class FeedbackMachine : MonoBehaviour
 
     public void OnDashFinished()
     {
-        Destroy(dashFrontInstance);
+        dashFrontInstance.GetComponent<MaterialSpriteAnimator>().activated = true;
         Destroy(dashTrailInstance);
     }
 

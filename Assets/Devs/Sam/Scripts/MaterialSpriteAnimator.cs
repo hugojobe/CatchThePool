@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MaterialSpriteAnimator : MonoBehaviour
 {
-
+    public bool activated = true;
     [SerializeField]
     private float maxLifetime = 1f;
     [SerializeField]
@@ -29,7 +29,10 @@ public class MaterialSpriteAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckLifetime();
+        if(activated)
+        {
+            CheckLifetime();
+        }
     }
 
     private float NormalizeLifetime()
