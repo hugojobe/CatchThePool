@@ -12,6 +12,9 @@ public class ParticlesMPB : MonoBehaviour
 
     public ChickenSelected currentChicken;
 
+    public Transform planeCollider;
+    public Vector3 colliderPos;
+
     [SerializeField]
     private ChickenColorSO chickenColors;
 
@@ -25,6 +28,9 @@ public class ParticlesMPB : MonoBehaviour
         mpb = new MaterialPropertyBlock();
         pS = transform.GetComponent<ParticleSystem>();
         var main = pS.main;
+
+        planeCollider.parent = null;
+        planeCollider.transform.position = colliderPos;
 
         switch (currentChicken)
         {
