@@ -12,16 +12,30 @@ public class FeedbackMachine : MonoBehaviour
 
     [Space] 
     public GameObject damageVfx;
+
+    [Space]
+    [Header("Dash")]
+    public GameObject dashFront;
+    public GameObject dashPuff;
+    public GameObject dashBurst;
+    public GameObject dashTrail;
+    private GameObject dashFrontInstance;
+    private GameObject dashTrailInstance;
+
     
 // DASH
     public void OnDashStarted()
     {
-        
+        dashFrontInstance = InstantiateVFX(dashFront);
+        dashTrailInstance = InstantiateVFX(dashTrail);
+        InstantiateSelfContainedVFX(dashBurst);
+        InstantiateSelfContainedVFX(dashPuff);
     }
 
     public void OnDashFinished()
     {
-        
+        Destroy(dashFrontInstance);
+        Destroy(dashTrailInstance);
     }
 
     public void OnDashUpdate(float dashProgress)
@@ -102,5 +116,15 @@ public class FeedbackMachine : MonoBehaviour
     public void OnSpicyFartUpdate()
     {
         
+    }
+
+    public GameObject InstantiateVFX(GameObject vfx)
+    {
+        return Instantiate(vfx, transform.position, Quaternion.identity, transform);
+    }
+
+    public void InstantiateSelfContainedVFX(GameObject vfx)
+    {
+        Instantiate(vfx, transform.position, Quaternion.identity);
     }
 }

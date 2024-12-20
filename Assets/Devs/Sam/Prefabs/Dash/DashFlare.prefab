@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 0.125
-  repeat: 1
+  repeat: 0
   properties:
   - _AlphaFactor
   - _UniformScale
