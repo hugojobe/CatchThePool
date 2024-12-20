@@ -427,15 +427,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10980393, g: 0.10980393, b: 0.10980393, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6a6e67ce85c2ceb4697fb013d2e5669e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -496,6 +496,8 @@ MonoBehaviour:
   playerDeaths: 05000000020000000200000002000000
   winningPlayerIndex: 1
   requiredPointsToWin: 5
+  currentRoundNumber: 1
+  isRoundRunning: 0
 --- !u!4 &611189082
 Transform:
   m_ObjectHideFlags: 0
@@ -762,6 +764,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3886739590665724181, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5e848a4c77089c247a16db681d232ce6, type: 3}
+    - target: {fileID: 4154271182295465240, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c81a192eb15258846969798e1750cfe0, type: 3}
     - target: {fileID: 7931886721518048786, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
       propertyPath: index
       value: 2
@@ -1048,6 +1058,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3886739590665724181, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37e7677dde162304aa3f7119066468a9, type: 3}
+    - target: {fileID: 4154271182295465240, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3dae90fa9114c2348b219495533bc827, type: 3}
     - target: {fileID: 7931886721518048786, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
       propertyPath: index
       value: 1
@@ -1280,6 +1298,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3886739590665724181, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c56182a3f3de70e48817257fb6f73875, type: 3}
+    - target: {fileID: 4154271182295465240, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3df5254933fb1c843a67263dbe9aa9af, type: 3}
     - target: {fileID: 7931886721518048786, guid: 7cebfa73f4e0dad4baf3aed864d40b41, type: 3}
       propertyPath: index
       value: 3
