@@ -55,7 +55,7 @@ public class EGSpritesheetAnimator : MonoBehaviour
             currentLifetime += Time.deltaTime;
             float normalizedLifetime = NormalizeLifetime();
             float curvePos = lifetimeCurve.Evaluate(normalizedLifetime);
-            meshRend.material.SetFloat("_Frame", (frames - 1)*curvePos);
+            meshRend.material.SetFloat("_Frame", (frames)*curvePos);
             return;
         }
         if(repeat)
