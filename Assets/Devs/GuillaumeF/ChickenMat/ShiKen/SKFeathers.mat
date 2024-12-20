@@ -52,7 +52,7 @@ Material:
     - _Float_1: 2.46
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SmoothstepMax: 2.5
+    - _SmoothstepMax: 1.5
     - _SmoothstepMin: 0
     m_Colors:
     - _FeatherColor1: {r: 0, g: 0, b: 0, a: 0}
