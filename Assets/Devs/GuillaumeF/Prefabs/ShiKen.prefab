@@ -415,6 +415,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7373091902373876899, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69
+      objectReference: {fileID: 0}
     - target: {fileID: -2888121367350151744, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000000029802322
@@ -442,6 +446,10 @@ PrefabInstance:
     - target: {fileID: -2396683154324201303, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.000021112563
+      objectReference: {fileID: 0}
+    - target: {fileID: -1557912455171051028, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f18878f7dc002b4eac65ef3c118055f, type: 3}
       propertyPath: m_Name
@@ -3473,7 +3481,7 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 1
     m_StartRange: 0
-    m_EndRange: 1
+    m_EndRange: 1.5
     m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
@@ -3533,7 +3541,7 @@ ParticleSystemForceField:
     m_DirectionCurveY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3955,7 +3963,7 @@ ParticleSystemForceField:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_MultiplyDragByParticleSize: 1
+    m_MultiplyDragByParticleSize: 0
     m_MultiplyDragByParticleVelocity: 1
 --- !u!4 &5379037967118463015 stripped
 Transform:
@@ -3978,7 +3986,7 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 1
     m_StartRange: 0
-    m_EndRange: 1
+    m_EndRange: 1.5
     m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
@@ -4038,7 +4046,7 @@ ParticleSystemForceField:
     m_DirectionCurveY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4460,7 +4468,7 @@ ParticleSystemForceField:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_MultiplyDragByParticleSize: 1
+    m_MultiplyDragByParticleSize: 0
     m_MultiplyDragByParticleVelocity: 1
 --- !u!54 &6820405614204760023
 Rigidbody:
@@ -5485,6 +5493,7 @@ MonoBehaviour:
   - {fileID: 2262970943056826907}
   - {fileID: 4552779053135204887}
   - {fileID: 71759359412403575}
+  FullScreenPass: {fileID: 2100000, guid: 7b79d9fd4e11c194a90fba299d724656, type: 2}
 --- !u!114 &5338841497579716436
 MonoBehaviour:
   m_ObjectHideFlags: 0
