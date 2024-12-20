@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         availableSpawnpoints = spawnpoints.ToList();
 
+        AudioManager.PlayMusic("Mu_Fight",0);
         if (GameInstance.instance.playerCount == 2)
         {
             int startIndex = Random.value < 0.5f ? 0 : 2;

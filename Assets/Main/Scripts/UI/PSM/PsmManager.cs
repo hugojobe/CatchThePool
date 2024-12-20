@@ -46,6 +46,7 @@ public class PsmManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.PlayMusic("Mu_SelectChicken",0);
 
         foreach (GameObject joinText in joinTexts)
         {

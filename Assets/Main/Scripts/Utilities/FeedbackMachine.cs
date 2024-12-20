@@ -127,6 +127,6 @@ public class FeedbackMachine : MonoBehaviour
 
     public void InstantiateSelfContainedVFX(GameObject vfx)
     {
-        Instantiate(vfx, transform.position, Quaternion.identity);
+        Instantiate(vfx, transform.position, transform.rotation);
     }
 }
