@@ -548,6 +548,11 @@ MonoBehaviour:
   - {r: 0.8862745, g: 0.26666668, b: 0.15294118, a: 1}
   - {r: 0.24705882, g: 0.69411767, b: 0.28627452, a: 1}
   - {r: 0.3254902, g: 0.5372549, b: 0.78039217, a: 1}
+  playerNumberImages:
+  - {fileID: 21300000, guid: f9558e2da98fb6943b46ce8a0572a9c1, type: 3}
+  - {fileID: 21300000, guid: 37e7677dde162304aa3f7119066468a9, type: 3}
+  - {fileID: 21300000, guid: 5e848a4c77089c247a16db681d232ce6, type: 3}
+  - {fileID: 21300000, guid: c56182a3f3de70e48817257fb6f73875, type: 3}
 --- !u!4 &890171086
 Transform:
   m_ObjectHideFlags: 0
