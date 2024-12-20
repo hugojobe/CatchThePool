@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -62,6 +63,8 @@ public class PlayerController : MonoBehaviour
     [Space]
     public PlayerFeathers feathers;
 
+    [Space] public GameObject popup;
+
     public void Initialize()
     {
         chickenColor = GameInstance.instance.playerColors[index];
@@ -102,6 +105,8 @@ public class PlayerController : MonoBehaviour
         circleRend.SetPropertyBlock(circleMpb);
         
         feathers = GetComponentInChildren<PlayerFeathers>();
+        
+        popup.GetComponentInChildren<Image>().sprite = GameInstance.instance.playerNumberImages[index];
         
         isInitialized = true;
     }
@@ -145,6 +150,22 @@ public class PlayerController : MonoBehaviour
         else
             dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
         
+    }
+
+    public void ShowPopup()
+    {
+        StartCoroutine(ShowPopupCoroutine());
+    }
+
+    public IEnumerator ShowPopupCoroutine()
+    {
+        popup.transform.DOLocalMoveY(1.06f, 0.2f);
+        popup.GetComponentInChildren<Image>().DOFade(1f, 0.2f);
+
+        yield return new WaitForSecondsRealtime(1.5f);
+        
+        popup.transform.DOLocalMoveY(0, 0.2f);
+        popup.GetComponentInChildren<Image>().DOFade(0f, 0.2f);
     }
 
     public void UseAbility(InputAction.CallbackContext context)

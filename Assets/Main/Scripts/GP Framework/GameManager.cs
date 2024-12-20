@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         availableSpawnpoints = spawnpoints.ToList();
-
-        AudioManager.PlayMusic("Mu_Fight",0);
         if (GameInstance.instance.playerCount == 2)
         {
             int startIndex = Random.value < 0.5f ? 0 : 2;
@@ -63,6 +61,8 @@ public class GameManager : MonoBehaviour
         GameInstance.instance.OnRoundStart += OnStartOfNewRound;
         
         StartCoroutine(GameInstance.instance.FirstRoundCoroutine());
+        
+        AudioManager.PlayMusic("Mu_Fight",0);
     }
 
     private void Update()

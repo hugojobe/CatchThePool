@@ -57,7 +57,7 @@ Material:
     m_Colors:
     - _FeatherColor1: {r: 0.9056604, g: 0.23495907, b: 0.23495907, a: 0}
     - _FeatherColor2: {r: 0.21713406, g: 0.18431365, b: 1, a: 0}
-    - _FeatherInnerColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 0}
+    - _FeatherInnerColor: {r: 0.7924528, g: 0.5591656, b: 0.2953008, a: 0}
     - _FeatherOuterColor: {r: 0.509434, g: 0.44935924, b: 0.44935924, a: 0}
     - _PlayerColor: {r: 0.23137254, g: 0.36062637, b: 1, a: 0}
   m_BuildTextureStacks: []
