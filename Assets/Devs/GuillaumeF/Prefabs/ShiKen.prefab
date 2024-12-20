@@ -5493,6 +5493,7 @@ MonoBehaviour:
   - {fileID: 2262970943056826907}
   - {fileID: 4552779053135204887}
   - {fileID: 71759359412403575}
+  FullScreenPass: {fileID: 2100000, guid: 7b79d9fd4e11c194a90fba299d724656, type: 2}
 --- !u!114 &5338841497579716436
 MonoBehaviour:
   m_ObjectHideFlags: 0
