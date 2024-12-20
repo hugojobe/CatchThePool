@@ -4949,8 +4949,8 @@ GameObject:
   - component: {fileID: 3355909111093337756}
   - component: {fileID: 6700484075207442489}
   - component: {fileID: 8364991084337739713}
-  m_Layer: 0
-  m_Name: Plane
+  m_Layer: 4
+  m_Name: FeatherPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
