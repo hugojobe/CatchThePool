@@ -20,12 +20,12 @@ MonoBehaviour:
   chickenSpeedPSM: 2
   chickenMeshPrefab: {fileID: 4217824599453750035, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
   chickenHealthGameplay: 2
-  chickenSpeed: 2.5
+  chickenSpeed: 3.5
   dashSpeed: 32
   dashDistance: 2.5
-  dashCooldown: 1.5
+  dashCooldown: 0.4
   chickenColors:
   - {r: 0.971418, g: 0.769, b: 1, a: 1}
   ability: {fileID: 11400000, guid: 355813d4d7a88e34093fa37e349f6eba, type: 2}
   abilityState: 5
-  abilityCooldown: 5
+  abilityCooldown: 2
