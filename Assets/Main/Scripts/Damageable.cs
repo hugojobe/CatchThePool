@@ -12,6 +12,9 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(GameObject damageCauser)
     {
+        if(playerController.playerState == PlayerState.Dead) return;
+        
+        
         OnDamageTaken?.Invoke(damageCauser);
         
         currentHealth--;

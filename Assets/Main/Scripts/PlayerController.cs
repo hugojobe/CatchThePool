@@ -371,6 +371,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Rope"))
+        {
+            StartCoroutine(ReleaseRopes());
+        }
+    }
+
     private IEnumerator ReloadAbilityCoroutine()
     {
         StartCoroutine(SetCirclePercent());
