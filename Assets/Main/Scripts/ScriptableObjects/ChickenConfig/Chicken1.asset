@@ -15,7 +15,7 @@ MonoBehaviour:
   chickenType: 2
   chickenName: Shi-ken
   chickenSpellName: Hadoukoeuf
-  chickenImage: {fileID: 21300000, guid: fa720e166e08eec4bb0fee36b6859556, type: 3}
+  chickenImage: {fileID: 21300000, guid: 07880d0c25cb7c240b3e828a1f905f45, type: 3}
   chickenHealthPSM: 1
   chickenSpeedPSM: 3
   chickenMeshPrefab: {fileID: 7529108689048270363, guid: 7251b9878eafa5745800b78e0002f4ff, type: 3}

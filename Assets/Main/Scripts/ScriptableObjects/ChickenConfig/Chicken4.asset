@@ -15,7 +15,7 @@ MonoBehaviour:
   chickenType: 0
   chickenName: ConPollo
   chickenSpellName: Spicyfart
-  chickenImage: {fileID: 21300000, guid: 021928db46ef2fe4492bd3621128e778, type: 3}
+  chickenImage: {fileID: 21300000, guid: 51dbd84482b60164d9dac82cdf461677, type: 3}
   chickenHealthPSM: 2
   chickenSpeedPSM: 2
   chickenMeshPrefab: {fileID: 4217824599453750035, guid: 82fe41ce9b400a347b5acbb2938bcbd1, type: 3}
