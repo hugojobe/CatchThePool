@@ -38,7 +38,7 @@ public class Tourbiplume : Ability
             float x = Mathf.Cos(i * angle) * radius;
             float z = Mathf.Sin(i * angle) * radius;
             Vector3 newPoint = position + new Vector3(x, 0, z);
-            Gizmos.DrawLine(prevPoint, newPoint);
+            //Gizmos.DrawLine(prevPoint, newPoint);
             prevPoint = newPoint;
         }
     
