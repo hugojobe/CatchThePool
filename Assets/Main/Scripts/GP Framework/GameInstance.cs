@@ -136,6 +136,7 @@ public class GameInstance : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         playerControllers.ForEach(player => player.playerState = PlayerState.Normal);
         isRoundRunning = true;
+        playerControllers.ForEach(player => player.ShowPopup());
     }
     
     public void EndRound()

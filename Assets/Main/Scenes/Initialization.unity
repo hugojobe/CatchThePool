@@ -540,7 +540,7 @@ MonoBehaviour:
   playerKills: 
   playerDeaths: 
   winningPlayerIndex: 0
-  requiredPointsToWin: 2
+  requiredPointsToWin: 5
   currentRoundNumber: 1
   isRoundRunning: 0
   playerColors:

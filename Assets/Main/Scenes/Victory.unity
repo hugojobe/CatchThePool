@@ -498,6 +498,8 @@ MonoBehaviour:
   requiredPointsToWin: 5
   currentRoundNumber: 1
   isRoundRunning: 0
+  playerColors: []
+  playerNumberImages: []
 --- !u!4 &611189082
 Transform:
   m_ObjectHideFlags: 0
