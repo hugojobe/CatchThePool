@@ -189,15 +189,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForEndOfFrame();
         
         playerState = PlayerState.Normal;
-        
-        if(isSpicyfart)
+
+        if (isSpicyfart)
+        {
             feedbackMachine.OnSpicyfartEnded();
+            animator.SetTrigger("EndState");
+            trailInstance.GetComponent<TrailRenderer>().emitting = false;
+            flameInstance.GetComponent<ParticleSystem>().Stop();
+            StartCoroutine(ReloadAbilityCoroutine());
+        }
         else
             feedbackMachine.OnDashFinished();
         
         dashCoroutine = null;
-
-        Debug.Log("Dash end");
         
         yield return new WaitForSeconds(chickenConfig.dashCooldown);
         ResetDashCooldown();
@@ -276,7 +280,7 @@ public class PlayerController : MonoBehaviour
             if (other.transform.childCount == 0)
                 return;
             
-            if (playerState == PlayerState.Dashing)
+            if (playerState == PlayerState.Dashing || playerState == PlayerState.Spicyfart)
             {
                 Debug.Log("Dashing");
                 
@@ -290,7 +294,20 @@ public class PlayerController : MonoBehaviour
                 {
                     StopCoroutine(dashCoroutine);
                     dashCoroutine = null;
-                    Invoke(nameof(ResetDashCooldown), chickenConfig.dashCooldown);
+
+                    if (playerState == PlayerState.Dashing)
+                        Invoke(nameof(ResetDashCooldown), chickenConfig.dashCooldown);
+                    else
+                    {
+                        feedbackMachine.OnSpicyfartEnded();
+                        animator.SetTrigger("EndState");
+                        trailInstance.GetComponent<TrailRenderer>().emitting = false;
+                        flameInstance.GetComponent<ParticleSystem>().Stop();
+                        StartCoroutine(ReloadAbilityCoroutine());
+                    }
+                    
+                    playerState = PlayerState.Normal;
+                    
                     feedbackMachine.OnDashFinished();
                 }
                 dashCooldownElapsed = false;
@@ -298,6 +315,7 @@ public class PlayerController : MonoBehaviour
                 if(dashCoroutine != null)
                     StopCoroutine(dashCoroutine);
                 
+                playerState = PlayerState.Dashing;
                 dashCoroutine = StartCoroutine(DashCoroutine(reflectVelocity.normalized, 3f));
 
                 StartCoroutine(ReleaseRopes());
@@ -314,6 +332,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator ReloadAbilityCoroutine()
+    {
+        StartCoroutine(SetCirclePercent());
+        yield return new WaitForSecondsRealtime(chickenConfig.abilityCooldown);
+
+        abilityCooldownElapsed = true;
+    }
+
     private IEnumerator ReleaseRopes()
     {
         yield return new WaitForSeconds(0.05f);
@@ -322,7 +348,7 @@ public class PlayerController : MonoBehaviour
         ringRopes.Clear();
     }
     
-    private void ReleaseRopesWithoutDelay()
+    public void ReleaseRopesWithoutDelay()
     {
         ringRopes.ForEach(r => r.ReleaseInteraction());
         ringRopes.Clear();
@@ -405,8 +431,11 @@ public class PlayerController : MonoBehaviour
             ropePullArrow.transform.parent.rotation = Quaternion.LookRotation(ropeEnterPosition - transform.position, ropePullArrow.transform.parent.up);
         }
 
-        circleMpb.SetFloat("_Cooldown", circlePercent);
-        circleRend.SetPropertyBlock(circleMpb);
+        if (playerState != PlayerState.Dead)
+        {
+            circleMpb.SetFloat("_Cooldown", circlePercent);
+            circleRend.SetPropertyBlock(circleMpb);
+        }
     }
 
     public IEnumerator SetCirclePercent()
@@ -473,6 +502,8 @@ public class PlayerController : MonoBehaviour
         playerState = PlayerState.Dead;
         rb.linearVelocity = Vector3.zero;
         moveInput = Vector3.zero;
+        
+        circleRend.enabled = false;
 
         GameInstance.instance.playerAlive[index] = false;
         GameInstance.instance.playerDeaths[index]++;

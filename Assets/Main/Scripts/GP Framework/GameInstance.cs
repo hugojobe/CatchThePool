@@ -53,8 +53,22 @@ public class GameInstance : MonoBehaviour
     
     private async void Start() {
         if (!debugMode) {
-            CSceneManager.LoadScene(SceneNames.MainMenu);
+            if (GameLoopManager.instance != null)
+            {
+                if (GameLoopManager.instance.skipMainMenu)
+                {
+                    StartCoroutine(MainMenuskipCoroutine());
+                }
+                else
+                    CSceneManager.LoadScene(SceneNames.MainMenu);
+            }
         }
+    }
+    
+    private IEnumerator MainMenuskipCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        CSceneManager.LoadScene(SceneNames.PSM);
     }
 
     public void InitNewRound()
@@ -95,7 +109,8 @@ public class GameInstance : MonoBehaviour
             playerControllers[i].playerState = PlayerState.Uncontrolled;
             playerAlive[i] = true;
             playerControllers[i].damageable.currentHealth = playerControllers[i].chickenConfig.chickenHealthGameplay;
-
+            playerControllers[i].circleRend.enabled = true;
+            playerControllers[i].ReleaseRopesWithoutDelay();
         }
         
         yield return new WaitForSeconds(1.5f);

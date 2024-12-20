@@ -42,5 +42,12 @@ public class EndScreenManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         
         playerDivs[winningPlayerIndex].ShowWinDiv();
+
+        yield return new WaitForSecondsRealtime(5f);
+        
+        Destroy(GameInstance.instance.gameObject);
+        
+        GameLoopManager.instance.skipMainMenu = true;
+        CSceneManager.LoadScene(SceneNames.Init);
     }
 }
