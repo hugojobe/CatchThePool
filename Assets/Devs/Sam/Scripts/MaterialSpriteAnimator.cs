@@ -16,13 +16,17 @@ public class MaterialSpriteAnimator : MonoBehaviour
 
 
     private float currentLifetime;
+    [SerializeField]
     private Renderer rend;
     private MaterialPropertyBlock mpb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        if(rend == null)
+        {
+            rend = GetComponent<Renderer>();
+        }
         mpb = new MaterialPropertyBlock();
     }
 
