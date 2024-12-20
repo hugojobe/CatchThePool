@@ -1,3 +1,4 @@
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
@@ -30,12 +31,32 @@ public class FeedbackMachine : MonoBehaviour
     
 // DAMAGE
     public void OnDamageTaken(GameObject damageCauser)
-    {
-        ImpactSetParameters obj = Instantiate(damageVfx).GetComponent<ImpactSetParameters>();
+    { ImpactSetParameters obj = Instantiate(damageVfx).GetComponent<ImpactSetParameters>();
         obj.transform.position = pc.transform.position;
         obj.playerColor = damageCauser.GetComponent<PlayerController>().chickenColor;
         obj.targetPlayerColor = pc.chickenColor;
         obj.targetChicken = pc.chickenConfig.chickenType;
+        
+        float healthPercent = (float)pc.damageable.currentHealth / (float)pc.chickenConfig.chickenHealthGameplay;
+        
+        if (pc.damageable.currentHealth == 1)
+        {
+            for (int i = 0; i < pc.feathers.feathersList.Length; i++)
+            {
+                pc.feathers.feathersList[i].feathersInItem.ToList().ForEach(g => g.SetActive(false));
+            }
+        }
+        else
+        {
+            for (int i = 0; i < pc.feathers.feathersList.Length; i++)
+            {
+                float threshold = (i + 1) / (float)pc.feathers.feathersList.Length;
+                if (healthPercent <= threshold)
+                    pc.feathers.feathersList[i].feathersInItem.ToList().ForEach(g => g.SetActive(true));
+                else
+                    pc.feathers.feathersList[i].feathersInItem.ToList().ForEach(g => g.SetActive(false));
+            }
+        }
     }
     
 // DEATH

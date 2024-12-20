@@ -135,10 +135,10 @@ Material:
     - _QuakeWidth: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RadiusP1: 0
-    - _RadiusP2: 0
-    - _RadiusP3: 0
-    - _RadiusP4: 0
+    - _RadiusP1: -1
+    - _RadiusP2: -1
+    - _RadiusP3: -1
+    - _RadiusP4: -1
     - _ReceiveShadows: 1
     - _SmoothMax: 1
     - _SmoothMin: 0

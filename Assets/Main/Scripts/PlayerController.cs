@@ -56,7 +56,11 @@ public class PlayerController : MonoBehaviour
     
     public Coroutine abilityCoroutine;
 
-    [Space] public Transform spicyfartDamagePoint;
+    [Space] 
+    public Transform spicyfartDamagePoint;
+    
+    [Space]
+    public PlayerFeathers feathers;
 
     public void Initialize()
     {
@@ -97,6 +101,8 @@ public class PlayerController : MonoBehaviour
         circleMpb.SetColor("_PlayerColor", chickenColor);
         circleRend.SetPropertyBlock(circleMpb);
         
+        feathers = GetComponentInChildren<PlayerFeathers>();
+        
         isInitialized = true;
     }
 
@@ -124,6 +130,8 @@ public class PlayerController : MonoBehaviour
 
         PlayerState oldState = playerState;
         
+        watchRotation = Quaternion.LookRotation(rb.linearVelocity.normalized, transform.up).eulerAngles;
+        
         dashCooldownElapsed = false;
         playerState = PlayerState.Dashing;
         rb.linearVelocity = Vector3.zero;
@@ -136,6 +144,7 @@ public class PlayerController : MonoBehaviour
         }
         else
             dashCoroutine = StartCoroutine(DashCoroutine(new Vector3(moveInput.x, 0, moveInput.y).normalized));
+        
     }
 
     public void UseAbility(InputAction.CallbackContext context)
@@ -164,11 +173,11 @@ public class PlayerController : MonoBehaviour
             feedbackMachine.OnSpicyfartStarted();
         
         
-        if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
+        /*if (Physics.Raycast(transform.position, dashDirection, out RaycastHit hit, dashDistance))
         {
             dashDistance = hit.distance;
             dashTime = dashDistance / dashSpeed;
-        }
+        }*/
 
         rb.linearVelocity = dashDirection * dashSpeed;
 
