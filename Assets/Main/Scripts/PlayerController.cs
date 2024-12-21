@@ -362,7 +362,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerState = PlayerState.RopePull;
                 animator.SetTrigger("PushRope");
-                ropeEnterPosition = transform.position;
+                ropeEnterPosition = ringRope.lineEnterPoint;
                 currentRopeNormalVector = -ringRope.perpendicularDirection.normalized;
                 
                 AudioManager.PlaySfx("SFX_Ring/Rope/SFX_TightRope");

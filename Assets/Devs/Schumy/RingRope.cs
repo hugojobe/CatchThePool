@@ -1,4 +1,6 @@
+using System;
 using DG.Tweening;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -24,6 +26,7 @@ public class RingRope : MonoBehaviour
     private Vector3 control1;
     private Vector3 control2;
     private int ropeIndex;
+    public Vector3 lineEnterPoint; 
 
     public void Initialize(Vector3 startPoint, Vector3 endPoint, float ropeRadius, Material ropeMaterial, int segments, float returnSpeed, int index)
     {
@@ -164,6 +167,8 @@ public class RingRope : MonoBehaviour
         if (!other.CompareTag("Player") || isInteracting) return;
         canMove = true;
         interactingPlayer = other.transform;
+        lineEnterPoint = startPoint + Vector3.Project(other.transform.position - startPoint, lineDirection);
+
         isInteracting = true;
         mpb.SetFloat("_Emiss",3);
         mpb.SetColor("_PlayerColor",other.GetComponent<PlayerController>().chickenColor);
@@ -263,14 +268,10 @@ public class RingRope : MonoBehaviour
     private void GenerateCollider()
     {
         float length = Vector3.Distance(startPoint, endPoint);
-        ropeCollider.size = new Vector3(ropeRadius * 100, ropeRadius * 4, length - 3f);
-
+        ropeCollider.size = new Vector3(ropeRadius * 100, ropeRadius * 4, length-1f);
         Vector3 direction = (endPoint - startPoint).normalized;
         ropeCollider.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-        
-        
-        ropeCollider.center = new(ropeCollider.center.x - 1.5f, ropeCollider.center.y, ropeCollider.center.z);
-        
+        ropeCollider.center = new(ropeCollider.center.x - 1.55f, ropeCollider.center.y, ropeCollider.center.z);
         ropeCollider.gameObject.tag = "Rope";
         canMove = false;
     }
@@ -287,5 +288,10 @@ public class RingRope : MonoBehaviour
                         Mathf.Pow(t, 3) * p3;
         }
         return points;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(lineEnterPoint,Vector3.one);
     }
 }
