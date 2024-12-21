@@ -14,10 +14,13 @@ public class SetRagdoll : MonoBehaviour
 
     public bool setGravity;
     private List<GameObject> rbGO = new();
-    public List<GameObject> rigidBodiedGameObject  => rbGO; 
+    public List<GameObject> rigidBodiedGameObject => rbGO;
+
+    public bool worldRagdoll;
 
     void OnEnable()
     {
+
         if ((Bones.Length > 0 || rbs.Length > 0) && _solverIterations != 0 && _velocitySolverIterations != 0)
         {
 
@@ -49,33 +52,48 @@ public class SetRagdoll : MonoBehaviour
                 }
             }
 
-            foreach (GameObject gameObject in rbGO)
+            if (!worldRagdoll)
             {
-                ConfigurableJoint joint;
-                if (gameObject.name.ToLower() != "root")
+                foreach (GameObject gameObject in rbGO)
                 {
-                    if (gameObject.GetComponent<ConfigurableJoint>() != null)
+                    ConfigurableJoint joint;
+                    if (gameObject.name.ToLower() != "root")
                     {
-                        joint = gameObject.GetComponent<ConfigurableJoint>();
-                    }
-                    else
-                    {
-                        joint = gameObject.AddComponent<ConfigurableJoint>();
-                    }
+                        if (gameObject.GetComponent<ConfigurableJoint>() != null)
+                        {
+                            joint = gameObject.GetComponent<ConfigurableJoint>();
+                        }
+                        else
+                        {
+                            joint = gameObject.AddComponent<ConfigurableJoint>();
+                        }
 
-                    joint.connectedBody = gameObject.transform.parent.GetComponent<Rigidbody>();
-                    joint.angularXMotion = ConfigurableJointMotion.Limited;
-                    joint.angularYMotion = ConfigurableJointMotion.Limited;
-                    joint.angularZMotion = ConfigurableJointMotion.Limited;
-                    joint.connectedBody = gameObject.transform.parent.GetComponent<Rigidbody>();
-                    joint.xMotion = ConfigurableJointMotion.Limited;
-                    joint.yMotion = ConfigurableJointMotion.Limited;
-                    joint.zMotion = ConfigurableJointMotion.Limited;
+                        joint.connectedBody = gameObject.transform.parent.GetComponent<Rigidbody>();
+                        joint.angularXMotion = ConfigurableJointMotion.Limited;
+                        joint.angularYMotion = ConfigurableJointMotion.Limited;
+                        joint.angularZMotion = ConfigurableJointMotion.Limited;
+                        joint.connectedBody = gameObject.transform.parent.GetComponent<Rigidbody>();
+                        joint.xMotion = ConfigurableJointMotion.Limited;
+                        joint.yMotion = ConfigurableJointMotion.Limited;
+                        joint.zMotion = ConfigurableJointMotion.Limited;
+                    }
+                }
+            }
+            else
+            {
+
+                foreach (GameObject gameObject in rbGO)
+                {
+                    gameObject.AddComponent<SphereCollider>().radius = .5f * transform.localScale.x;
                 }
             }
 
             enabled = false;
         }
+
+
+
     }
+
 
 }

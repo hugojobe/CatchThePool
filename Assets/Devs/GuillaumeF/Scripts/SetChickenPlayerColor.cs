@@ -6,6 +6,9 @@ public class SetChickenPlayerColor : MonoBehaviour
     public Color chickenColor = Color.white;
     public SkinnedMeshRenderer[] chickenRenderer;
     private MaterialPropertyBlock mpb;
+    public Transform[] toDisable;
+    public Transform toEnable;
+
 
     public Material FullScreenPass;
     private void OnEnable()
@@ -26,9 +29,23 @@ public class SetChickenPlayerColor : MonoBehaviour
     }
     public void StartImpact()
     {
+        if (toDisable.Length > 0)
+            foreach (Transform go in toDisable)
+            {
+                go.gameObject.SetActive(false);
+            }
+        if (toEnable != null)
+            toEnable.gameObject.SetActive(true);
+
         StartCoroutine(ImpactFrameProgress());
     }
 
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //        StartImpact();
+
+    //}
     public IEnumerator ImpactFrameProgress()
     {
         FullScreenPass.SetFloat("_ImpactActive", 1);
