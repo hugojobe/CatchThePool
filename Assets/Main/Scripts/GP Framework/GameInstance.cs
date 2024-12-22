@@ -116,6 +116,7 @@ public class GameInstance : MonoBehaviour
             
             playerControllers[i].playerState = PlayerState.Uncontrolled;
             playerAlive[i] = true;
+            playerControllers[i].GetComponentInChildren<SetChickenPlayerColor>().Restart();
             playerControllers[i].damageable.currentHealth = playerControllers[i].chickenConfig.chickenHealthGameplay;
             playerControllers[i].circleRend.enabled = true;
             playerControllers[i].ReleaseRopesWithoutDelay();

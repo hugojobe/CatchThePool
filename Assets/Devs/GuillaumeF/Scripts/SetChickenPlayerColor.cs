@@ -13,15 +13,7 @@ public class SetChickenPlayerColor : MonoBehaviour
     public Material FullScreenPass;
     private void OnEnable()
     {
-        if (toEnable.gameObject.activeInHierarchy)
-        {
-            foreach (Transform go in toDisable)
-            {
-                go.gameObject.SetActive(true);
-            }
-            toEnable.gameObject.SetActive(false);
-        }
-
+        Restart();
 
         if (transform.parent != null)
             if (transform.parent.transform.GetComponent<PlayerController>() != null)
@@ -37,6 +29,21 @@ public class SetChickenPlayerColor : MonoBehaviour
 
 
     }
+
+    public void Restart()
+    {
+        Debug.Log("Ah");
+        if (toEnable.gameObject.activeInHierarchy)
+        {
+            foreach (Transform go in toDisable)
+            {
+                go.gameObject.SetActive(true);
+            }
+            toEnable.gameObject.SetActive(false);
+        }
+
+    }
+
     public void StartImpact()
     {
         if (toDisable.Length > 0)
