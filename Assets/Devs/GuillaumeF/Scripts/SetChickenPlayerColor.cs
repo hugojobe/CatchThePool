@@ -13,6 +13,16 @@ public class SetChickenPlayerColor : MonoBehaviour
     public Material FullScreenPass;
     private void OnEnable()
     {
+        if (toEnable.gameObject.activeInHierarchy)
+        {
+            foreach (Transform go in toDisable)
+            {
+                go.gameObject.SetActive(true);
+            }
+            toEnable.gameObject.SetActive(false);
+        }
+
+
         if (transform.parent != null)
             if (transform.parent.transform.GetComponent<PlayerController>() != null)
                 chickenColor = transform.parent.transform.GetComponent<PlayerController>().chickenColor;
