@@ -130,7 +130,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FRAME_ANIMATION: 1
-    - _Frame: 0
+    - _Frame: 25
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

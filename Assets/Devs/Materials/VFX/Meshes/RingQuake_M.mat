@@ -153,10 +153,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 2.63
-    - _RadiusP1: 2.5
-    - _RadiusP2: 0.75
-    - _RadiusP3: 0.75
-    - _RadiusP4: 0.75
+    - _RadiusP1: 4.46
+    - _RadiusP2: -1
+    - _RadiusP3: -1
+    - _RadiusP4: -1
     - _ReceiveShadows: 1
     - _SmoothMax: 0.55
     - _SmoothMin: 0.18
